@@ -1,8 +1,8 @@
 name: "toy_experiment"              # name of experiment
 joeynmt_version: "2.3.0"            # joeynmt version
 model_dir: "toy_transformer"        # directory where models and validation results are stored, required.
-use_cuda: False                     # use CUDA for acceleration on GPU, required. Set to False when working on CPU.
-fp16: False                          # whether to use 16-bit half-precision training instead of 32-bit training. Used also for prediction.
+use_cuda: True                     # use CUDA for acceleration on GPU, required. Set to False when working on CPU.
+fp16: True                          # whether to use 16-bit half-precision training instead of 32-bit training. Used also for prediction.
 random_seed: 42                     # set this seed to make training and prediction deterministic.
 
 data:
@@ -74,8 +74,8 @@ testing:                            # specify which inference algorithm to use f
     n_best: 1                       # n_best size, must be smaller than or equal to beam_size
     beam_size: 5                    # size of the beam for beam search
     beam_alpha: 1.0                 # length penalty for beam search
-    batch_size: 10                  # mini-batch size for evaluation
-    batch_type: "sentence"          # evaluation batch type ("sentence", default) or tokens ("token")
+    batch_size: 2048                  # mini-batch size for evaluation
+    batch_type: "token"          # evaluation batch type ("sentence", default) or tokens ("token")
     eval_metrics: ["bleu"]          # validation metric, default: "bleu", other options: "chrf", "token_accuracy", "sequence_accuracy"
     max_output_length: 31           # maximum output length for decoding, default: None. If set to None, allow sentences of max 1.5*src length
     min_output_length: 1            # minimum output length for decoding, default: 1.
@@ -99,24 +99,24 @@ training:                           # specify training details here
     optimizer: "adamw"              # choices: "sgd", "adam", "adamw", "adadelta", "adagrad", "rmsprop", default is SGD
     adam_betas: [0.9, 0.999]        # beta parameters for Adam. These are the defaults. Typically these are different for Transformer models.
     learning_rate: 0.005            # initial learning rate, default: 3.0e-4
-    learning_rate_min: 0.0001       # stop learning when learning rate is reduced below this threshold, default: 1.0e-8
+    learning_rate_min: 0.0       # stop learning when learning rate is reduced below this threshold, default: 1.0e-8
     #learning_rate_factor: 1        # factor for Noam scheduler (used with Transformer)
-    #learning_rate_warmup: 4000     # warmup steps for Noam scheduler (used with Transformer)
+    learning_rate_warmup: 4000     # warmup steps for Noam scheduler (used with Transformer)
     clip_grad_val: 1.0              # clip the gradients to this value when they exceed it, optional
     #clip_grad_norm: 1.0            # norm clipping instead of value clipping
     weight_decay: 0.                # l2 regularization, default: 0
     loss: "crossentropy"            # loss type, default: "crossentropy"
     label_smoothing: 0.0            # label smoothing: reference tokens will have 1-label_smoothing probability instead of 1, rest of probability mass is uniformly distributed over the rest of the vocabulary, default: 0.0 (off)
-    batch_size: 32                 # mini-batch size as number of sentences (when batch_type is "sentence"; default) or total number of tokens (when batch_type is "token"). When you use more than 1 GPUs, the actual batch size per device will be: batch_size // n_gpu.
-    batch_type: "sentence"          # create batches with sentences ("sentence", default) or tokens ("token")
+    batch_size: 2048                 # mini-batch size as number of sentences (when batch_type is "sentence"; default) or total number of tokens (when batch_type is "token"). When you use more than 1 GPUs, the actual batch size per device will be: batch_size // n_gpu.
+    batch_type: "token"          # create batches with sentences ("sentence", default) or tokens ("token")
     batch_multiplier: 1             # increase the effective batch size with values >1 to batch_multiplier*batch_size without increasing memory consumption by making updates only every batch_multiplier batches
     normalization: "batch"          # loss normalization of a mini-batch, default: "batch" (by number of sequences in batch), other options: "tokens" (by number of tokens in batch), "none" (don't normalize, sum up loss)
-    scheduling: "plateau"           # learning rate scheduling, optional, if not specified stays constant, options: "plateau", "exponential", "decaying", "noam" (for Transformer), "warmupexponentialdecay", "warmupinversesquareroot"
+    scheduling: "noam"           # learning rate scheduling, optional, if not specified stays constant, options: "plateau", "exponential", "decaying", "noam" (for Transformer), "warmupexponentialdecay", "warmupinversesquareroot"
     patience: 5                     # specific to plateau scheduler: wait for this many validations without improvement before decreasing the learning rate
     decrease_factor: 0.5            # specific to plateau & exponential scheduler: decrease the learning rate by this factor
-    epochs: 1                       # train for this many epochs (will be reset in resumed process)
+    epochs: 20                       # train for this many epochs (will be reset in resumed process)
     updates: 100000                    # train for this many updates (won't be reset in resumed process)
-    validation_freq: 10             # validate after this many updates (number of mini-batches), default: 1000
+    validation_freq: 500             # validate after this many updates (number of mini-batches), default: 1000
     logging_freq: 10                # log the training progress after this many updates, default: 100
     early_stopping_metric: "loss"   # when a new high score on this metric is achieved, a checkpoint is written, when "eval_metric" (default) is maximized, when "loss" or "ppl" is minimized
     shuffle: True                   # shuffle the training data, default: True
