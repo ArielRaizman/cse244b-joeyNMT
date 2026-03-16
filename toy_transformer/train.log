@@ -1,0 +1,1565 @@
+2026-03-15 14:31:11,979 - INFO - root - Hello! This is Joey-NMT (version 2.3.0).
+2026-03-15 14:31:11,979 - INFO - joeynmt.config -                           cfg.name : toy_experiment
+2026-03-15 14:31:11,979 - INFO - joeynmt.config -                cfg.joeynmt_version : 2.3.0
+2026-03-15 14:31:11,979 - INFO - joeynmt.config -                      cfg.model_dir : toy_transformer
+2026-03-15 14:31:11,979 - INFO - joeynmt.config -                       cfg.use_cuda : False
+2026-03-15 14:31:11,979 - INFO - joeynmt.config -                           cfg.fp16 : False
+2026-03-15 14:31:11,979 - INFO - joeynmt.config -                    cfg.random_seed : 42
+2026-03-15 14:31:11,979 - INFO - joeynmt.config -                     cfg.data.train : data/train
+2026-03-15 14:31:11,979 - INFO - joeynmt.config -                       cfg.data.dev : data/dev
+2026-03-15 14:31:11,979 - INFO - joeynmt.config -                      cfg.data.test : data/test
+2026-03-15 14:31:11,979 - INFO - joeynmt.config -              cfg.data.dataset_type : plain
+2026-03-15 14:31:11,979 - INFO - joeynmt.config -       cfg.data.sample_train_subset : -1
+2026-03-15 14:31:11,979 - INFO - joeynmt.config -         cfg.data.sample_dev_subset : -1
+2026-03-15 14:31:11,979 - INFO - joeynmt.config -                  cfg.data.src.lang : en
+2026-03-15 14:31:11,979 - INFO - joeynmt.config -            cfg.data.src.max_length : 100
+2026-03-15 14:31:11,979 - INFO - joeynmt.config -            cfg.data.src.min_length : 1
+2026-03-15 14:31:11,979 - INFO - joeynmt.config -             cfg.data.src.lowercase : False
+2026-03-15 14:31:11,979 - INFO - joeynmt.config -             cfg.data.src.normalize : False
+2026-03-15 14:31:11,980 - INFO - joeynmt.config -                 cfg.data.src.level : bpe
+2026-03-15 14:31:11,980 - INFO - joeynmt.config -             cfg.data.src.voc_limit : 32000
+2026-03-15 14:31:11,980 - INFO - joeynmt.config -          cfg.data.src.voc_min_freq : 1
+2026-03-15 14:31:11,980 - INFO - joeynmt.config -        cfg.data.src.tokenizer_type : subword-nmt
+2026-03-15 14:31:11,980 - INFO - joeynmt.config - cfg.data.src.tokenizer_cfg.num_merges : 32000
+2026-03-15 14:31:11,980 - INFO - joeynmt.config -   cfg.data.src.tokenizer_cfg.codes : en_es.codes
+2026-03-15 14:31:11,980 - INFO - joeynmt.config - cfg.data.src.tokenizer_cfg.dropout : 0.0
+2026-03-15 14:31:11,980 - INFO - joeynmt.config - cfg.data.src.tokenizer_cfg.pretokenizer : moses
+2026-03-15 14:31:11,980 - INFO - joeynmt.config -                  cfg.data.trg.lang : es
+2026-03-15 14:31:11,980 - INFO - joeynmt.config -            cfg.data.trg.max_length : 100
+2026-03-15 14:31:11,980 - INFO - joeynmt.config -            cfg.data.trg.min_length : 1
+2026-03-15 14:31:11,980 - INFO - joeynmt.config -             cfg.data.trg.lowercase : False
+2026-03-15 14:31:11,980 - INFO - joeynmt.config -             cfg.data.trg.normalize : False
+2026-03-15 14:31:11,980 - INFO - joeynmt.config -                 cfg.data.trg.level : bpe
+2026-03-15 14:31:11,980 - INFO - joeynmt.config -             cfg.data.trg.voc_limit : 32000
+2026-03-15 14:31:11,980 - INFO - joeynmt.config -          cfg.data.trg.voc_min_freq : 1
+2026-03-15 14:31:11,980 - INFO - joeynmt.config -        cfg.data.trg.tokenizer_type : subword-nmt
+2026-03-15 14:31:11,980 - INFO - joeynmt.config - cfg.data.trg.tokenizer_cfg.num_merges : 32000
+2026-03-15 14:31:11,980 - INFO - joeynmt.config -   cfg.data.trg.tokenizer_cfg.codes : en_es.codes
+2026-03-15 14:31:11,980 - INFO - joeynmt.config - cfg.data.trg.tokenizer_cfg.dropout : 0.0
+2026-03-15 14:31:11,980 - INFO - joeynmt.config - cfg.data.trg.tokenizer_cfg.pretokenizer : moses
+2026-03-15 14:31:11,980 - INFO - joeynmt.config - cfg.data.special_symbols.unk_token : <unk>
+2026-03-15 14:31:11,980 - INFO - joeynmt.config - cfg.data.special_symbols.pad_token : <pad>
+2026-03-15 14:31:11,980 - INFO - joeynmt.config - cfg.data.special_symbols.bos_token : <s>
+2026-03-15 14:31:11,980 - INFO - joeynmt.config - cfg.data.special_symbols.eos_token : </s>
+2026-03-15 14:31:11,980 - INFO - joeynmt.config -    cfg.data.special_symbols.unk_id : 0
+2026-03-15 14:31:11,980 - INFO - joeynmt.config -    cfg.data.special_symbols.pad_id : 1
+2026-03-15 14:31:11,980 - INFO - joeynmt.config -    cfg.data.special_symbols.bos_id : 2
+2026-03-15 14:31:11,980 - INFO - joeynmt.config -    cfg.data.special_symbols.eos_id : 3
+2026-03-15 14:31:11,980 - INFO - joeynmt.config -             cfg.testing.load_model : toy_transformer
+2026-03-15 14:31:11,980 - INFO - joeynmt.config -                 cfg.testing.n_best : 1
+2026-03-15 14:31:11,980 - INFO - joeynmt.config -              cfg.testing.beam_size : 5
+2026-03-15 14:31:11,980 - INFO - joeynmt.config -             cfg.testing.beam_alpha : 1.0
+2026-03-15 14:31:11,980 - INFO - joeynmt.config -             cfg.testing.batch_size : 10
+2026-03-15 14:31:11,980 - INFO - joeynmt.config -             cfg.testing.batch_type : sentence
+2026-03-15 14:31:11,980 - INFO - joeynmt.config -           cfg.testing.eval_metrics : ['bleu']
+2026-03-15 14:31:11,980 - INFO - joeynmt.config -      cfg.testing.max_output_length : 31
+2026-03-15 14:31:11,980 - INFO - joeynmt.config -      cfg.testing.min_output_length : 1
+2026-03-15 14:31:11,980 - INFO - joeynmt.config -            cfg.testing.return_prob : none
+2026-03-15 14:31:11,980 - INFO - joeynmt.config -       cfg.testing.return_attention : False
+2026-03-15 14:31:11,980 - INFO - joeynmt.config -           cfg.testing.generate_unk : True
+2026-03-15 14:31:11,980 - INFO - joeynmt.config -   cfg.testing.no_repeat_ngram_size : -1
+2026-03-15 14:31:11,980 - INFO - joeynmt.config -     cfg.testing.repetition_penalty : -1
+2026-03-15 14:31:11,980 - INFO - joeynmt.config - cfg.testing.sacrebleu_cfg.whitespace : False
+2026-03-15 14:31:11,980 - INFO - joeynmt.config - cfg.testing.sacrebleu_cfg.tokenize : 13a
+2026-03-15 14:31:11,980 - INFO - joeynmt.config -             cfg.training.model_dir : toy_transformer
+2026-03-15 14:31:11,980 - INFO - joeynmt.config -       cfg.training.reset_best_ckpt : False
+2026-03-15 14:31:11,980 - INFO - joeynmt.config -       cfg.training.reset_scheduler : False
+2026-03-15 14:31:11,980 - INFO - joeynmt.config -       cfg.training.reset_optimizer : False
+2026-03-15 14:31:11,980 - INFO - joeynmt.config -      cfg.training.reset_iter_state : False
+2026-03-15 14:31:11,980 - INFO - joeynmt.config -             cfg.training.optimizer : adamw
+2026-03-15 14:31:11,980 - INFO - joeynmt.config -            cfg.training.adam_betas : [0.9, 0.999]
+2026-03-15 14:31:11,980 - INFO - joeynmt.config -         cfg.training.learning_rate : 0.005
+2026-03-15 14:31:11,980 - INFO - joeynmt.config -     cfg.training.learning_rate_min : 0.0001
+2026-03-15 14:31:11,980 - INFO - joeynmt.config -         cfg.training.clip_grad_val : 1.0
+2026-03-15 14:31:11,980 - INFO - joeynmt.config -          cfg.training.weight_decay : 0.0
+2026-03-15 14:31:11,980 - INFO - joeynmt.config -                  cfg.training.loss : crossentropy
+2026-03-15 14:31:11,980 - INFO - joeynmt.config -       cfg.training.label_smoothing : 0.0
+2026-03-15 14:31:11,981 - INFO - joeynmt.config -            cfg.training.batch_size : 32
+2026-03-15 14:31:11,981 - INFO - joeynmt.config -            cfg.training.batch_type : sentence
+2026-03-15 14:31:11,981 - INFO - joeynmt.config -      cfg.training.batch_multiplier : 1
+2026-03-15 14:31:11,981 - INFO - joeynmt.config -         cfg.training.normalization : batch
+2026-03-15 14:31:11,981 - INFO - joeynmt.config -            cfg.training.scheduling : plateau
+2026-03-15 14:31:11,981 - INFO - joeynmt.config -              cfg.training.patience : 5
+2026-03-15 14:31:11,981 - INFO - joeynmt.config -       cfg.training.decrease_factor : 0.5
+2026-03-15 14:31:11,981 - INFO - joeynmt.config -                cfg.training.epochs : 1
+2026-03-15 14:31:11,981 - INFO - joeynmt.config -               cfg.training.updates : 100000
+2026-03-15 14:31:11,981 - INFO - joeynmt.config -       cfg.training.validation_freq : 10
+2026-03-15 14:31:11,981 - INFO - joeynmt.config -          cfg.training.logging_freq : 10
+2026-03-15 14:31:11,981 - INFO - joeynmt.config - cfg.training.early_stopping_metric : loss
+2026-03-15 14:31:11,981 - INFO - joeynmt.config -               cfg.training.shuffle : True
+2026-03-15 14:31:11,981 - INFO - joeynmt.config -             cfg.training.overwrite : True
+2026-03-15 14:31:11,981 - INFO - joeynmt.config -     cfg.training.print_valid_sents : [0, 1, 2]
+2026-03-15 14:31:11,981 - INFO - joeynmt.config -       cfg.training.keep_best_ckpts : 3
+2026-03-15 14:31:11,981 - INFO - joeynmt.config -              cfg.model.initializer : xavier_uniform
+2026-03-15 14:31:11,981 - INFO - joeynmt.config -                cfg.model.init_gain : 1.0
+2026-03-15 14:31:11,981 - INFO - joeynmt.config -         cfg.model.bias_initializer : zeros
+2026-03-15 14:31:11,981 - INFO - joeynmt.config -        cfg.model.embed_initializer : xavier_uniform
+2026-03-15 14:31:11,981 - INFO - joeynmt.config -          cfg.model.embed_init_gain : 1.0
+2026-03-15 14:31:11,981 - INFO - joeynmt.config -          cfg.model.tied_embeddings : False
+2026-03-15 14:31:11,981 - INFO - joeynmt.config -             cfg.model.tied_softmax : True
+2026-03-15 14:31:11,981 - INFO - joeynmt.config -             cfg.model.encoder.type : transformer
+2026-03-15 14:31:11,981 - INFO - joeynmt.config -       cfg.model.encoder.num_layers : 3
+2026-03-15 14:31:11,981 - INFO - joeynmt.config -        cfg.model.encoder.num_heads : 4
+2026-03-15 14:31:11,981 - INFO - joeynmt.config - cfg.model.encoder.embeddings.embedding_dim : 64
+2026-03-15 14:31:11,981 - INFO - joeynmt.config - cfg.model.encoder.embeddings.scale : True
+2026-03-15 14:31:11,981 - INFO - joeynmt.config - cfg.model.encoder.embeddings.freeze : False
+2026-03-15 14:31:11,981 - INFO - joeynmt.config -      cfg.model.encoder.hidden_size : 64
+2026-03-15 14:31:11,981 - INFO - joeynmt.config -          cfg.model.encoder.ff_size : 128
+2026-03-15 14:31:11,981 - INFO - joeynmt.config -          cfg.model.encoder.dropout : 0.1
+2026-03-15 14:31:11,981 - INFO - joeynmt.config -           cfg.model.encoder.freeze : False
+2026-03-15 14:31:11,981 - INFO - joeynmt.config -       cfg.model.encoder.layer_norm : pre
+2026-03-15 14:31:11,981 - INFO - joeynmt.config -       cfg.model.encoder.activation : relu
+2026-03-15 14:31:11,981 - INFO - joeynmt.config -             cfg.model.decoder.type : transformer
+2026-03-15 14:31:11,981 - INFO - joeynmt.config -       cfg.model.decoder.num_layers : 3
+2026-03-15 14:31:11,981 - INFO - joeynmt.config -        cfg.model.decoder.num_heads : 4
+2026-03-15 14:31:11,981 - INFO - joeynmt.config - cfg.model.decoder.embeddings.embedding_dim : 64
+2026-03-15 14:31:11,981 - INFO - joeynmt.config - cfg.model.decoder.embeddings.scale : True
+2026-03-15 14:31:11,981 - INFO - joeynmt.config - cfg.model.decoder.embeddings.freeze : False
+2026-03-15 14:31:11,981 - INFO - joeynmt.config -      cfg.model.decoder.hidden_size : 64
+2026-03-15 14:31:11,981 - INFO - joeynmt.config -          cfg.model.decoder.ff_size : 128
+2026-03-15 14:31:11,981 - INFO - joeynmt.config -          cfg.model.decoder.dropout : 0.1
+2026-03-15 14:31:11,982 - INFO - joeynmt.config -           cfg.model.decoder.freeze : False
+2026-03-15 14:31:11,982 - INFO - joeynmt.config -       cfg.model.decoder.layer_norm : pre
+2026-03-15 14:31:11,982 - INFO - joeynmt.config -       cfg.model.decoder.activation : relu
+2026-03-15 14:31:11,982 - INFO - joeynmt.data - Building tokenizer...
+2026-03-15 14:31:12,163 - INFO - joeynmt.tokenizers - en tokenizer: SubwordNMTTokenizer(level=bpe, lowercase=False, normalize=False, filter_by_length=(1, 100), pretokenizer=moses, tokenizer=BPE, separator=@@, dropout=0.0)
+2026-03-15 14:31:12,163 - INFO - joeynmt.tokenizers - es tokenizer: SubwordNMTTokenizer(level=bpe, lowercase=False, normalize=False, filter_by_length=(1, 100), pretokenizer=moses, tokenizer=BPE, separator=@@, dropout=0.0)
+2026-03-15 14:31:12,163 - INFO - joeynmt.data - Loading train set...
+2026-03-15 14:31:23,663 - INFO - joeynmt.data - Building vocabulary...
+2026-03-15 14:31:31,225 - INFO - joeynmt.data - Loading dev set...
+2026-03-15 14:31:32,770 - INFO - joeynmt.data - Loading test set...
+2026-03-15 14:31:34,409 - INFO - joeynmt.data - Data loaded.
+2026-03-15 14:31:34,409 - INFO - joeynmt.data - Train dataset: PlaintextDataset(split=train, len=223992, src_lang="en", trg_lang="es", has_trg=True, random_subset=-1, has_src_prompt=False, has_trg_prompt=False)
+2026-03-15 14:31:34,409 - INFO - joeynmt.data - Valid dataset: PlaintextDataset(split=dev, len=27999, src_lang="en", trg_lang="es", has_trg=True, random_subset=-1, has_src_prompt=False, has_trg_prompt=False)
+2026-03-15 14:31:34,409 - INFO - joeynmt.data -  Test dataset: PlaintextDataset(split=test, len=28000, src_lang="en", trg_lang="es", has_trg=True, random_subset=-1, has_src_prompt=False, has_trg_prompt=False)
+2026-03-15 14:31:34,409 - INFO - joeynmt.data - First training example:
+	[SRC] Internet in Brazil isn &apos;t something cheap .
+	[TRG] La Internet en Brasil no es nada barata .
+2026-03-15 14:31:34,409 - INFO - joeynmt.data - First 10 Src tokens: (0) <unk> (1) <pad> (2) <s> (3) </s> (4) . (5) I (6) the (7) to (8) a (9) you
+2026-03-15 14:31:34,409 - INFO - joeynmt.data - First 10 Trg tokens: (0) <unk> (1) <pad> (2) <s> (3) </s> (4) . (5) de (6) que (7) a (8) la (9) ?
+2026-03-15 14:31:34,410 - INFO - joeynmt.data - Number of unique Src tokens (vocab_size): 16476
+2026-03-15 14:31:34,410 - INFO - joeynmt.data - Number of unique Trg tokens (vocab_size): 21522
+2026-03-15 14:31:34,422 - INFO - joeynmt.model - Building an encoder-decoder model...
+2026-03-15 14:31:34,477 - INFO - joeynmt.model - Enc-dec model built.
+2026-03-15 14:31:34,479 - INFO - joeynmt.model - Total params: 2683264
+2026-03-15 14:31:34,479 - DEBUG - joeynmt.model - Trainable parameters: ['decoder.layer_norm.bias', 'decoder.layer_norm.weight', 'decoder.layers.0.dec_layer_norm.bias', 'decoder.layers.0.dec_layer_norm.weight', 'decoder.layers.0.feed_forward.layer_norm.bias', 'decoder.layers.0.feed_forward.layer_norm.weight', 'decoder.layers.0.feed_forward.pwff_layer.0.bias', 'decoder.layers.0.feed_forward.pwff_layer.0.weight', 'decoder.layers.0.feed_forward.pwff_layer.3.bias', 'decoder.layers.0.feed_forward.pwff_layer.3.weight', 'decoder.layers.0.src_trg_att.k_layer.bias', 'decoder.layers.0.src_trg_att.k_layer.weight', 'decoder.layers.0.src_trg_att.output_layer.bias', 'decoder.layers.0.src_trg_att.output_layer.weight', 'decoder.layers.0.src_trg_att.q_layer.bias', 'decoder.layers.0.src_trg_att.q_layer.weight', 'decoder.layers.0.src_trg_att.v_layer.bias', 'decoder.layers.0.src_trg_att.v_layer.weight', 'decoder.layers.0.trg_trg_att.k_layer.bias', 'decoder.layers.0.trg_trg_att.k_layer.weight', 'decoder.layers.0.trg_trg_att.output_layer.bias', 'decoder.layers.0.trg_trg_att.output_layer.weight', 'decoder.layers.0.trg_trg_att.q_layer.bias', 'decoder.layers.0.trg_trg_att.q_layer.weight', 'decoder.layers.0.trg_trg_att.v_layer.bias', 'decoder.layers.0.trg_trg_att.v_layer.weight', 'decoder.layers.0.x_layer_norm.bias', 'decoder.layers.0.x_layer_norm.weight', 'decoder.layers.1.dec_layer_norm.bias', 'decoder.layers.1.dec_layer_norm.weight', 'decoder.layers.1.feed_forward.layer_norm.bias', 'decoder.layers.1.feed_forward.layer_norm.weight', 'decoder.layers.1.feed_forward.pwff_layer.0.bias', 'decoder.layers.1.feed_forward.pwff_layer.0.weight', 'decoder.layers.1.feed_forward.pwff_layer.3.bias', 'decoder.layers.1.feed_forward.pwff_layer.3.weight', 'decoder.layers.1.src_trg_att.k_layer.bias', 'decoder.layers.1.src_trg_att.k_layer.weight', 'decoder.layers.1.src_trg_att.output_layer.bias', 'decoder.layers.1.src_trg_att.output_layer.weight', 'decoder.layers.1.src_trg_att.q_layer.bias', 'decoder.layers.1.src_trg_att.q_layer.weight', 'decoder.layers.1.src_trg_att.v_layer.bias', 'decoder.layers.1.src_trg_att.v_layer.weight', 'decoder.layers.1.trg_trg_att.k_layer.bias', 'decoder.layers.1.trg_trg_att.k_layer.weight', 'decoder.layers.1.trg_trg_att.output_layer.bias', 'decoder.layers.1.trg_trg_att.output_layer.weight', 'decoder.layers.1.trg_trg_att.q_layer.bias', 'decoder.layers.1.trg_trg_att.q_layer.weight', 'decoder.layers.1.trg_trg_att.v_layer.bias', 'decoder.layers.1.trg_trg_att.v_layer.weight', 'decoder.layers.1.x_layer_norm.bias', 'decoder.layers.1.x_layer_norm.weight', 'decoder.layers.2.dec_layer_norm.bias', 'decoder.layers.2.dec_layer_norm.weight', 'decoder.layers.2.feed_forward.layer_norm.bias', 'decoder.layers.2.feed_forward.layer_norm.weight', 'decoder.layers.2.feed_forward.pwff_layer.0.bias', 'decoder.layers.2.feed_forward.pwff_layer.0.weight', 'decoder.layers.2.feed_forward.pwff_layer.3.bias', 'decoder.layers.2.feed_forward.pwff_layer.3.weight', 'decoder.layers.2.src_trg_att.k_layer.bias', 'decoder.layers.2.src_trg_att.k_layer.weight', 'decoder.layers.2.src_trg_att.output_layer.bias', 'decoder.layers.2.src_trg_att.output_layer.weight', 'decoder.layers.2.src_trg_att.q_layer.bias', 'decoder.layers.2.src_trg_att.q_layer.weight', 'decoder.layers.2.src_trg_att.v_layer.bias', 'decoder.layers.2.src_trg_att.v_layer.weight', 'decoder.layers.2.trg_trg_att.k_layer.bias', 'decoder.layers.2.trg_trg_att.k_layer.weight', 'decoder.layers.2.trg_trg_att.output_layer.bias', 'decoder.layers.2.trg_trg_att.output_layer.weight', 'decoder.layers.2.trg_trg_att.q_layer.bias', 'decoder.layers.2.trg_trg_att.q_layer.weight', 'decoder.layers.2.trg_trg_att.v_layer.bias', 'decoder.layers.2.trg_trg_att.v_layer.weight', 'decoder.layers.2.x_layer_norm.bias', 'decoder.layers.2.x_layer_norm.weight', 'encoder.layer_norm.bias', 'encoder.layer_norm.weight', 'encoder.layers.0.feed_forward.layer_norm.bias', 'encoder.layers.0.feed_forward.layer_norm.weight', 'encoder.layers.0.feed_forward.pwff_layer.0.bias', 'encoder.layers.0.feed_forward.pwff_layer.0.weight', 'encoder.layers.0.feed_forward.pwff_layer.3.bias', 'encoder.layers.0.feed_forward.pwff_layer.3.weight', 'encoder.layers.0.layer_norm.bias', 'encoder.layers.0.layer_norm.weight', 'encoder.layers.0.src_src_att.k_layer.bias', 'encoder.layers.0.src_src_att.k_layer.weight', 'encoder.layers.0.src_src_att.output_layer.bias', 'encoder.layers.0.src_src_att.output_layer.weight', 'encoder.layers.0.src_src_att.q_layer.bias', 'encoder.layers.0.src_src_att.q_layer.weight', 'encoder.layers.0.src_src_att.v_layer.bias', 'encoder.layers.0.src_src_att.v_layer.weight', 'encoder.layers.1.feed_forward.layer_norm.bias', 'encoder.layers.1.feed_forward.layer_norm.weight', 'encoder.layers.1.feed_forward.pwff_layer.0.bias', 'encoder.layers.1.feed_forward.pwff_layer.0.weight', 'encoder.layers.1.feed_forward.pwff_layer.3.bias', 'encoder.layers.1.feed_forward.pwff_layer.3.weight', 'encoder.layers.1.layer_norm.bias', 'encoder.layers.1.layer_norm.weight', 'encoder.layers.1.src_src_att.k_layer.bias', 'encoder.layers.1.src_src_att.k_layer.weight', 'encoder.layers.1.src_src_att.output_layer.bias', 'encoder.layers.1.src_src_att.output_layer.weight', 'encoder.layers.1.src_src_att.q_layer.bias', 'encoder.layers.1.src_src_att.q_layer.weight', 'encoder.layers.1.src_src_att.v_layer.bias', 'encoder.layers.1.src_src_att.v_layer.weight', 'encoder.layers.2.feed_forward.layer_norm.bias', 'encoder.layers.2.feed_forward.layer_norm.weight', 'encoder.layers.2.feed_forward.pwff_layer.0.bias', 'encoder.layers.2.feed_forward.pwff_layer.0.weight', 'encoder.layers.2.feed_forward.pwff_layer.3.bias', 'encoder.layers.2.feed_forward.pwff_layer.3.weight', 'encoder.layers.2.layer_norm.bias', 'encoder.layers.2.layer_norm.weight', 'encoder.layers.2.src_src_att.k_layer.bias', 'encoder.layers.2.src_src_att.k_layer.weight', 'encoder.layers.2.src_src_att.output_layer.bias', 'encoder.layers.2.src_src_att.output_layer.weight', 'encoder.layers.2.src_src_att.q_layer.bias', 'encoder.layers.2.src_src_att.q_layer.weight', 'encoder.layers.2.src_src_att.v_layer.bias', 'encoder.layers.2.src_src_att.v_layer.weight', 'src_embed.lut.weight', 'trg_embed.lut.weight']
+2026-03-15 14:31:34,479 - INFO - joeynmt.prediction - Model(
+	encoder=TransformerEncoder(num_layers=3, num_heads=4, alpha=1.0, layer_norm="pre", activation=ReLU()),
+	decoder=TransformerDecoder(num_layers=3, num_heads=4, alpha=1.0, layer_norm="pre", activation=ReLU()),
+	src_embed=Embeddings(embedding_dim=64, vocab_size=16476),
+	trg_embed=Embeddings(embedding_dim=64, vocab_size=21522),
+	loss_function=XentLoss(criterion=NLLLoss(), smoothing=0.0))
+2026-03-15 14:31:35,247 - INFO - joeynmt.builders - AdamW(lr=0.005, weight_decay=0.0, betas=[0.9, 0.999])
+2026-03-15 14:31:35,247 - INFO - joeynmt.builders - ReduceLROnPlateau(mode=min, threshold_mode=abs, eps=0.0, factor=0.5, patience=5)
+2026-03-15 14:31:35,248 - INFO - joeynmt.training - Train config:
+	device: cpu
+	n_gpu: 0
+	ddp training: False
+	16-bits training: False
+	gradient accumulation: 1
+	batch size per device: 32
+	effective batch size (w. parallel & accumulation): 32
+2026-03-15 14:31:35,248 - INFO - joeynmt.training - EPOCH 1
+2026-03-15 14:31:36,524 - INFO - joeynmt.training - Epoch   1, Step:       10, Batch Loss:    67.071121, Batch Acc: 0.101773, Tokens per Sec:     2212, Lr: 0.005000
+2026-03-15 14:31:36,524 - INFO - joeynmt.prediction - Predicting 27999 example(s)... (Greedy decoding with min_output_length=1, max_output_length=31, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2026-03-15 14:59:44,694 - INFO - joeynmt.prediction - Generation took 1688.1688[sec].
+2026-03-15 14:59:45,366 - INFO - joeynmt.metrics - nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0
+2026-03-15 14:59:45,366 - INFO - joeynmt.prediction - Evaluation result (greedy): bleu:   0.00, loss:  70.24, ppl: 1718.74, acc:   0.11, 0.4170[sec]
+2026-03-15 14:59:45,369 - INFO - joeynmt.training - Hooray! New best validation result [loss]!
+2026-03-15 14:59:45,508 - INFO - joeynmt.training - Checkpoint saved in /Users/ariel/nlpfinal/toy_transformer/10.ckpt.
+2026-03-15 14:59:45,509 - INFO - joeynmt.training - Example #0
+2026-03-15 14:59:45,514 - INFO - joeynmt.training - 	Source:     Tom felt lonely and abandoned.
+2026-03-15 14:59:45,514 - INFO - joeynmt.training - 	Reference:  Tom se sentía solo y abandonado.
+2026-03-15 14:59:45,514 - INFO - joeynmt.training - 	Hypothesis: .
+2026-03-15 14:59:45,522 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tom', 'felt', 'lonely', 'and', 'abandoned', '.']
+2026-03-15 14:59:45,522 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Tom', 'se', 'sentía', 'solo', 'y', 'abandonado', '.']
+2026-03-15 14:59:45,522 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['.']
+2026-03-15 14:59:45,522 - INFO - joeynmt.training - Example #1
+2026-03-15 14:59:45,526 - INFO - joeynmt.training - 	Source:     There's no time to lose.
+2026-03-15 14:59:45,526 - INFO - joeynmt.training - 	Reference:  No hay tiempo que perder.
+2026-03-15 14:59:45,526 - INFO - joeynmt.training - 	Hypothesis: .
+2026-03-15 14:59:45,533 - DEBUG - joeynmt.training - 	Tokenized source:     ['There', '&apos;s', 'no', 'time', 'to', 'lose', '.']
+2026-03-15 14:59:45,545 - DEBUG - joeynmt.training - 	Tokenized reference:  ['No', 'hay', 'tiempo', 'que', 'perder', '.']
+2026-03-15 14:59:45,545 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['.']
+2026-03-15 14:59:45,545 - INFO - joeynmt.training - Example #2
+2026-03-15 14:59:45,549 - INFO - joeynmt.training - 	Source:     I felt exactly the same way.
+2026-03-15 14:59:45,549 - INFO - joeynmt.training - 	Reference:  Yo sentí exactamente lo mismo.
+2026-03-15 14:59:45,550 - INFO - joeynmt.training - 	Hypothesis: .
+2026-03-15 14:59:45,557 - DEBUG - joeynmt.training - 	Tokenized source:     ['I', 'felt', 'exactly', 'the', 'same', 'way', '.']
+2026-03-15 14:59:45,557 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Yo', 'sentí', 'exactamente', 'lo', 'mismo', '.']
+2026-03-15 14:59:45,557 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['.']
+2026-03-15 14:59:46,529 - INFO - joeynmt.training - Epoch   1, Step:       20, Batch Loss:    68.157028, Batch Acc: 0.108401, Tokens per Sec:     3046, Lr: 0.005000
+2026-03-15 14:59:46,530 - INFO - joeynmt.prediction - Predicting 27999 example(s)... (Greedy decoding with min_output_length=1, max_output_length=31, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2026-03-15 15:00:25,824 - INFO - joeynmt.prediction - Generation took 39.2933[sec].
+2026-03-15 15:00:26,566 - INFO - joeynmt.metrics - nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0
+2026-03-15 15:00:26,566 - INFO - joeynmt.prediction - Evaluation result (greedy): bleu:   0.00, loss:  66.23, ppl: 1122.69, acc:   0.11, 0.4553[sec]
+2026-03-15 15:00:26,568 - INFO - joeynmt.training - Hooray! New best validation result [loss]!
+2026-03-15 15:00:26,712 - INFO - joeynmt.training - Checkpoint saved in /Users/ariel/nlpfinal/toy_transformer/20.ckpt.
+2026-03-15 15:00:26,714 - INFO - joeynmt.training - Example #0
+2026-03-15 15:00:26,718 - INFO - joeynmt.training - 	Source:     Tom felt lonely and abandoned.
+2026-03-15 15:00:26,718 - INFO - joeynmt.training - 	Reference:  Tom se sentía solo y abandonado.
+2026-03-15 15:00:26,718 - INFO - joeynmt.training - 	Hypothesis: .
+2026-03-15 15:00:26,726 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tom', 'felt', 'lonely', 'and', 'abandoned', '.']
+2026-03-15 15:00:26,726 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Tom', 'se', 'sentía', 'solo', 'y', 'abandonado', '.']
+2026-03-15 15:00:26,726 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['.']
+2026-03-15 15:00:26,726 - INFO - joeynmt.training - Example #1
+2026-03-15 15:00:26,729 - INFO - joeynmt.training - 	Source:     There's no time to lose.
+2026-03-15 15:00:26,729 - INFO - joeynmt.training - 	Reference:  No hay tiempo que perder.
+2026-03-15 15:00:26,729 - INFO - joeynmt.training - 	Hypothesis: .
+2026-03-15 15:00:26,736 - DEBUG - joeynmt.training - 	Tokenized source:     ['There', '&apos;s', 'no', 'time', 'to', 'lose', '.']
+2026-03-15 15:00:26,736 - DEBUG - joeynmt.training - 	Tokenized reference:  ['No', 'hay', 'tiempo', 'que', 'perder', '.']
+2026-03-15 15:00:26,736 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['.']
+2026-03-15 15:00:26,736 - INFO - joeynmt.training - Example #2
+2026-03-15 15:00:26,740 - INFO - joeynmt.training - 	Source:     I felt exactly the same way.
+2026-03-15 15:00:26,740 - INFO - joeynmt.training - 	Reference:  Yo sentí exactamente lo mismo.
+2026-03-15 15:00:26,740 - INFO - joeynmt.training - 	Hypothesis: .
+2026-03-15 15:00:26,746 - DEBUG - joeynmt.training - 	Tokenized source:     ['I', 'felt', 'exactly', 'the', 'same', 'way', '.']
+2026-03-15 15:00:26,747 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Yo', 'sentí', 'exactamente', 'lo', 'mismo', '.']
+2026-03-15 15:00:26,747 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['.']
+2026-03-15 15:00:27,571 - INFO - joeynmt.training - Epoch   1, Step:       30, Batch Loss:    54.259445, Batch Acc: 0.104686, Tokens per Sec:     3664, Lr: 0.005000
+2026-03-15 15:00:27,571 - INFO - joeynmt.prediction - Predicting 27999 example(s)... (Greedy decoding with min_output_length=1, max_output_length=31, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2026-03-15 15:01:02,063 - INFO - joeynmt.prediction - Generation took 34.4903[sec].
+2026-03-15 15:01:02,669 - INFO - joeynmt.metrics - nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0
+2026-03-15 15:01:02,669 - INFO - joeynmt.prediction - Evaluation result (greedy): bleu:   0.00, loss:  64.18, ppl: 904.08, acc:   0.11, 0.3607[sec]
+2026-03-15 15:01:02,674 - INFO - joeynmt.training - Hooray! New best validation result [loss]!
+2026-03-15 15:01:02,793 - INFO - joeynmt.training - Checkpoint saved in /Users/ariel/nlpfinal/toy_transformer/30.ckpt.
+2026-03-15 15:01:02,795 - INFO - joeynmt.training - Example #0
+2026-03-15 15:01:02,799 - INFO - joeynmt.training - 	Source:     Tom felt lonely and abandoned.
+2026-03-15 15:01:02,799 - INFO - joeynmt.training - 	Reference:  Tom se sentía solo y abandonado.
+2026-03-15 15:01:02,799 - INFO - joeynmt.training - 	Hypothesis: .
+2026-03-15 15:01:02,805 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tom', 'felt', 'lonely', 'and', 'abandoned', '.']
+2026-03-15 15:01:02,806 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Tom', 'se', 'sentía', 'solo', 'y', 'abandonado', '.']
+2026-03-15 15:01:02,806 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['.']
+2026-03-15 15:01:02,806 - INFO - joeynmt.training - Example #1
+2026-03-15 15:01:02,809 - INFO - joeynmt.training - 	Source:     There's no time to lose.
+2026-03-15 15:01:02,809 - INFO - joeynmt.training - 	Reference:  No hay tiempo que perder.
+2026-03-15 15:01:02,809 - INFO - joeynmt.training - 	Hypothesis: .
+2026-03-15 15:01:02,815 - DEBUG - joeynmt.training - 	Tokenized source:     ['There', '&apos;s', 'no', 'time', 'to', 'lose', '.']
+2026-03-15 15:01:02,815 - DEBUG - joeynmt.training - 	Tokenized reference:  ['No', 'hay', 'tiempo', 'que', 'perder', '.']
+2026-03-15 15:01:02,815 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['.']
+2026-03-15 15:01:02,815 - INFO - joeynmt.training - Example #2
+2026-03-15 15:01:02,818 - INFO - joeynmt.training - 	Source:     I felt exactly the same way.
+2026-03-15 15:01:02,818 - INFO - joeynmt.training - 	Reference:  Yo sentí exactamente lo mismo.
+2026-03-15 15:01:02,818 - INFO - joeynmt.training - 	Hypothesis: .
+2026-03-15 15:01:02,824 - DEBUG - joeynmt.training - 	Tokenized source:     ['I', 'felt', 'exactly', 'the', 'same', 'way', '.']
+2026-03-15 15:01:02,824 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Yo', 'sentí', 'exactamente', 'lo', 'mismo', '.']
+2026-03-15 15:01:02,824 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['.']
+2026-03-15 15:01:03,610 - INFO - joeynmt.training - Epoch   1, Step:       40, Batch Loss:    63.624252, Batch Acc: 0.112006, Tokens per Sec:     3648, Lr: 0.005000
+2026-03-15 15:01:03,610 - INFO - joeynmt.prediction - Predicting 27999 example(s)... (Greedy decoding with min_output_length=1, max_output_length=31, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2026-03-15 15:01:42,752 - INFO - joeynmt.prediction - Generation took 39.1377[sec].
+2026-03-15 15:01:43,528 - INFO - joeynmt.metrics - nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0
+2026-03-15 15:01:43,528 - INFO - joeynmt.prediction - Evaluation result (greedy): bleu:   0.00, loss:  63.38, ppl: 829.82, acc:   0.11, 0.4268[sec]
+2026-03-15 15:01:43,537 - INFO - joeynmt.training - Hooray! New best validation result [loss]!
+2026-03-15 15:01:43,647 - INFO - joeynmt.training - Checkpoint saved in /Users/ariel/nlpfinal/toy_transformer/40.ckpt.
+2026-03-15 15:01:43,714 - INFO - joeynmt.training - Example #0
+2026-03-15 15:01:43,718 - INFO - joeynmt.training - 	Source:     Tom felt lonely and abandoned.
+2026-03-15 15:01:43,718 - INFO - joeynmt.training - 	Reference:  Tom se sentía solo y abandonado.
+2026-03-15 15:01:43,718 - INFO - joeynmt.training - 	Hypothesis: .
+2026-03-15 15:01:43,724 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tom', 'felt', 'lonely', 'and', 'abandoned', '.']
+2026-03-15 15:01:43,724 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Tom', 'se', 'sentía', 'solo', 'y', 'abandonado', '.']
+2026-03-15 15:01:43,724 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['.']
+2026-03-15 15:01:43,725 - INFO - joeynmt.training - Example #1
+2026-03-15 15:01:43,728 - INFO - joeynmt.training - 	Source:     There's no time to lose.
+2026-03-15 15:01:43,728 - INFO - joeynmt.training - 	Reference:  No hay tiempo que perder.
+2026-03-15 15:01:43,728 - INFO - joeynmt.training - 	Hypothesis: .
+2026-03-15 15:01:43,734 - DEBUG - joeynmt.training - 	Tokenized source:     ['There', '&apos;s', 'no', 'time', 'to', 'lose', '.']
+2026-03-15 15:01:43,734 - DEBUG - joeynmt.training - 	Tokenized reference:  ['No', 'hay', 'tiempo', 'que', 'perder', '.']
+2026-03-15 15:01:43,734 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['.']
+2026-03-15 15:01:43,734 - INFO - joeynmt.training - Example #2
+2026-03-15 15:01:43,738 - INFO - joeynmt.training - 	Source:     I felt exactly the same way.
+2026-03-15 15:01:43,738 - INFO - joeynmt.training - 	Reference:  Yo sentí exactamente lo mismo.
+2026-03-15 15:01:43,738 - INFO - joeynmt.training - 	Hypothesis: .
+2026-03-15 15:01:43,745 - DEBUG - joeynmt.training - 	Tokenized source:     ['I', 'felt', 'exactly', 'the', 'same', 'way', '.']
+2026-03-15 15:01:43,745 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Yo', 'sentí', 'exactamente', 'lo', 'mismo', '.']
+2026-03-15 15:01:43,745 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['.']
+2026-03-15 15:01:44,732 - INFO - joeynmt.training - Epoch   1, Step:       50, Batch Loss:    70.318802, Batch Acc: 0.111763, Tokens per Sec:     2945, Lr: 0.005000
+2026-03-15 15:01:44,735 - INFO - joeynmt.prediction - Predicting 27999 example(s)... (Greedy decoding with min_output_length=1, max_output_length=31, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2026-03-15 15:02:22,502 - INFO - joeynmt.prediction - Generation took 37.7598[sec].
+2026-03-15 15:02:23,288 - INFO - joeynmt.metrics - nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0
+2026-03-15 15:02:23,288 - INFO - joeynmt.prediction - Evaluation result (greedy): bleu:   0.00, loss:  62.68, ppl: 770.79, acc:   0.14, 0.3306[sec]
+2026-03-15 15:02:23,297 - INFO - joeynmt.training - Hooray! New best validation result [loss]!
+2026-03-15 15:02:23,417 - INFO - joeynmt.training - Checkpoint saved in /Users/ariel/nlpfinal/toy_transformer/50.ckpt.
+2026-03-15 15:02:23,462 - INFO - joeynmt.training - Example #0
+2026-03-15 15:02:23,465 - INFO - joeynmt.training - 	Source:     Tom felt lonely and abandoned.
+2026-03-15 15:02:23,465 - INFO - joeynmt.training - 	Reference:  Tom se sentía solo y abandonado.
+2026-03-15 15:02:23,465 - INFO - joeynmt.training - 	Hypothesis: .
+2026-03-15 15:02:23,472 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tom', 'felt', 'lonely', 'and', 'abandoned', '.']
+2026-03-15 15:02:23,472 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Tom', 'se', 'sentía', 'solo', 'y', 'abandonado', '.']
+2026-03-15 15:02:23,472 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['.']
+2026-03-15 15:02:23,472 - INFO - joeynmt.training - Example #1
+2026-03-15 15:02:23,475 - INFO - joeynmt.training - 	Source:     There's no time to lose.
+2026-03-15 15:02:23,475 - INFO - joeynmt.training - 	Reference:  No hay tiempo que perder.
+2026-03-15 15:02:23,475 - INFO - joeynmt.training - 	Hypothesis: .
+2026-03-15 15:02:23,481 - DEBUG - joeynmt.training - 	Tokenized source:     ['There', '&apos;s', 'no', 'time', 'to', 'lose', '.']
+2026-03-15 15:02:23,482 - DEBUG - joeynmt.training - 	Tokenized reference:  ['No', 'hay', 'tiempo', 'que', 'perder', '.']
+2026-03-15 15:02:23,482 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['.']
+2026-03-15 15:02:23,482 - INFO - joeynmt.training - Example #2
+2026-03-15 15:02:23,485 - INFO - joeynmt.training - 	Source:     I felt exactly the same way.
+2026-03-15 15:02:23,485 - INFO - joeynmt.training - 	Reference:  Yo sentí exactamente lo mismo.
+2026-03-15 15:02:23,485 - INFO - joeynmt.training - 	Hypothesis: .
+2026-03-15 15:02:23,491 - DEBUG - joeynmt.training - 	Tokenized source:     ['I', 'felt', 'exactly', 'the', 'same', 'way', '.']
+2026-03-15 15:02:23,491 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Yo', 'sentí', 'exactamente', 'lo', 'mismo', '.']
+2026-03-15 15:02:23,491 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['.']
+2026-03-15 15:02:24,478 - INFO - joeynmt.training - Epoch   1, Step:       60, Batch Loss:    61.842304, Batch Acc: 0.163102, Tokens per Sec:     3039, Lr: 0.005000
+2026-03-15 15:02:24,479 - INFO - joeynmt.prediction - Predicting 27999 example(s)... (Greedy decoding with min_output_length=1, max_output_length=31, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2026-03-15 15:03:10,938 - INFO - joeynmt.prediction - Generation took 46.4583[sec].
+2026-03-15 15:03:11,531 - INFO - joeynmt.metrics - nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0
+2026-03-15 15:03:11,531 - INFO - joeynmt.prediction - Evaluation result (greedy): bleu:   0.00, loss:  60.09, ppl: 585.60, acc:   0.18, 0.3365[sec]
+2026-03-15 15:03:11,537 - INFO - joeynmt.training - Hooray! New best validation result [loss]!
+2026-03-15 15:03:11,631 - INFO - joeynmt.training - Checkpoint saved in /Users/ariel/nlpfinal/toy_transformer/60.ckpt.
+2026-03-15 15:03:11,654 - INFO - joeynmt.training - Example #0
+2026-03-15 15:03:11,657 - INFO - joeynmt.training - 	Source:     Tom felt lonely and abandoned.
+2026-03-15 15:03:11,657 - INFO - joeynmt.training - 	Reference:  Tom se sentía solo y abandonado.
+2026-03-15 15:03:11,657 - INFO - joeynmt.training - 	Hypothesis: ¿
+2026-03-15 15:03:11,663 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tom', 'felt', 'lonely', 'and', 'abandoned', '.']
+2026-03-15 15:03:11,663 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Tom', 'se', 'sentía', 'solo', 'y', 'abandonado', '.']
+2026-03-15 15:03:11,663 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['¿']
+2026-03-15 15:03:11,663 - INFO - joeynmt.training - Example #1
+2026-03-15 15:03:11,666 - INFO - joeynmt.training - 	Source:     There's no time to lose.
+2026-03-15 15:03:11,666 - INFO - joeynmt.training - 	Reference:  No hay tiempo que perder.
+2026-03-15 15:03:11,666 - INFO - joeynmt.training - 	Hypothesis: ¿
+2026-03-15 15:03:11,673 - DEBUG - joeynmt.training - 	Tokenized source:     ['There', '&apos;s', 'no', 'time', 'to', 'lose', '.']
+2026-03-15 15:03:11,673 - DEBUG - joeynmt.training - 	Tokenized reference:  ['No', 'hay', 'tiempo', 'que', 'perder', '.']
+2026-03-15 15:03:11,673 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['¿']
+2026-03-15 15:03:11,673 - INFO - joeynmt.training - Example #2
+2026-03-15 15:03:11,676 - INFO - joeynmt.training - 	Source:     I felt exactly the same way.
+2026-03-15 15:03:11,676 - INFO - joeynmt.training - 	Reference:  Yo sentí exactamente lo mismo.
+2026-03-15 15:03:11,676 - INFO - joeynmt.training - 	Hypothesis: ¿
+2026-03-15 15:03:11,682 - DEBUG - joeynmt.training - 	Tokenized source:     ['I', 'felt', 'exactly', 'the', 'same', 'way', '.']
+2026-03-15 15:03:11,682 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Yo', 'sentí', 'exactamente', 'lo', 'mismo', '.']
+2026-03-15 15:03:11,682 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['¿']
+2026-03-15 15:03:12,533 - INFO - joeynmt.training - Epoch   1, Step:       70, Batch Loss:    48.589279, Batch Acc: 0.199728, Tokens per Sec:     3474, Lr: 0.005000
+2026-03-15 15:03:12,534 - INFO - joeynmt.prediction - Predicting 27999 example(s)... (Greedy decoding with min_output_length=1, max_output_length=31, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2026-03-15 15:09:43,676 - INFO - joeynmt.prediction - Generation took 391.1381[sec].
+2026-03-15 15:09:44,807 - INFO - joeynmt.metrics - nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0
+2026-03-15 15:09:44,807 - INFO - joeynmt.prediction - Evaluation result (greedy): bleu:   0.00, loss:  57.93, ppl: 465.58, acc:   0.22, 0.5300[sec]
+2026-03-15 15:09:44,820 - INFO - joeynmt.training - Hooray! New best validation result [loss]!
+2026-03-15 15:09:45,032 - INFO - joeynmt.training - Checkpoint saved in /Users/ariel/nlpfinal/toy_transformer/70.ckpt.
+2026-03-15 15:09:45,046 - INFO - joeynmt.training - Example #0
+2026-03-15 15:09:45,053 - INFO - joeynmt.training - 	Source:     Tom felt lonely and abandoned.
+2026-03-15 15:09:45,053 - INFO - joeynmt.training - 	Reference:  Tom se sentía solo y abandonado.
+2026-03-15 15:09:45,053 - INFO - joeynmt.training - 	Hypothesis: ¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿
+2026-03-15 15:09:45,060 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tom', 'felt', 'lonely', 'and', 'abandoned', '.']
+2026-03-15 15:09:45,060 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Tom', 'se', 'sentía', 'solo', 'y', 'abandonado', '.']
+2026-03-15 15:09:45,060 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿']
+2026-03-15 15:09:45,060 - INFO - joeynmt.training - Example #1
+2026-03-15 15:09:45,063 - INFO - joeynmt.training - 	Source:     There's no time to lose.
+2026-03-15 15:09:45,063 - INFO - joeynmt.training - 	Reference:  No hay tiempo que perder.
+2026-03-15 15:09:45,064 - INFO - joeynmt.training - 	Hypothesis: ¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿
+2026-03-15 15:09:45,070 - DEBUG - joeynmt.training - 	Tokenized source:     ['There', '&apos;s', 'no', 'time', 'to', 'lose', '.']
+2026-03-15 15:09:45,071 - DEBUG - joeynmt.training - 	Tokenized reference:  ['No', 'hay', 'tiempo', 'que', 'perder', '.']
+2026-03-15 15:09:45,071 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿']
+2026-03-15 15:09:45,071 - INFO - joeynmt.training - Example #2
+2026-03-15 15:09:45,074 - INFO - joeynmt.training - 	Source:     I felt exactly the same way.
+2026-03-15 15:09:45,074 - INFO - joeynmt.training - 	Reference:  Yo sentí exactamente lo mismo.
+2026-03-15 15:09:45,074 - INFO - joeynmt.training - 	Hypothesis: ¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿
+2026-03-15 15:09:45,081 - DEBUG - joeynmt.training - 	Tokenized source:     ['I', 'felt', 'exactly', 'the', 'same', 'way', '.']
+2026-03-15 15:09:45,081 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Yo', 'sentí', 'exactamente', 'lo', 'mismo', '.']
+2026-03-15 15:09:45,081 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿', '¿']
+2026-03-15 15:09:46,310 - INFO - joeynmt.training - Epoch   1, Step:       80, Batch Loss:    54.125603, Batch Acc: 0.218005, Tokens per Sec:     2441, Lr: 0.005000
+2026-03-15 15:09:46,311 - INFO - joeynmt.prediction - Predicting 27999 example(s)... (Greedy decoding with min_output_length=1, max_output_length=31, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2026-03-15 15:16:05,573 - INFO - joeynmt.prediction - Generation took 379.2598[sec].
+2026-03-15 15:16:07,554 - INFO - joeynmt.metrics - nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0
+2026-03-15 15:16:07,554 - INFO - joeynmt.prediction - Evaluation result (greedy): bleu:   0.00, loss:  57.09, ppl: 426.00, acc:   0.22, 1.2225[sec]
+2026-03-15 15:16:07,558 - INFO - joeynmt.training - Hooray! New best validation result [loss]!
+2026-03-15 15:16:07,720 - INFO - joeynmt.training - Checkpoint saved in /Users/ariel/nlpfinal/toy_transformer/80.ckpt.
+2026-03-15 15:16:07,744 - INFO - joeynmt.training - Example #0
+2026-03-15 15:16:07,747 - INFO - joeynmt.training - 	Source:     Tom felt lonely and abandoned.
+2026-03-15 15:16:07,747 - INFO - joeynmt.training - 	Reference:  Tom se sentía solo y abandonado.
+2026-03-15 15:16:07,747 - INFO - joeynmt.training - 	Hypothesis: ¿Tom la la la la la la la la la la la la la la la la la la la la la la la la la la la la la
+2026-03-15 15:16:07,756 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tom', 'felt', 'lonely', 'and', 'abandoned', '.']
+2026-03-15 15:16:07,756 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Tom', 'se', 'sentía', 'solo', 'y', 'abandonado', '.']
+2026-03-15 15:16:07,756 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['¿', 'Tom', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la']
+2026-03-15 15:16:07,756 - INFO - joeynmt.training - Example #1
+2026-03-15 15:16:07,762 - INFO - joeynmt.training - 	Source:     There's no time to lose.
+2026-03-15 15:16:07,762 - INFO - joeynmt.training - 	Reference:  No hay tiempo que perder.
+2026-03-15 15:16:07,762 - INFO - joeynmt.training - 	Hypothesis: ¿Tom la la la la la la la la la la la la la la la la la la la la la la la la la la la la la
+2026-03-15 15:16:07,769 - DEBUG - joeynmt.training - 	Tokenized source:     ['There', '&apos;s', 'no', 'time', 'to', 'lose', '.']
+2026-03-15 15:16:07,769 - DEBUG - joeynmt.training - 	Tokenized reference:  ['No', 'hay', 'tiempo', 'que', 'perder', '.']
+2026-03-15 15:16:07,769 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['¿', 'Tom', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la']
+2026-03-15 15:16:07,769 - INFO - joeynmt.training - Example #2
+2026-03-15 15:16:07,773 - INFO - joeynmt.training - 	Source:     I felt exactly the same way.
+2026-03-15 15:16:07,773 - INFO - joeynmt.training - 	Reference:  Yo sentí exactamente lo mismo.
+2026-03-15 15:16:07,773 - INFO - joeynmt.training - 	Hypothesis: ¿Tom la la la la la la la la la la la la la la la la la la la la la la la la la la la la la
+2026-03-15 15:16:07,779 - DEBUG - joeynmt.training - 	Tokenized source:     ['I', 'felt', 'exactly', 'the', 'same', 'way', '.']
+2026-03-15 15:16:07,779 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Yo', 'sentí', 'exactamente', 'lo', 'mismo', '.']
+2026-03-15 15:16:07,779 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['¿', 'Tom', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la']
+2026-03-15 15:16:08,627 - INFO - joeynmt.training - Epoch   1, Step:       90, Batch Loss:    48.810551, Batch Acc: 0.219253, Tokens per Sec:     3477, Lr: 0.005000
+2026-03-15 15:16:08,628 - INFO - joeynmt.prediction - Predicting 27999 example(s)... (Greedy decoding with min_output_length=1, max_output_length=31, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2026-03-15 15:22:11,259 - INFO - joeynmt.prediction - Generation took 362.6293[sec].
+2026-03-15 15:22:12,634 - INFO - joeynmt.metrics - nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0
+2026-03-15 15:22:12,635 - INFO - joeynmt.prediction - Evaluation result (greedy): bleu:   0.00, loss:  56.77, ppl: 411.68, acc:   0.21, 0.7443[sec]
+2026-03-15 15:22:12,654 - INFO - joeynmt.training - Hooray! New best validation result [loss]!
+2026-03-15 15:22:12,829 - INFO - joeynmt.training - Checkpoint saved in /Users/ariel/nlpfinal/toy_transformer/90.ckpt.
+2026-03-15 15:22:12,865 - INFO - joeynmt.training - Example #0
+2026-03-15 15:22:12,878 - INFO - joeynmt.training - 	Source:     Tom felt lonely and abandoned.
+2026-03-15 15:22:12,878 - INFO - joeynmt.training - 	Reference:  Tom se sentía solo y abandonado.
+2026-03-15 15:22:12,878 - INFO - joeynmt.training - 	Hypothesis: No Tom Tom
+2026-03-15 15:22:12,891 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tom', 'felt', 'lonely', 'and', 'abandoned', '.']
+2026-03-15 15:22:12,892 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Tom', 'se', 'sentía', 'solo', 'y', 'abandonado', '.']
+2026-03-15 15:22:12,892 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['No', 'Tom', 'Tom']
+2026-03-15 15:22:12,892 - INFO - joeynmt.training - Example #1
+2026-03-15 15:22:12,896 - INFO - joeynmt.training - 	Source:     There's no time to lose.
+2026-03-15 15:22:12,896 - INFO - joeynmt.training - 	Reference:  No hay tiempo que perder.
+2026-03-15 15:22:12,896 - INFO - joeynmt.training - 	Hypothesis: No Tom Tom
+2026-03-15 15:22:12,908 - DEBUG - joeynmt.training - 	Tokenized source:     ['There', '&apos;s', 'no', 'time', 'to', 'lose', '.']
+2026-03-15 15:22:12,908 - DEBUG - joeynmt.training - 	Tokenized reference:  ['No', 'hay', 'tiempo', 'que', 'perder', '.']
+2026-03-15 15:22:12,908 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['No', 'Tom', 'Tom']
+2026-03-15 15:22:12,908 - INFO - joeynmt.training - Example #2
+2026-03-15 15:22:12,911 - INFO - joeynmt.training - 	Source:     I felt exactly the same way.
+2026-03-15 15:22:12,911 - INFO - joeynmt.training - 	Reference:  Yo sentí exactamente lo mismo.
+2026-03-15 15:22:12,911 - INFO - joeynmt.training - 	Hypothesis: No Tom Tom la la la la la la la la la la la la la la la la la la la la la la la la la la la la
+2026-03-15 15:22:12,918 - DEBUG - joeynmt.training - 	Tokenized source:     ['I', 'felt', 'exactly', 'the', 'same', 'way', '.']
+2026-03-15 15:22:12,918 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Yo', 'sentí', 'exactamente', 'lo', 'mismo', '.']
+2026-03-15 15:22:12,918 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['No', 'Tom', 'Tom', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la']
+2026-03-15 15:22:13,843 - INFO - joeynmt.training - Epoch   1, Step:      100, Batch Loss:    77.655098, Batch Acc: 0.214215, Tokens per Sec:     3306, Lr: 0.005000
+2026-03-15 15:22:13,846 - INFO - joeynmt.prediction - Predicting 27999 example(s)... (Greedy decoding with min_output_length=1, max_output_length=31, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2026-03-15 15:28:52,968 - INFO - joeynmt.prediction - Generation took 399.1194[sec].
+2026-03-15 15:28:55,102 - INFO - joeynmt.metrics - nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0
+2026-03-15 15:28:55,102 - INFO - joeynmt.prediction - Evaluation result (greedy): bleu:   0.00, loss:  56.26, ppl: 390.10, acc:   0.22, 1.1962[sec]
+2026-03-15 15:28:55,112 - INFO - joeynmt.training - Hooray! New best validation result [loss]!
+2026-03-15 15:28:55,449 - INFO - joeynmt.training - Checkpoint saved in /Users/ariel/nlpfinal/toy_transformer/100.ckpt.
+2026-03-15 15:28:55,506 - INFO - joeynmt.training - Example #0
+2026-03-15 15:28:55,512 - INFO - joeynmt.training - 	Source:     Tom felt lonely and abandoned.
+2026-03-15 15:28:55,512 - INFO - joeynmt.training - 	Reference:  Tom se sentía solo y abandonado.
+2026-03-15 15:28:55,512 - INFO - joeynmt.training - 	Hypothesis: ¿Tom la que que que que que que la la la la la la la la la la la la la la la la la la la la la la
+2026-03-15 15:28:55,521 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tom', 'felt', 'lonely', 'and', 'abandoned', '.']
+2026-03-15 15:28:55,522 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Tom', 'se', 'sentía', 'solo', 'y', 'abandonado', '.']
+2026-03-15 15:28:55,522 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['¿', 'Tom', 'la', 'que', 'que', 'que', 'que', 'que', 'que', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la']
+2026-03-15 15:28:55,522 - INFO - joeynmt.training - Example #1
+2026-03-15 15:28:55,526 - INFO - joeynmt.training - 	Source:     There's no time to lose.
+2026-03-15 15:28:55,526 - INFO - joeynmt.training - 	Reference:  No hay tiempo que perder.
+2026-03-15 15:28:55,526 - INFO - joeynmt.training - 	Hypothesis: ¿Tom la que que que que que la la la la la la la la la la la la la la la la la la la la la la la
+2026-03-15 15:28:55,533 - DEBUG - joeynmt.training - 	Tokenized source:     ['There', '&apos;s', 'no', 'time', 'to', 'lose', '.']
+2026-03-15 15:28:55,533 - DEBUG - joeynmt.training - 	Tokenized reference:  ['No', 'hay', 'tiempo', 'que', 'perder', '.']
+2026-03-15 15:28:55,533 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['¿', 'Tom', 'la', 'que', 'que', 'que', 'que', 'que', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la']
+2026-03-15 15:28:55,533 - INFO - joeynmt.training - Example #2
+2026-03-15 15:28:55,537 - INFO - joeynmt.training - 	Source:     I felt exactly the same way.
+2026-03-15 15:28:55,537 - INFO - joeynmt.training - 	Reference:  Yo sentí exactamente lo mismo.
+2026-03-15 15:28:55,537 - INFO - joeynmt.training - 	Hypothesis: ¿Tom la la que que que la la la la la la la la la la la la la la la la la la la la la la la la
+2026-03-15 15:28:55,544 - DEBUG - joeynmt.training - 	Tokenized source:     ['I', 'felt', 'exactly', 'the', 'same', 'way', '.']
+2026-03-15 15:28:55,544 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Yo', 'sentí', 'exactamente', 'lo', 'mismo', '.']
+2026-03-15 15:28:55,544 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['¿', 'Tom', 'la', 'la', 'que', 'que', 'que', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la']
+2026-03-15 15:28:56,807 - INFO - joeynmt.training - Epoch   1, Step:      110, Batch Loss:    50.673225, Batch Acc: 0.214542, Tokens per Sec:     2445, Lr: 0.005000
+2026-03-15 15:28:56,808 - INFO - joeynmt.prediction - Predicting 27999 example(s)... (Greedy decoding with min_output_length=1, max_output_length=31, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2026-03-15 15:36:12,313 - INFO - joeynmt.prediction - Generation took 435.5037[sec].
+2026-03-15 15:36:13,893 - INFO - joeynmt.metrics - nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0
+2026-03-15 15:36:13,893 - INFO - joeynmt.prediction - Evaluation result (greedy): bleu:   0.00, loss:  55.54, ppl: 361.44, acc:   0.22, 0.8306[sec]
+2026-03-15 15:36:13,900 - INFO - joeynmt.training - Hooray! New best validation result [loss]!
+2026-03-15 15:36:14,085 - INFO - joeynmt.training - Checkpoint saved in /Users/ariel/nlpfinal/toy_transformer/110.ckpt.
+2026-03-15 15:36:14,142 - INFO - joeynmt.training - Example #0
+2026-03-15 15:36:14,146 - INFO - joeynmt.training - 	Source:     Tom felt lonely and abandoned.
+2026-03-15 15:36:14,146 - INFO - joeynmt.training - 	Reference:  Tom se sentía solo y abandonado.
+2026-03-15 15:36:14,146 - INFO - joeynmt.training - 	Hypothesis: ¿Tom la la la la la la la la la la la la la la la la la la la la la la la la la la la la la
+2026-03-15 15:36:14,152 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tom', 'felt', 'lonely', 'and', 'abandoned', '.']
+2026-03-15 15:36:14,152 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Tom', 'se', 'sentía', 'solo', 'y', 'abandonado', '.']
+2026-03-15 15:36:14,152 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['¿', 'Tom', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la']
+2026-03-15 15:36:14,152 - INFO - joeynmt.training - Example #1
+2026-03-15 15:36:14,155 - INFO - joeynmt.training - 	Source:     There's no time to lose.
+2026-03-15 15:36:14,155 - INFO - joeynmt.training - 	Reference:  No hay tiempo que perder.
+2026-03-15 15:36:14,155 - INFO - joeynmt.training - 	Hypothesis: ¿Tom la la la la la la la la la la la la la la la la la la la la la la la la la la la la la
+2026-03-15 15:36:14,161 - DEBUG - joeynmt.training - 	Tokenized source:     ['There', '&apos;s', 'no', 'time', 'to', 'lose', '.']
+2026-03-15 15:36:14,161 - DEBUG - joeynmt.training - 	Tokenized reference:  ['No', 'hay', 'tiempo', 'que', 'perder', '.']
+2026-03-15 15:36:14,161 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['¿', 'Tom', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la']
+2026-03-15 15:36:14,161 - INFO - joeynmt.training - Example #2
+2026-03-15 15:36:14,164 - INFO - joeynmt.training - 	Source:     I felt exactly the same way.
+2026-03-15 15:36:14,164 - INFO - joeynmt.training - 	Reference:  Yo sentí exactamente lo mismo.
+2026-03-15 15:36:14,164 - INFO - joeynmt.training - 	Hypothesis: ¿Tom la la la la la la la la la la la la la la la la la la la la la la la la la la la la la
+2026-03-15 15:36:14,170 - DEBUG - joeynmt.training - 	Tokenized source:     ['I', 'felt', 'exactly', 'the', 'same', 'way', '.']
+2026-03-15 15:36:14,170 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Yo', 'sentí', 'exactamente', 'lo', 'mismo', '.']
+2026-03-15 15:36:14,170 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['¿', 'Tom', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la']
+2026-03-15 15:36:15,013 - INFO - joeynmt.training - Epoch   1, Step:      120, Batch Loss:    41.358902, Batch Acc: 0.232558, Tokens per Sec:     3505, Lr: 0.005000
+2026-03-15 15:36:15,014 - INFO - joeynmt.prediction - Predicting 27999 example(s)... (Greedy decoding with min_output_length=1, max_output_length=31, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2026-03-15 15:42:53,869 - INFO - joeynmt.prediction - Generation took 398.8537[sec].
+2026-03-15 15:42:55,868 - INFO - joeynmt.metrics - nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0
+2026-03-15 15:42:55,868 - INFO - joeynmt.prediction - Evaluation result (greedy): bleu:   0.00, loss:  55.22, ppl: 349.54, acc:   0.22, 0.7235[sec]
+2026-03-15 15:42:55,873 - INFO - joeynmt.training - Hooray! New best validation result [loss]!
+2026-03-15 15:42:56,060 - INFO - joeynmt.training - Checkpoint saved in /Users/ariel/nlpfinal/toy_transformer/120.ckpt.
+2026-03-15 15:42:56,118 - INFO - joeynmt.training - Example #0
+2026-03-15 15:42:56,121 - INFO - joeynmt.training - 	Source:     Tom felt lonely and abandoned.
+2026-03-15 15:42:56,121 - INFO - joeynmt.training - 	Reference:  Tom se sentía solo y abandonado.
+2026-03-15 15:42:56,121 - INFO - joeynmt.training - 	Hypothesis: ¿Tom la la la la la la la la la la la la la la la la la la la la la la la la la la la la la
+2026-03-15 15:42:56,127 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tom', 'felt', 'lonely', 'and', 'abandoned', '.']
+2026-03-15 15:42:56,127 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Tom', 'se', 'sentía', 'solo', 'y', 'abandonado', '.']
+2026-03-15 15:42:56,127 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['¿', 'Tom', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la']
+2026-03-15 15:42:56,127 - INFO - joeynmt.training - Example #1
+2026-03-15 15:42:56,130 - INFO - joeynmt.training - 	Source:     There's no time to lose.
+2026-03-15 15:42:56,130 - INFO - joeynmt.training - 	Reference:  No hay tiempo que perder.
+2026-03-15 15:42:56,130 - INFO - joeynmt.training - 	Hypothesis: ¿Qué la la la la la la la la la la la la la la la la la la la la la la la la la la la la la
+2026-03-15 15:42:56,137 - DEBUG - joeynmt.training - 	Tokenized source:     ['There', '&apos;s', 'no', 'time', 'to', 'lose', '.']
+2026-03-15 15:42:56,137 - DEBUG - joeynmt.training - 	Tokenized reference:  ['No', 'hay', 'tiempo', 'que', 'perder', '.']
+2026-03-15 15:42:56,137 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['¿', 'Qué', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la']
+2026-03-15 15:42:56,137 - INFO - joeynmt.training - Example #2
+2026-03-15 15:42:56,140 - INFO - joeynmt.training - 	Source:     I felt exactly the same way.
+2026-03-15 15:42:56,140 - INFO - joeynmt.training - 	Reference:  Yo sentí exactamente lo mismo.
+2026-03-15 15:42:56,140 - INFO - joeynmt.training - 	Hypothesis: ¿Qué la la la la la la la la la la la la la la la la la la la la la la la la la la la la la
+2026-03-15 15:42:56,146 - DEBUG - joeynmt.training - 	Tokenized source:     ['I', 'felt', 'exactly', 'the', 'same', 'way', '.']
+2026-03-15 15:42:56,146 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Yo', 'sentí', 'exactamente', 'lo', 'mismo', '.']
+2026-03-15 15:42:56,146 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['¿', 'Qué', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la']
+2026-03-15 15:42:56,935 - INFO - joeynmt.training - Epoch   1, Step:      130, Batch Loss:    49.625813, Batch Acc: 0.229096, Tokens per Sec:     3774, Lr: 0.005000
+2026-03-15 15:42:56,936 - INFO - joeynmt.prediction - Predicting 27999 example(s)... (Greedy decoding with min_output_length=1, max_output_length=31, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2026-03-15 15:50:42,830 - INFO - joeynmt.prediction - Generation took 465.8902[sec].
+2026-03-15 15:50:44,272 - INFO - joeynmt.metrics - nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0
+2026-03-15 15:50:44,272 - INFO - joeynmt.prediction - Evaluation result (greedy): bleu:   0.00, loss:  54.85, ppl: 336.02, acc:   0.23, 0.7366[sec]
+2026-03-15 15:50:44,291 - INFO - joeynmt.training - Hooray! New best validation result [loss]!
+2026-03-15 15:50:44,760 - INFO - joeynmt.training - Checkpoint saved in /Users/ariel/nlpfinal/toy_transformer/130.ckpt.
+2026-03-15 15:50:44,989 - INFO - joeynmt.training - Example #0
+2026-03-15 15:50:44,994 - INFO - joeynmt.training - 	Source:     Tom felt lonely and abandoned.
+2026-03-15 15:50:44,994 - INFO - joeynmt.training - 	Reference:  Tom se sentía solo y abandonado.
+2026-03-15 15:50:44,994 - INFO - joeynmt.training - 	Hypothesis: ¿Qué la la la la la la la la la la la la la la la la la la la la la la la la la la la la la
+2026-03-15 15:50:45,000 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tom', 'felt', 'lonely', 'and', 'abandoned', '.']
+2026-03-15 15:50:45,000 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Tom', 'se', 'sentía', 'solo', 'y', 'abandonado', '.']
+2026-03-15 15:50:45,000 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['¿', 'Qué', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la']
+2026-03-15 15:50:45,000 - INFO - joeynmt.training - Example #1
+2026-03-15 15:50:45,003 - INFO - joeynmt.training - 	Source:     There's no time to lose.
+2026-03-15 15:50:45,003 - INFO - joeynmt.training - 	Reference:  No hay tiempo que perder.
+2026-03-15 15:50:45,003 - INFO - joeynmt.training - 	Hypothesis: ¿Qué la la la la la la la la la la la la la la la la la la la la la la la la la la la la la
+2026-03-15 15:50:45,009 - DEBUG - joeynmt.training - 	Tokenized source:     ['There', '&apos;s', 'no', 'time', 'to', 'lose', '.']
+2026-03-15 15:50:45,009 - DEBUG - joeynmt.training - 	Tokenized reference:  ['No', 'hay', 'tiempo', 'que', 'perder', '.']
+2026-03-15 15:50:45,009 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['¿', 'Qué', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la']
+2026-03-15 15:50:45,009 - INFO - joeynmt.training - Example #2
+2026-03-15 15:50:45,012 - INFO - joeynmt.training - 	Source:     I felt exactly the same way.
+2026-03-15 15:50:45,012 - INFO - joeynmt.training - 	Reference:  Yo sentí exactamente lo mismo.
+2026-03-15 15:50:45,012 - INFO - joeynmt.training - 	Hypothesis: ¿Qué la la la la la la la la la la la la la la la la la la la la la la la la la la la la la
+2026-03-15 15:50:45,018 - DEBUG - joeynmt.training - 	Tokenized source:     ['I', 'felt', 'exactly', 'the', 'same', 'way', '.']
+2026-03-15 15:50:45,018 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Yo', 'sentí', 'exactamente', 'lo', 'mismo', '.']
+2026-03-15 15:50:45,018 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['¿', 'Qué', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la']
+2026-03-15 15:50:45,915 - INFO - joeynmt.training - Epoch   1, Step:      140, Batch Loss:    61.489170, Batch Acc: 0.228825, Tokens per Sec:     3285, Lr: 0.005000
+2026-03-15 15:50:45,919 - INFO - joeynmt.prediction - Predicting 27999 example(s)... (Greedy decoding with min_output_length=1, max_output_length=31, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2026-03-15 15:56:53,204 - INFO - joeynmt.prediction - Generation took 367.2848[sec].
+2026-03-15 15:56:54,380 - INFO - joeynmt.metrics - nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0
+2026-03-15 15:56:54,380 - INFO - joeynmt.prediction - Evaluation result (greedy): bleu:   0.00, loss:  54.38, ppl: 319.69, acc:   0.23, 0.6368[sec]
+2026-03-15 15:56:54,383 - INFO - joeynmt.training - Hooray! New best validation result [loss]!
+2026-03-15 15:56:54,658 - INFO - joeynmt.training - Checkpoint saved in /Users/ariel/nlpfinal/toy_transformer/140.ckpt.
+2026-03-15 15:56:54,780 - INFO - joeynmt.training - Example #0
+2026-03-15 15:56:54,784 - INFO - joeynmt.training - 	Source:     Tom felt lonely and abandoned.
+2026-03-15 15:56:54,784 - INFO - joeynmt.training - 	Reference:  Tom se sentía solo y abandonado.
+2026-03-15 15:56:54,784 - INFO - joeynmt.training - 	Hypothesis: ¿Tom Tom Tom Tom
+2026-03-15 15:56:54,790 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tom', 'felt', 'lonely', 'and', 'abandoned', '.']
+2026-03-15 15:56:54,790 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Tom', 'se', 'sentía', 'solo', 'y', 'abandonado', '.']
+2026-03-15 15:56:54,790 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['¿', 'Tom', 'Tom', 'Tom', 'Tom']
+2026-03-15 15:56:54,790 - INFO - joeynmt.training - Example #1
+2026-03-15 15:56:54,793 - INFO - joeynmt.training - 	Source:     There's no time to lose.
+2026-03-15 15:56:54,793 - INFO - joeynmt.training - 	Reference:  No hay tiempo que perder.
+2026-03-15 15:56:54,793 - INFO - joeynmt.training - 	Hypothesis: ¿Qué la la la la la la la la la la la la la la la la la la la la la la la la la la la la la
+2026-03-15 15:56:54,799 - DEBUG - joeynmt.training - 	Tokenized source:     ['There', '&apos;s', 'no', 'time', 'to', 'lose', '.']
+2026-03-15 15:56:54,799 - DEBUG - joeynmt.training - 	Tokenized reference:  ['No', 'hay', 'tiempo', 'que', 'perder', '.']
+2026-03-15 15:56:54,799 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['¿', 'Qué', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la']
+2026-03-15 15:56:54,799 - INFO - joeynmt.training - Example #2
+2026-03-15 15:56:54,802 - INFO - joeynmt.training - 	Source:     I felt exactly the same way.
+2026-03-15 15:56:54,802 - INFO - joeynmt.training - 	Reference:  Yo sentí exactamente lo mismo.
+2026-03-15 15:56:54,802 - INFO - joeynmt.training - 	Hypothesis: ¿Qué la la la la la la la la la la la la la la la la la la la la la la la la la la la la la
+2026-03-15 15:56:54,808 - DEBUG - joeynmt.training - 	Tokenized source:     ['I', 'felt', 'exactly', 'the', 'same', 'way', '.']
+2026-03-15 15:56:54,808 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Yo', 'sentí', 'exactamente', 'lo', 'mismo', '.']
+2026-03-15 15:56:54,808 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['¿', 'Qué', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la']
+2026-03-15 15:56:55,644 - INFO - joeynmt.training - Epoch   1, Step:      150, Batch Loss:    55.765938, Batch Acc: 0.233103, Tokens per Sec:     3656, Lr: 0.005000
+2026-03-15 15:56:55,646 - INFO - joeynmt.prediction - Predicting 27999 example(s)... (Greedy decoding with min_output_length=1, max_output_length=31, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2026-03-15 16:02:28,479 - INFO - joeynmt.prediction - Generation took 332.8293[sec].
+2026-03-15 16:02:30,256 - INFO - joeynmt.metrics - nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0
+2026-03-15 16:02:30,256 - INFO - joeynmt.prediction - Evaluation result (greedy): bleu:   0.00, loss:  54.17, ppl: 312.60, acc:   0.24, 1.0530[sec]
+2026-03-15 16:02:30,258 - INFO - joeynmt.training - Hooray! New best validation result [loss]!
+2026-03-15 16:02:30,495 - INFO - joeynmt.training - Checkpoint saved in /Users/ariel/nlpfinal/toy_transformer/150.ckpt.
+2026-03-15 16:02:30,584 - INFO - joeynmt.training - Example #0
+2026-03-15 16:02:30,588 - INFO - joeynmt.training - 	Source:     Tom felt lonely and abandoned.
+2026-03-15 16:02:30,588 - INFO - joeynmt.training - 	Reference:  Tom se sentía solo y abandonado.
+2026-03-15 16:02:30,588 - INFO - joeynmt.training - 	Hypothesis: Tom no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no
+2026-03-15 16:02:30,594 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tom', 'felt', 'lonely', 'and', 'abandoned', '.']
+2026-03-15 16:02:30,594 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Tom', 'se', 'sentía', 'solo', 'y', 'abandonado', '.']
+2026-03-15 16:02:30,594 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['Tom', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no']
+2026-03-15 16:02:30,594 - INFO - joeynmt.training - Example #1
+2026-03-15 16:02:30,597 - INFO - joeynmt.training - 	Source:     There's no time to lose.
+2026-03-15 16:02:30,597 - INFO - joeynmt.training - 	Reference:  No hay tiempo que perder.
+2026-03-15 16:02:30,597 - INFO - joeynmt.training - 	Hypothesis: ¿No no la la la la la la la la la la la la la la la la la la la la la la no no no no no no
+2026-03-15 16:02:30,604 - DEBUG - joeynmt.training - 	Tokenized source:     ['There', '&apos;s', 'no', 'time', 'to', 'lose', '.']
+2026-03-15 16:02:30,604 - DEBUG - joeynmt.training - 	Tokenized reference:  ['No', 'hay', 'tiempo', 'que', 'perder', '.']
+2026-03-15 16:02:30,604 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['¿', 'No', 'no', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'no', 'no', 'no', 'no', 'no']
+2026-03-15 16:02:30,604 - INFO - joeynmt.training - Example #2
+2026-03-15 16:02:30,607 - INFO - joeynmt.training - 	Source:     I felt exactly the same way.
+2026-03-15 16:02:30,607 - INFO - joeynmt.training - 	Reference:  Yo sentí exactamente lo mismo.
+2026-03-15 16:02:30,607 - INFO - joeynmt.training - 	Hypothesis: ¿No no la la la la la la la la la la la la la la la la la la la la la la la la la la la la
+2026-03-15 16:02:30,613 - DEBUG - joeynmt.training - 	Tokenized source:     ['I', 'felt', 'exactly', 'the', 'same', 'way', '.']
+2026-03-15 16:02:30,613 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Yo', 'sentí', 'exactamente', 'lo', 'mismo', '.']
+2026-03-15 16:02:30,613 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['¿', 'No', 'no', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la']
+2026-03-15 16:02:31,278 - INFO - joeynmt.training - Epoch   1, Step:      160, Batch Loss:    46.032055, Batch Acc: 0.248749, Tokens per Sec:     4276, Lr: 0.005000
+2026-03-15 16:02:31,278 - INFO - joeynmt.prediction - Predicting 27999 example(s)... (Greedy decoding with min_output_length=1, max_output_length=31, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2026-03-15 16:08:08,854 - INFO - joeynmt.prediction - Generation took 337.5759[sec].
+2026-03-15 16:08:10,500 - INFO - joeynmt.metrics - nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0
+2026-03-15 16:08:10,500 - INFO - joeynmt.prediction - Evaluation result (greedy): bleu:   0.00, loss:  54.01, ppl: 307.41, acc:   0.24, 0.8617[sec]
+2026-03-15 16:08:10,504 - INFO - joeynmt.training - Hooray! New best validation result [loss]!
+2026-03-15 16:08:10,810 - INFO - joeynmt.training - Checkpoint saved in /Users/ariel/nlpfinal/toy_transformer/160.ckpt.
+2026-03-15 16:08:11,010 - INFO - joeynmt.training - Example #0
+2026-03-15 16:08:11,016 - INFO - joeynmt.training - 	Source:     Tom felt lonely and abandoned.
+2026-03-15 16:08:11,016 - INFO - joeynmt.training - 	Reference:  Tom se sentía solo y abandonado.
+2026-03-15 16:08:11,016 - INFO - joeynmt.training - 	Hypothesis: Tom no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no
+2026-03-15 16:08:11,023 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tom', 'felt', 'lonely', 'and', 'abandoned', '.']
+2026-03-15 16:08:11,023 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Tom', 'se', 'sentía', 'solo', 'y', 'abandonado', '.']
+2026-03-15 16:08:11,023 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['Tom', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no']
+2026-03-15 16:08:11,023 - INFO - joeynmt.training - Example #1
+2026-03-15 16:08:11,026 - INFO - joeynmt.training - 	Source:     There's no time to lose.
+2026-03-15 16:08:11,026 - INFO - joeynmt.training - 	Reference:  No hay tiempo que perder.
+2026-03-15 16:08:11,026 - INFO - joeynmt.training - 	Hypothesis: ¿Qué no la la la la la la la la la la la la la la la la la la la la qué qué qué no la la qué qué
+2026-03-15 16:08:11,032 - DEBUG - joeynmt.training - 	Tokenized source:     ['There', '&apos;s', 'no', 'time', 'to', 'lose', '.']
+2026-03-15 16:08:11,032 - DEBUG - joeynmt.training - 	Tokenized reference:  ['No', 'hay', 'tiempo', 'que', 'perder', '.']
+2026-03-15 16:08:11,032 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['¿', 'Qué', 'no', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'qué', 'qué', 'qué', 'no', 'la', 'la', 'qué']
+2026-03-15 16:08:11,032 - INFO - joeynmt.training - Example #2
+2026-03-15 16:08:11,035 - INFO - joeynmt.training - 	Source:     I felt exactly the same way.
+2026-03-15 16:08:11,035 - INFO - joeynmt.training - 	Reference:  Yo sentí exactamente lo mismo.
+2026-03-15 16:08:11,035 - INFO - joeynmt.training - 	Hypothesis: Él la la la la la la la la la la la la la la la la la la la la la la la la la la la la la la
+2026-03-15 16:08:11,041 - DEBUG - joeynmt.training - 	Tokenized source:     ['I', 'felt', 'exactly', 'the', 'same', 'way', '.']
+2026-03-15 16:08:11,041 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Yo', 'sentí', 'exactamente', 'lo', 'mismo', '.']
+2026-03-15 16:08:11,041 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['Él', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la']
+2026-03-15 16:08:11,981 - INFO - joeynmt.training - Epoch   1, Step:      170, Batch Loss:    51.473236, Batch Acc: 0.240041, Tokens per Sec:     3175, Lr: 0.005000
+2026-03-15 16:08:11,982 - INFO - joeynmt.prediction - Predicting 27999 example(s)... (Greedy decoding with min_output_length=1, max_output_length=31, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2026-03-15 16:14:18,124 - INFO - joeynmt.prediction - Generation took 366.1418[sec].
+2026-03-15 16:14:19,830 - INFO - joeynmt.metrics - nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0
+2026-03-15 16:14:19,831 - INFO - joeynmt.prediction - Evaluation result (greedy): bleu:   0.00, loss:  53.85, ppl: 302.18, acc:   0.24, 0.9122[sec]
+2026-03-15 16:14:19,834 - INFO - joeynmt.training - Hooray! New best validation result [loss]!
+2026-03-15 16:14:20,140 - INFO - joeynmt.training - Checkpoint saved in /Users/ariel/nlpfinal/toy_transformer/170.ckpt.
+2026-03-15 16:14:20,266 - INFO - joeynmt.training - Example #0
+2026-03-15 16:14:20,270 - INFO - joeynmt.training - 	Source:     Tom felt lonely and abandoned.
+2026-03-15 16:14:20,270 - INFO - joeynmt.training - 	Reference:  Tom se sentía solo y abandonado.
+2026-03-15 16:14:20,270 - INFO - joeynmt.training - 	Hypothesis: Tom no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no
+2026-03-15 16:14:20,276 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tom', 'felt', 'lonely', 'and', 'abandoned', '.']
+2026-03-15 16:14:20,276 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Tom', 'se', 'sentía', 'solo', 'y', 'abandonado', '.']
+2026-03-15 16:14:20,276 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['Tom', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no']
+2026-03-15 16:14:20,276 - INFO - joeynmt.training - Example #1
+2026-03-15 16:14:20,279 - INFO - joeynmt.training - 	Source:     There's no time to lose.
+2026-03-15 16:14:20,279 - INFO - joeynmt.training - 	Reference:  No hay tiempo que perder.
+2026-03-15 16:14:20,279 - INFO - joeynmt.training - 	Hypothesis: ¿Qué es la la la la la la la la la la la la la la la la la la la la la la la la la la la la
+2026-03-15 16:14:20,285 - DEBUG - joeynmt.training - 	Tokenized source:     ['There', '&apos;s', 'no', 'time', 'to', 'lose', '.']
+2026-03-15 16:14:20,285 - DEBUG - joeynmt.training - 	Tokenized reference:  ['No', 'hay', 'tiempo', 'que', 'perder', '.']
+2026-03-15 16:14:20,285 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['¿', 'Qué', 'es', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la']
+2026-03-15 16:14:20,285 - INFO - joeynmt.training - Example #2
+2026-03-15 16:14:20,288 - INFO - joeynmt.training - 	Source:     I felt exactly the same way.
+2026-03-15 16:14:20,288 - INFO - joeynmt.training - 	Reference:  Yo sentí exactamente lo mismo.
+2026-03-15 16:14:20,288 - INFO - joeynmt.training - 	Hypothesis: El la la la la la la la la la la la la la la la la la la la la la la la la la la la la la la
+2026-03-15 16:14:20,294 - DEBUG - joeynmt.training - 	Tokenized source:     ['I', 'felt', 'exactly', 'the', 'same', 'way', '.']
+2026-03-15 16:14:20,294 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Yo', 'sentí', 'exactamente', 'lo', 'mismo', '.']
+2026-03-15 16:14:20,294 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['El', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la']
+2026-03-15 16:14:21,269 - INFO - joeynmt.training - Epoch   1, Step:      180, Batch Loss:    61.394165, Batch Acc: 0.236634, Tokens per Sec:     3132, Lr: 0.005000
+2026-03-15 16:14:21,270 - INFO - joeynmt.prediction - Predicting 27999 example(s)... (Greedy decoding with min_output_length=1, max_output_length=31, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2026-03-15 16:19:52,949 - INFO - joeynmt.prediction - Generation took 331.6786[sec].
+2026-03-15 16:19:54,292 - INFO - joeynmt.metrics - nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0
+2026-03-15 16:19:54,292 - INFO - joeynmt.prediction - Evaluation result (greedy): bleu:   0.01, loss:  53.44, ppl: 289.29, acc:   0.24, 0.7043[sec]
+2026-03-15 16:19:54,295 - INFO - joeynmt.training - Hooray! New best validation result [loss]!
+2026-03-15 16:19:54,532 - INFO - joeynmt.training - Checkpoint saved in /Users/ariel/nlpfinal/toy_transformer/180.ckpt.
+2026-03-15 16:19:54,642 - INFO - joeynmt.training - Example #0
+2026-03-15 16:19:54,646 - INFO - joeynmt.training - 	Source:     Tom felt lonely and abandoned.
+2026-03-15 16:19:54,646 - INFO - joeynmt.training - 	Reference:  Tom se sentía solo y abandonado.
+2026-03-15 16:19:54,646 - INFO - joeynmt.training - 	Hypothesis: Tom Tom no no no no no no Tom Tom Tom no Tom no no no Tom Tom Tom Tom Tom Tom Tom Tom Tom Tom Tom Tom no Tom Tom
+2026-03-15 16:19:54,652 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tom', 'felt', 'lonely', 'and', 'abandoned', '.']
+2026-03-15 16:19:54,652 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Tom', 'se', 'sentía', 'solo', 'y', 'abandonado', '.']
+2026-03-15 16:19:54,652 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['Tom', 'Tom', 'no', 'no', 'no', 'no', 'no', 'no', 'Tom', 'Tom', 'Tom', 'no', 'Tom', 'no', 'no', 'no', 'Tom', 'Tom', 'Tom', 'Tom', 'Tom', 'Tom', 'Tom', 'Tom', 'Tom', 'Tom', 'Tom', 'Tom', 'no', 'Tom']
+2026-03-15 16:19:54,652 - INFO - joeynmt.training - Example #1
+2026-03-15 16:19:54,655 - INFO - joeynmt.training - 	Source:     There's no time to lose.
+2026-03-15 16:19:54,655 - INFO - joeynmt.training - 	Reference:  No hay tiempo que perder.
+2026-03-15 16:19:54,655 - INFO - joeynmt.training - 	Hypothesis: ¿Qué es la la la la la la la la la la la la la la la casa.
+2026-03-15 16:19:54,661 - DEBUG - joeynmt.training - 	Tokenized source:     ['There', '&apos;s', 'no', 'time', 'to', 'lose', '.']
+2026-03-15 16:19:54,661 - DEBUG - joeynmt.training - 	Tokenized reference:  ['No', 'hay', 'tiempo', 'que', 'perder', '.']
+2026-03-15 16:19:54,661 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['¿', 'Qué', 'es', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'casa', '.']
+2026-03-15 16:19:54,661 - INFO - joeynmt.training - Example #2
+2026-03-15 16:19:54,664 - INFO - joeynmt.training - 	Source:     I felt exactly the same way.
+2026-03-15 16:19:54,664 - INFO - joeynmt.training - 	Reference:  Yo sentí exactamente lo mismo.
+2026-03-15 16:19:54,664 - INFO - joeynmt.training - 	Hypothesis: ¿Qué es la la la la la la la la la la la la la la la la la la la la la la la la la la la la
+2026-03-15 16:19:54,670 - DEBUG - joeynmt.training - 	Tokenized source:     ['I', 'felt', 'exactly', 'the', 'same', 'way', '.']
+2026-03-15 16:19:54,670 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Yo', 'sentí', 'exactamente', 'lo', 'mismo', '.']
+2026-03-15 16:19:54,670 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['¿', 'Qué', 'es', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la']
+2026-03-15 16:19:55,589 - INFO - joeynmt.training - Epoch   1, Step:      190, Batch Loss:    66.378616, Batch Acc: 0.250428, Tokens per Sec:     3202, Lr: 0.005000
+2026-03-15 16:19:55,590 - INFO - joeynmt.prediction - Predicting 27999 example(s)... (Greedy decoding with min_output_length=1, max_output_length=31, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2026-03-15 16:25:22,304 - INFO - joeynmt.prediction - Generation took 326.7137[sec].
+2026-03-15 16:25:23,881 - INFO - joeynmt.metrics - nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0
+2026-03-15 16:25:23,881 - INFO - joeynmt.prediction - Evaluation result (greedy): bleu:   0.01, loss:  53.14, ppl: 280.34, acc:   0.25, 0.8525[sec]
+2026-03-15 16:25:23,883 - INFO - joeynmt.training - Hooray! New best validation result [loss]!
+2026-03-15 16:25:24,064 - INFO - joeynmt.training - Checkpoint saved in /Users/ariel/nlpfinal/toy_transformer/190.ckpt.
+2026-03-15 16:25:24,207 - INFO - joeynmt.training - Example #0
+2026-03-15 16:25:24,210 - INFO - joeynmt.training - 	Source:     Tom felt lonely and abandoned.
+2026-03-15 16:25:24,210 - INFO - joeynmt.training - 	Reference:  Tom se sentía solo y abandonado.
+2026-03-15 16:25:24,210 - INFO - joeynmt.training - 	Hypothesis: Tom no Tom no Tom no Tom no Tom no Tom no Tom no Tom no Tom no Tom no Tom no Tom Tom Tom Tom no Tom no Tom no
+2026-03-15 16:25:24,216 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tom', 'felt', 'lonely', 'and', 'abandoned', '.']
+2026-03-15 16:25:24,217 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Tom', 'se', 'sentía', 'solo', 'y', 'abandonado', '.']
+2026-03-15 16:25:24,217 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['Tom', 'no', 'Tom', 'no', 'Tom', 'no', 'Tom', 'no', 'Tom', 'no', 'Tom', 'no', 'Tom', 'no', 'Tom', 'no', 'Tom', 'no', 'Tom', 'no', 'Tom', 'no', 'Tom', 'Tom', 'Tom', 'Tom', 'no', 'Tom', 'no', 'Tom']
+2026-03-15 16:25:24,217 - INFO - joeynmt.training - Example #1
+2026-03-15 16:25:24,220 - INFO - joeynmt.training - 	Source:     There's no time to lose.
+2026-03-15 16:25:24,220 - INFO - joeynmt.training - 	Reference:  No hay tiempo que perder.
+2026-03-15 16:25:24,220 - INFO - joeynmt.training - 	Hypothesis: No me la la la la la la la la la la la la la la la la la la la la la la la la la la la la la
+2026-03-15 16:25:24,225 - DEBUG - joeynmt.training - 	Tokenized source:     ['There', '&apos;s', 'no', 'time', 'to', 'lose', '.']
+2026-03-15 16:25:24,226 - DEBUG - joeynmt.training - 	Tokenized reference:  ['No', 'hay', 'tiempo', 'que', 'perder', '.']
+2026-03-15 16:25:24,226 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['No', 'me', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la']
+2026-03-15 16:25:24,226 - INFO - joeynmt.training - Example #2
+2026-03-15 16:25:24,228 - INFO - joeynmt.training - 	Source:     I felt exactly the same way.
+2026-03-15 16:25:24,229 - INFO - joeynmt.training - 	Reference:  Yo sentí exactamente lo mismo.
+2026-03-15 16:25:24,229 - INFO - joeynmt.training - 	Hypothesis: No me la la la la la la la la la la la la la la la la la la la la la la la la la la la la la
+2026-03-15 16:25:24,234 - DEBUG - joeynmt.training - 	Tokenized source:     ['I', 'felt', 'exactly', 'the', 'same', 'way', '.']
+2026-03-15 16:25:24,234 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Yo', 'sentí', 'exactamente', 'lo', 'mismo', '.']
+2026-03-15 16:25:24,234 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['No', 'me', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la']
+2026-03-15 16:25:24,989 - INFO - joeynmt.training - Epoch   1, Step:      200, Batch Loss:    42.231922, Batch Acc: 0.249317, Tokens per Sec:     3929, Lr: 0.005000
+2026-03-15 16:25:24,990 - INFO - joeynmt.prediction - Predicting 27999 example(s)... (Greedy decoding with min_output_length=1, max_output_length=31, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2026-03-15 16:30:52,863 - INFO - joeynmt.prediction - Generation took 327.8727[sec].
+2026-03-15 16:30:54,224 - INFO - joeynmt.metrics - nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0
+2026-03-15 16:30:54,224 - INFO - joeynmt.prediction - Evaluation result (greedy): bleu:   0.01, loss:  53.11, ppl: 279.33, acc:   0.24, 0.6827[sec]
+2026-03-15 16:30:54,227 - INFO - joeynmt.training - Hooray! New best validation result [loss]!
+2026-03-15 16:30:54,481 - INFO - joeynmt.training - Checkpoint saved in /Users/ariel/nlpfinal/toy_transformer/200.ckpt.
+2026-03-15 16:30:54,574 - INFO - joeynmt.training - Example #0
+2026-03-15 16:30:54,578 - INFO - joeynmt.training - 	Source:     Tom felt lonely and abandoned.
+2026-03-15 16:30:54,578 - INFO - joeynmt.training - 	Reference:  Tom se sentía solo y abandonado.
+2026-03-15 16:30:54,578 - INFO - joeynmt.training - 	Hypothesis: Tom Tom Tom Tom no Tom Tom que Tom que Tom.
+2026-03-15 16:30:54,585 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tom', 'felt', 'lonely', 'and', 'abandoned', '.']
+2026-03-15 16:30:54,585 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Tom', 'se', 'sentía', 'solo', 'y', 'abandonado', '.']
+2026-03-15 16:30:54,585 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['Tom', 'Tom', 'Tom', 'Tom', 'no', 'Tom', 'Tom', 'que', 'Tom', 'que', 'Tom', '.']
+2026-03-15 16:30:54,585 - INFO - joeynmt.training - Example #1
+2026-03-15 16:30:54,588 - INFO - joeynmt.training - 	Source:     There's no time to lose.
+2026-03-15 16:30:54,588 - INFO - joeynmt.training - 	Reference:  No hay tiempo que perder.
+2026-03-15 16:30:54,588 - INFO - joeynmt.training - 	Hypothesis: ¿Qué no la la la la me me me me me me me me me me me me me me me me me Qué no la me me me me
+2026-03-15 16:30:54,594 - DEBUG - joeynmt.training - 	Tokenized source:     ['There', '&apos;s', 'no', 'time', 'to', 'lose', '.']
+2026-03-15 16:30:54,594 - DEBUG - joeynmt.training - 	Tokenized reference:  ['No', 'hay', 'tiempo', 'que', 'perder', '.']
+2026-03-15 16:30:54,594 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['¿', 'Qué', 'no', 'la', 'la', 'la', 'la', 'me', 'me', 'me', 'me', 'me', 'me', 'me', 'me', 'me', 'me', 'me', 'me', 'me', 'me', 'me', 'me', 'me', 'Qué', 'no', 'la', 'me', 'me', 'me']
+2026-03-15 16:30:54,594 - INFO - joeynmt.training - Example #2
+2026-03-15 16:30:54,597 - INFO - joeynmt.training - 	Source:     I felt exactly the same way.
+2026-03-15 16:30:54,597 - INFO - joeynmt.training - 	Reference:  Yo sentí exactamente lo mismo.
+2026-03-15 16:30:54,597 - INFO - joeynmt.training - 	Hypothesis: No te me me la la la la la la la la la la la la la la la la la la la Qué no la Qué que la la la
+2026-03-15 16:30:54,603 - DEBUG - joeynmt.training - 	Tokenized source:     ['I', 'felt', 'exactly', 'the', 'same', 'way', '.']
+2026-03-15 16:30:54,603 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Yo', 'sentí', 'exactamente', 'lo', 'mismo', '.']
+2026-03-15 16:30:54,603 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['No', 'te', 'me', 'me', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'la', 'Qué', 'no', 'la', 'Qué', 'que', 'la', 'la']
+2026-03-15 16:30:55,612 - INFO - joeynmt.training - Epoch   1, Step:      210, Batch Loss:    51.406445, Batch Acc: 0.240819, Tokens per Sec:     3077, Lr: 0.005000
+2026-03-15 16:30:55,612 - INFO - joeynmt.prediction - Predicting 27999 example(s)... (Greedy decoding with min_output_length=1, max_output_length=31, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2026-03-15 16:36:47,417 - INFO - joeynmt.prediction - Generation took 351.8039[sec].
+2026-03-15 16:36:48,780 - INFO - joeynmt.metrics - nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0
+2026-03-15 16:36:48,780 - INFO - joeynmt.prediction - Evaluation result (greedy): bleu:   0.01, loss:  52.61, ppl: 265.00, acc:   0.25, 0.7445[sec]
+2026-03-15 16:36:48,784 - INFO - joeynmt.training - Hooray! New best validation result [loss]!
+2026-03-15 16:36:49,028 - INFO - joeynmt.training - Checkpoint saved in /Users/ariel/nlpfinal/toy_transformer/210.ckpt.
+2026-03-15 16:36:49,153 - INFO - joeynmt.training - Example #0
+2026-03-15 16:36:49,158 - INFO - joeynmt.training - 	Source:     Tom felt lonely and abandoned.
+2026-03-15 16:36:49,158 - INFO - joeynmt.training - 	Reference:  Tom se sentía solo y abandonado.
+2026-03-15 16:36:49,158 - INFO - joeynmt.training - 	Hypothesis: Tom no no no no no no no no no no no no no Tom.
+2026-03-15 16:36:49,165 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tom', 'felt', 'lonely', 'and', 'abandoned', '.']
+2026-03-15 16:36:49,165 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Tom', 'se', 'sentía', 'solo', 'y', 'abandonado', '.']
+2026-03-15 16:36:49,165 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['Tom', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'Tom', '.']
+2026-03-15 16:36:49,165 - INFO - joeynmt.training - Example #1
+2026-03-15 16:36:49,168 - INFO - joeynmt.training - 	Source:     There's no time to lose.
+2026-03-15 16:36:49,168 - INFO - joeynmt.training - 	Reference:  No hay tiempo que perder.
+2026-03-15 16:36:49,168 - INFO - joeynmt.training - 	Hypothesis: No no no no un puedo.
+2026-03-15 16:36:49,175 - DEBUG - joeynmt.training - 	Tokenized source:     ['There', '&apos;s', 'no', 'time', 'to', 'lose', '.']
+2026-03-15 16:36:49,175 - DEBUG - joeynmt.training - 	Tokenized reference:  ['No', 'hay', 'tiempo', 'que', 'perder', '.']
+2026-03-15 16:36:49,175 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['No', 'no', 'no', 'no', 'un', 'puedo', '.']
+2026-03-15 16:36:49,175 - INFO - joeynmt.training - Example #2
+2026-03-15 16:36:49,179 - INFO - joeynmt.training - 	Source:     I felt exactly the same way.
+2026-03-15 16:36:49,179 - INFO - joeynmt.training - 	Reference:  Yo sentí exactamente lo mismo.
+2026-03-15 16:36:49,179 - INFO - joeynmt.training - 	Hypothesis: No no no no un mi puedo.
+2026-03-15 16:36:49,185 - DEBUG - joeynmt.training - 	Tokenized source:     ['I', 'felt', 'exactly', 'the', 'same', 'way', '.']
+2026-03-15 16:36:49,185 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Yo', 'sentí', 'exactamente', 'lo', 'mismo', '.']
+2026-03-15 16:36:49,185 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['No', 'no', 'no', 'no', 'un', 'mi', 'puedo', '.']
+2026-03-15 16:36:49,924 - INFO - joeynmt.training - Epoch   1, Step:      220, Batch Loss:    48.756302, Batch Acc: 0.252762, Tokens per Sec:     3968, Lr: 0.005000
+2026-03-15 16:36:49,924 - INFO - joeynmt.prediction - Predicting 27999 example(s)... (Greedy decoding with min_output_length=1, max_output_length=31, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2026-03-15 16:42:52,595 - INFO - joeynmt.prediction - Generation took 362.6706[sec].
+2026-03-15 16:42:54,306 - INFO - joeynmt.metrics - nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0
+2026-03-15 16:42:54,306 - INFO - joeynmt.prediction - Evaluation result (greedy): bleu:   0.01, loss:  52.38, ppl: 258.48, acc:   0.25, 0.9466[sec]
+2026-03-15 16:42:54,310 - INFO - joeynmt.training - Hooray! New best validation result [loss]!
+2026-03-15 16:42:54,565 - INFO - joeynmt.training - Checkpoint saved in /Users/ariel/nlpfinal/toy_transformer/220.ckpt.
+2026-03-15 16:42:54,615 - INFO - joeynmt.training - Example #0
+2026-03-15 16:42:54,619 - INFO - joeynmt.training - 	Source:     Tom felt lonely and abandoned.
+2026-03-15 16:42:54,619 - INFO - joeynmt.training - 	Reference:  Tom se sentía solo y abandonado.
+2026-03-15 16:42:54,619 - INFO - joeynmt.training - 	Hypothesis: Tom no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no
+2026-03-15 16:42:54,626 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tom', 'felt', 'lonely', 'and', 'abandoned', '.']
+2026-03-15 16:42:54,626 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Tom', 'se', 'sentía', 'solo', 'y', 'abandonado', '.']
+2026-03-15 16:42:54,626 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['Tom', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no']
+2026-03-15 16:42:54,626 - INFO - joeynmt.training - Example #1
+2026-03-15 16:42:54,629 - INFO - joeynmt.training - 	Source:     There's no time to lose.
+2026-03-15 16:42:54,629 - INFO - joeynmt.training - 	Reference:  No hay tiempo que perder.
+2026-03-15 16:42:54,629 - INFO - joeynmt.training - 	Hypothesis: Él no no no un la puedo.
+2026-03-15 16:42:54,636 - DEBUG - joeynmt.training - 	Tokenized source:     ['There', '&apos;s', 'no', 'time', 'to', 'lose', '.']
+2026-03-15 16:42:54,636 - DEBUG - joeynmt.training - 	Tokenized reference:  ['No', 'hay', 'tiempo', 'que', 'perder', '.']
+2026-03-15 16:42:54,636 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['Él', 'no', 'no', 'no', 'un', 'la', 'puedo', '.']
+2026-03-15 16:42:54,636 - INFO - joeynmt.training - Example #2
+2026-03-15 16:42:54,640 - INFO - joeynmt.training - 	Source:     I felt exactly the same way.
+2026-03-15 16:42:54,640 - INFO - joeynmt.training - 	Reference:  Yo sentí exactamente lo mismo.
+2026-03-15 16:42:54,640 - INFO - joeynmt.training - 	Hypothesis: Él no no no la la la puedo.
+2026-03-15 16:42:54,646 - DEBUG - joeynmt.training - 	Tokenized source:     ['I', 'felt', 'exactly', 'the', 'same', 'way', '.']
+2026-03-15 16:42:54,647 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Yo', 'sentí', 'exactamente', 'lo', 'mismo', '.']
+2026-03-15 16:42:54,647 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['Él', 'no', 'no', 'no', 'la', 'la', 'la', 'puedo', '.']
+2026-03-15 16:42:55,513 - INFO - joeynmt.training - Epoch   1, Step:      230, Batch Loss:    48.122555, Batch Acc: 0.259144, Tokens per Sec:     3390, Lr: 0.005000
+2026-03-15 16:42:55,513 - INFO - joeynmt.prediction - Predicting 27999 example(s)... (Greedy decoding with min_output_length=1, max_output_length=31, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2026-03-15 16:48:27,253 - INFO - joeynmt.prediction - Generation took 331.7400[sec].
+2026-03-15 16:48:28,207 - INFO - joeynmt.metrics - nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0
+2026-03-15 16:48:28,207 - INFO - joeynmt.prediction - Evaluation result (greedy): bleu:   0.05, loss:  52.33, ppl: 257.11, acc:   0.25, 0.5116[sec]
+2026-03-15 16:48:28,210 - INFO - joeynmt.training - Hooray! New best validation result [loss]!
+2026-03-15 16:48:28,426 - INFO - joeynmt.training - Checkpoint saved in /Users/ariel/nlpfinal/toy_transformer/230.ckpt.
+2026-03-15 16:48:28,538 - INFO - joeynmt.training - Example #0
+2026-03-15 16:48:28,541 - INFO - joeynmt.training - 	Source:     Tom felt lonely and abandoned.
+2026-03-15 16:48:28,541 - INFO - joeynmt.training - 	Reference:  Tom se sentía solo y abandonado.
+2026-03-15 16:48:28,541 - INFO - joeynmt.training - 	Hypothesis: No puedo no no no no no no no no no no no no no no no no Tom que Tom que Tom que Tom que Tom que no Tom que
+2026-03-15 16:48:28,547 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tom', 'felt', 'lonely', 'and', 'abandoned', '.']
+2026-03-15 16:48:28,547 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Tom', 'se', 'sentía', 'solo', 'y', 'abandonado', '.']
+2026-03-15 16:48:28,547 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['No', 'puedo', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'Tom', 'que', 'Tom', 'que', 'Tom', 'que', 'Tom', 'que', 'Tom', 'que', 'no', 'Tom']
+2026-03-15 16:48:28,547 - INFO - joeynmt.training - Example #1
+2026-03-15 16:48:28,550 - INFO - joeynmt.training - 	Source:     There's no time to lose.
+2026-03-15 16:48:28,550 - INFO - joeynmt.training - 	Reference:  No hay tiempo que perder.
+2026-03-15 16:48:28,550 - INFO - joeynmt.training - 	Hypothesis: No puedo es la casa.
+2026-03-15 16:48:28,556 - DEBUG - joeynmt.training - 	Tokenized source:     ['There', '&apos;s', 'no', 'time', 'to', 'lose', '.']
+2026-03-15 16:48:28,556 - DEBUG - joeynmt.training - 	Tokenized reference:  ['No', 'hay', 'tiempo', 'que', 'perder', '.']
+2026-03-15 16:48:28,556 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['No', 'puedo', 'es', 'la', 'casa', '.']
+2026-03-15 16:48:28,556 - INFO - joeynmt.training - Example #2
+2026-03-15 16:48:28,559 - INFO - joeynmt.training - 	Source:     I felt exactly the same way.
+2026-03-15 16:48:28,559 - INFO - joeynmt.training - 	Reference:  Yo sentí exactamente lo mismo.
+2026-03-15 16:48:28,559 - INFO - joeynmt.training - 	Hypothesis: No gusta el gusta.
+2026-03-15 16:48:28,565 - DEBUG - joeynmt.training - 	Tokenized source:     ['I', 'felt', 'exactly', 'the', 'same', 'way', '.']
+2026-03-15 16:48:28,565 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Yo', 'sentí', 'exactamente', 'lo', 'mismo', '.']
+2026-03-15 16:48:28,565 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['No', 'gusta', 'el', 'gusta', '.']
+2026-03-15 16:48:29,413 - INFO - joeynmt.training - Epoch   1, Step:      240, Batch Loss:    50.125641, Batch Acc: 0.252663, Tokens per Sec:     3567, Lr: 0.005000
+2026-03-15 16:48:29,413 - INFO - joeynmt.prediction - Predicting 27999 example(s)... (Greedy decoding with min_output_length=1, max_output_length=31, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2026-03-15 17:00:15,184 - INFO - joeynmt.prediction - Generation took 705.7694[sec].
+2026-03-15 17:00:16,193 - INFO - joeynmt.metrics - nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0
+2026-03-15 17:00:16,193 - INFO - joeynmt.prediction - Evaluation result (greedy): bleu:   0.04, loss:  52.00, ppl: 248.39, acc:   0.26, 0.5525[sec]
+2026-03-15 17:00:16,199 - INFO - joeynmt.training - Hooray! New best validation result [loss]!
+2026-03-15 17:00:16,425 - INFO - joeynmt.training - Checkpoint saved in /Users/ariel/nlpfinal/toy_transformer/240.ckpt.
+2026-03-15 17:00:16,521 - INFO - joeynmt.training - Example #0
+2026-03-15 17:00:16,525 - INFO - joeynmt.training - 	Source:     Tom felt lonely and abandoned.
+2026-03-15 17:00:16,525 - INFO - joeynmt.training - 	Reference:  Tom se sentía solo y abandonado.
+2026-03-15 17:00:16,525 - INFO - joeynmt.training - 	Hypothesis: Tom que Tom que Tom que Tom que Tom que Tom que Tom que Tom que Tom que Tom que Tom que Tom que Tom que Tom que Tom que Tom
+2026-03-15 17:00:16,531 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tom', 'felt', 'lonely', 'and', 'abandoned', '.']
+2026-03-15 17:00:16,531 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Tom', 'se', 'sentía', 'solo', 'y', 'abandonado', '.']
+2026-03-15 17:00:16,531 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['Tom', 'que', 'Tom', 'que', 'Tom', 'que', 'Tom', 'que', 'Tom', 'que', 'Tom', 'que', 'Tom', 'que', 'Tom', 'que', 'Tom', 'que', 'Tom', 'que', 'Tom', 'que', 'Tom', 'que', 'Tom', 'que', 'Tom', 'que', 'Tom', 'que']
+2026-03-15 17:00:16,531 - INFO - joeynmt.training - Example #1
+2026-03-15 17:00:16,534 - INFO - joeynmt.training - 	Source:     There's no time to lose.
+2026-03-15 17:00:16,534 - INFO - joeynmt.training - 	Reference:  No hay tiempo que perder.
+2026-03-15 17:00:16,534 - INFO - joeynmt.training - 	Hypothesis: No gusta que la casa.
+2026-03-15 17:00:16,540 - DEBUG - joeynmt.training - 	Tokenized source:     ['There', '&apos;s', 'no', 'time', 'to', 'lose', '.']
+2026-03-15 17:00:16,540 - DEBUG - joeynmt.training - 	Tokenized reference:  ['No', 'hay', 'tiempo', 'que', 'perder', '.']
+2026-03-15 17:00:16,540 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['No', 'gusta', 'que', 'la', 'casa', '.']
+2026-03-15 17:00:16,540 - INFO - joeynmt.training - Example #2
+2026-03-15 17:00:16,543 - INFO - joeynmt.training - 	Source:     I felt exactly the same way.
+2026-03-15 17:00:16,543 - INFO - joeynmt.training - 	Reference:  Yo sentí exactamente lo mismo.
+2026-03-15 17:00:16,543 - INFO - joeynmt.training - 	Hypothesis: El gusta el casa.
+2026-03-15 17:00:16,549 - DEBUG - joeynmt.training - 	Tokenized source:     ['I', 'felt', 'exactly', 'the', 'same', 'way', '.']
+2026-03-15 17:00:16,549 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Yo', 'sentí', 'exactamente', 'lo', 'mismo', '.']
+2026-03-15 17:00:16,549 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['El', 'gusta', 'el', 'casa', '.']
+2026-03-15 17:00:17,562 - INFO - joeynmt.training - Epoch   1, Step:      250, Batch Loss:    47.315807, Batch Acc: 0.241930, Tokens per Sec:     3175, Lr: 0.005000
+2026-03-15 17:00:17,564 - INFO - joeynmt.prediction - Predicting 27999 example(s)... (Greedy decoding with min_output_length=1, max_output_length=31, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2026-03-15 17:05:27,183 - INFO - joeynmt.prediction - Generation took 309.6187[sec].
+2026-03-15 17:05:28,313 - INFO - joeynmt.metrics - nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0
+2026-03-15 17:05:28,313 - INFO - joeynmt.prediction - Evaluation result (greedy): bleu:   0.03, loss:  51.90, ppl: 245.80, acc:   0.26, 0.6127[sec]
+2026-03-15 17:05:28,316 - INFO - joeynmt.training - Hooray! New best validation result [loss]!
+2026-03-15 17:05:28,509 - INFO - joeynmt.training - Checkpoint saved in /Users/ariel/nlpfinal/toy_transformer/250.ckpt.
+2026-03-15 17:05:28,615 - INFO - joeynmt.training - Example #0
+2026-03-15 17:05:28,618 - INFO - joeynmt.training - 	Source:     Tom felt lonely and abandoned.
+2026-03-15 17:05:28,618 - INFO - joeynmt.training - 	Reference:  Tom se sentía solo y abandonado.
+2026-03-15 17:05:28,618 - INFO - joeynmt.training - 	Hypothesis: Tom que que que que que que que que que que que que que que que que que que que que que que que que que que que que que que
+2026-03-15 17:05:28,625 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tom', 'felt', 'lonely', 'and', 'abandoned', '.']
+2026-03-15 17:05:28,625 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Tom', 'se', 'sentía', 'solo', 'y', 'abandonado', '.']
+2026-03-15 17:05:28,625 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['Tom', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que']
+2026-03-15 17:05:28,625 - INFO - joeynmt.training - Example #1
+2026-03-15 17:05:28,628 - INFO - joeynmt.training - 	Source:     There's no time to lose.
+2026-03-15 17:05:28,628 - INFO - joeynmt.training - 	Reference:  No hay tiempo que perder.
+2026-03-15 17:05:28,628 - INFO - joeynmt.training - 	Hypothesis: No es que que que que que que que que que que que que que que que que que que que que que que que que que que que que que
+2026-03-15 17:05:28,634 - DEBUG - joeynmt.training - 	Tokenized source:     ['There', '&apos;s', 'no', 'time', 'to', 'lose', '.']
+2026-03-15 17:05:28,634 - DEBUG - joeynmt.training - 	Tokenized reference:  ['No', 'hay', 'tiempo', 'que', 'perder', '.']
+2026-03-15 17:05:28,634 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['No', 'es', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que']
+2026-03-15 17:05:28,634 - INFO - joeynmt.training - Example #2
+2026-03-15 17:05:28,637 - INFO - joeynmt.training - 	Source:     I felt exactly the same way.
+2026-03-15 17:05:28,637 - INFO - joeynmt.training - 	Reference:  Yo sentí exactamente lo mismo.
+2026-03-15 17:05:28,637 - INFO - joeynmt.training - 	Hypothesis: Él es un casa.
+2026-03-15 17:05:28,643 - DEBUG - joeynmt.training - 	Tokenized source:     ['I', 'felt', 'exactly', 'the', 'same', 'way', '.']
+2026-03-15 17:05:28,643 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Yo', 'sentí', 'exactamente', 'lo', 'mismo', '.']
+2026-03-15 17:05:28,643 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['Él', 'es', 'un', 'casa', '.']
+2026-03-15 17:05:29,538 - INFO - joeynmt.training - Epoch   1, Step:      260, Batch Loss:    51.892376, Batch Acc: 0.251707, Tokens per Sec:     3465, Lr: 0.005000
+2026-03-15 17:05:29,540 - INFO - joeynmt.prediction - Predicting 27999 example(s)... (Greedy decoding with min_output_length=1, max_output_length=31, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2026-03-15 17:11:29,959 - INFO - joeynmt.prediction - Generation took 360.4176[sec].
+2026-03-15 17:11:31,475 - INFO - joeynmt.metrics - nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0
+2026-03-15 17:11:31,476 - INFO - joeynmt.prediction - Evaluation result (greedy): bleu:   0.03, loss:  51.68, ppl: 240.10, acc:   0.26, 0.8887[sec]
+2026-03-15 17:11:31,484 - INFO - joeynmt.training - Hooray! New best validation result [loss]!
+2026-03-15 17:11:31,776 - INFO - joeynmt.training - Checkpoint saved in /Users/ariel/nlpfinal/toy_transformer/260.ckpt.
+2026-03-15 17:11:31,814 - INFO - joeynmt.training - Example #0
+2026-03-15 17:11:31,818 - INFO - joeynmt.training - 	Source:     Tom felt lonely and abandoned.
+2026-03-15 17:11:31,818 - INFO - joeynmt.training - 	Reference:  Tom se sentía solo y abandonado.
+2026-03-15 17:11:31,818 - INFO - joeynmt.training - 	Hypothesis: Tom no no no no no Tom no Tom Tom no Tom no Tom no Tom no Tom no Tom no Tom no Tom no Tom no Tom no Tom no
+2026-03-15 17:11:31,825 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tom', 'felt', 'lonely', 'and', 'abandoned', '.']
+2026-03-15 17:11:31,825 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Tom', 'se', 'sentía', 'solo', 'y', 'abandonado', '.']
+2026-03-15 17:11:31,825 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['Tom', 'no', 'no', 'no', 'no', 'no', 'Tom', 'no', 'Tom', 'Tom', 'no', 'Tom', 'no', 'Tom', 'no', 'Tom', 'no', 'Tom', 'no', 'Tom', 'no', 'Tom', 'no', 'Tom', 'no', 'Tom', 'no', 'Tom', 'no', 'Tom']
+2026-03-15 17:11:31,825 - INFO - joeynmt.training - Example #1
+2026-03-15 17:11:31,828 - INFO - joeynmt.training - 	Source:     There's no time to lose.
+2026-03-15 17:11:31,828 - INFO - joeynmt.training - 	Reference:  No hay tiempo que perder.
+2026-03-15 17:11:31,828 - INFO - joeynmt.training - 	Hypothesis: No Tom que no no no no no no no no no no no no no no no no no no no no no no no no no no no no
+2026-03-15 17:11:31,834 - DEBUG - joeynmt.training - 	Tokenized source:     ['There', '&apos;s', 'no', 'time', 'to', 'lose', '.']
+2026-03-15 17:11:31,834 - DEBUG - joeynmt.training - 	Tokenized reference:  ['No', 'hay', 'tiempo', 'que', 'perder', '.']
+2026-03-15 17:11:31,834 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['No', 'Tom', 'que', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no']
+2026-03-15 17:11:31,834 - INFO - joeynmt.training - Example #2
+2026-03-15 17:11:31,838 - INFO - joeynmt.training - 	Source:     I felt exactly the same way.
+2026-03-15 17:11:31,838 - INFO - joeynmt.training - 	Reference:  Yo sentí exactamente lo mismo.
+2026-03-15 17:11:31,838 - INFO - joeynmt.training - 	Hypothesis: No gusta la casa.
+2026-03-15 17:11:31,844 - DEBUG - joeynmt.training - 	Tokenized source:     ['I', 'felt', 'exactly', 'the', 'same', 'way', '.']
+2026-03-15 17:11:31,844 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Yo', 'sentí', 'exactamente', 'lo', 'mismo', '.']
+2026-03-15 17:11:31,844 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['No', 'gusta', 'la', 'casa', '.']
+2026-03-15 17:11:32,928 - INFO - joeynmt.training - Epoch   1, Step:      270, Batch Loss:    50.897900, Batch Acc: 0.254457, Tokens per Sec:     2868, Lr: 0.005000
+2026-03-15 17:11:32,930 - INFO - joeynmt.prediction - Predicting 27999 example(s)... (Greedy decoding with min_output_length=1, max_output_length=31, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2026-03-15 17:17:45,693 - INFO - joeynmt.prediction - Generation took 372.7626[sec].
+2026-03-15 17:17:46,911 - INFO - joeynmt.metrics - nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0
+2026-03-15 17:17:46,912 - INFO - joeynmt.prediction - Evaluation result (greedy): bleu:   0.01, loss:  51.67, ppl: 239.87, acc:   0.27, 0.6352[sec]
+2026-03-15 17:17:46,915 - INFO - joeynmt.training - Hooray! New best validation result [loss]!
+2026-03-15 17:17:47,084 - INFO - joeynmt.training - Checkpoint saved in /Users/ariel/nlpfinal/toy_transformer/270.ckpt.
+2026-03-15 17:17:47,174 - INFO - joeynmt.training - Example #0
+2026-03-15 17:17:47,177 - INFO - joeynmt.training - 	Source:     Tom felt lonely and abandoned.
+2026-03-15 17:17:47,177 - INFO - joeynmt.training - 	Reference:  Tom se sentía solo y abandonado.
+2026-03-15 17:17:47,177 - INFO - joeynmt.training - 	Hypothesis: Tom no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no
+2026-03-15 17:17:47,184 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tom', 'felt', 'lonely', 'and', 'abandoned', '.']
+2026-03-15 17:17:47,184 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Tom', 'se', 'sentía', 'solo', 'y', 'abandonado', '.']
+2026-03-15 17:17:47,184 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['Tom', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no']
+2026-03-15 17:17:47,184 - INFO - joeynmt.training - Example #1
+2026-03-15 17:17:47,187 - INFO - joeynmt.training - 	Source:     There's no time to lose.
+2026-03-15 17:17:47,187 - INFO - joeynmt.training - 	Reference:  No hay tiempo que perder.
+2026-03-15 17:17:47,187 - INFO - joeynmt.training - 	Hypothesis: No no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no
+2026-03-15 17:17:47,193 - DEBUG - joeynmt.training - 	Tokenized source:     ['There', '&apos;s', 'no', 'time', 'to', 'lose', '.']
+2026-03-15 17:17:47,193 - DEBUG - joeynmt.training - 	Tokenized reference:  ['No', 'hay', 'tiempo', 'que', 'perder', '.']
+2026-03-15 17:17:47,193 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['No', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no']
+2026-03-15 17:17:47,193 - INFO - joeynmt.training - Example #2
+2026-03-15 17:17:47,196 - INFO - joeynmt.training - 	Source:     I felt exactly the same way.
+2026-03-15 17:17:47,196 - INFO - joeynmt.training - 	Reference:  Yo sentí exactamente lo mismo.
+2026-03-15 17:17:47,196 - INFO - joeynmt.training - 	Hypothesis: No me gusta un gusta la gusta la casa.
+2026-03-15 17:17:47,202 - DEBUG - joeynmt.training - 	Tokenized source:     ['I', 'felt', 'exactly', 'the', 'same', 'way', '.']
+2026-03-15 17:17:47,202 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Yo', 'sentí', 'exactamente', 'lo', 'mismo', '.']
+2026-03-15 17:17:47,202 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['No', 'me', 'gusta', 'un', 'gusta', 'la', 'gusta', 'la', 'casa', '.']
+2026-03-15 17:17:48,244 - INFO - joeynmt.training - Epoch   1, Step:      280, Batch Loss:    53.679749, Batch Acc: 0.254309, Tokens per Sec:     2978, Lr: 0.005000
+2026-03-15 17:17:48,245 - INFO - joeynmt.prediction - Predicting 27999 example(s)... (Greedy decoding with min_output_length=1, max_output_length=31, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2026-03-15 17:24:01,194 - INFO - joeynmt.prediction - Generation took 372.9492[sec].
+2026-03-15 17:24:02,341 - INFO - joeynmt.metrics - nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0
+2026-03-15 17:24:02,341 - INFO - joeynmt.prediction - Evaluation result (greedy): bleu:   0.02, loss:  51.52, ppl: 236.06, acc:   0.26, 0.6003[sec]
+2026-03-15 17:24:02,344 - INFO - joeynmt.training - Hooray! New best validation result [loss]!
+2026-03-15 17:24:02,565 - INFO - joeynmt.training - Checkpoint saved in /Users/ariel/nlpfinal/toy_transformer/280.ckpt.
+2026-03-15 17:24:02,629 - INFO - joeynmt.training - Example #0
+2026-03-15 17:24:02,632 - INFO - joeynmt.training - 	Source:     Tom felt lonely and abandoned.
+2026-03-15 17:24:02,632 - INFO - joeynmt.training - 	Reference:  Tom se sentía solo y abandonado.
+2026-03-15 17:24:02,632 - INFO - joeynmt.training - 	Hypothesis: Tom Tom Tom que Tom Tom Tom Tom Tom Tom Tom Tom Tom Tom Tom Tom Tom Tom Tom Tom Tom Tom Tom Tom Tom Tom Tom Tom Tom Tom Tom
+2026-03-15 17:24:02,639 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tom', 'felt', 'lonely', 'and', 'abandoned', '.']
+2026-03-15 17:24:02,639 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Tom', 'se', 'sentía', 'solo', 'y', 'abandonado', '.']
+2026-03-15 17:24:02,639 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['Tom', 'Tom', 'Tom', 'que', 'Tom', 'Tom', 'Tom', 'Tom', 'Tom', 'Tom', 'Tom', 'Tom', 'Tom', 'Tom', 'Tom', 'Tom', 'Tom', 'Tom', 'Tom', 'Tom', 'Tom', 'Tom', 'Tom', 'Tom', 'Tom', 'Tom', 'Tom', 'Tom', 'Tom', 'Tom']
+2026-03-15 17:24:02,639 - INFO - joeynmt.training - Example #1
+2026-03-15 17:24:02,642 - INFO - joeynmt.training - 	Source:     There's no time to lose.
+2026-03-15 17:24:02,642 - INFO - joeynmt.training - 	Reference:  No hay tiempo que perder.
+2026-03-15 17:24:02,642 - INFO - joeynmt.training - 	Hypothesis: No no que que que que que que que que que que que que que que que que que que que que que que que que que que que que que
+2026-03-15 17:24:02,648 - DEBUG - joeynmt.training - 	Tokenized source:     ['There', '&apos;s', 'no', 'time', 'to', 'lose', '.']
+2026-03-15 17:24:02,648 - DEBUG - joeynmt.training - 	Tokenized reference:  ['No', 'hay', 'tiempo', 'que', 'perder', '.']
+2026-03-15 17:24:02,648 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['No', 'no', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que']
+2026-03-15 17:24:02,648 - INFO - joeynmt.training - Example #2
+2026-03-15 17:24:02,651 - INFO - joeynmt.training - 	Source:     I felt exactly the same way.
+2026-03-15 17:24:02,651 - INFO - joeynmt.training - 	Reference:  Yo sentí exactamente lo mismo.
+2026-03-15 17:24:02,651 - INFO - joeynmt.training - 	Hypothesis: No no que que que que que que que que que que que que que que que que que que que que que que que que que que que que que
+2026-03-15 17:24:02,657 - DEBUG - joeynmt.training - 	Tokenized source:     ['I', 'felt', 'exactly', 'the', 'same', 'way', '.']
+2026-03-15 17:24:02,657 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Yo', 'sentí', 'exactamente', 'lo', 'mismo', '.']
+2026-03-15 17:24:02,657 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['No', 'no', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que']
+2026-03-15 17:24:03,613 - INFO - joeynmt.training - Epoch   1, Step:      290, Batch Loss:    60.332630, Batch Acc: 0.252237, Tokens per Sec:     3175, Lr: 0.005000
+2026-03-15 17:24:03,613 - INFO - joeynmt.prediction - Predicting 27999 example(s)... (Greedy decoding with min_output_length=1, max_output_length=31, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2026-03-15 17:30:18,268 - INFO - joeynmt.prediction - Generation took 374.6539[sec].
+2026-03-15 17:30:19,616 - INFO - joeynmt.metrics - nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0
+2026-03-15 17:30:19,616 - INFO - joeynmt.prediction - Evaluation result (greedy): bleu:   0.02, loss:  51.17, ppl: 227.45, acc:   0.26, 0.7507[sec]
+2026-03-15 17:30:19,618 - INFO - joeynmt.training - Hooray! New best validation result [loss]!
+2026-03-15 17:30:19,765 - INFO - joeynmt.training - Checkpoint saved in /Users/ariel/nlpfinal/toy_transformer/290.ckpt.
+2026-03-15 17:30:19,877 - INFO - joeynmt.training - Example #0
+2026-03-15 17:30:19,880 - INFO - joeynmt.training - 	Source:     Tom felt lonely and abandoned.
+2026-03-15 17:30:19,880 - INFO - joeynmt.training - 	Reference:  Tom se sentía solo y abandonado.
+2026-03-15 17:30:19,880 - INFO - joeynmt.training - 	Hypothesis: Tom no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no
+2026-03-15 17:30:19,886 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tom', 'felt', 'lonely', 'and', 'abandoned', '.']
+2026-03-15 17:30:19,886 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Tom', 'se', 'sentía', 'solo', 'y', 'abandonado', '.']
+2026-03-15 17:30:19,886 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['Tom', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no']
+2026-03-15 17:30:19,886 - INFO - joeynmt.training - Example #1
+2026-03-15 17:30:19,889 - INFO - joeynmt.training - 	Source:     There's no time to lose.
+2026-03-15 17:30:19,889 - INFO - joeynmt.training - 	Reference:  No hay tiempo que perder.
+2026-03-15 17:30:19,889 - INFO - joeynmt.training - 	Hypothesis: No no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no
+2026-03-15 17:30:19,895 - DEBUG - joeynmt.training - 	Tokenized source:     ['There', '&apos;s', 'no', 'time', 'to', 'lose', '.']
+2026-03-15 17:30:19,895 - DEBUG - joeynmt.training - 	Tokenized reference:  ['No', 'hay', 'tiempo', 'que', 'perder', '.']
+2026-03-15 17:30:19,895 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['No', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no']
+2026-03-15 17:30:19,895 - INFO - joeynmt.training - Example #2
+2026-03-15 17:30:19,898 - INFO - joeynmt.training - 	Source:     I felt exactly the same way.
+2026-03-15 17:30:19,898 - INFO - joeynmt.training - 	Reference:  Yo sentí exactamente lo mismo.
+2026-03-15 17:30:19,898 - INFO - joeynmt.training - 	Hypothesis: No no es la casa.
+2026-03-15 17:30:19,904 - DEBUG - joeynmt.training - 	Tokenized source:     ['I', 'felt', 'exactly', 'the', 'same', 'way', '.']
+2026-03-15 17:30:19,904 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Yo', 'sentí', 'exactamente', 'lo', 'mismo', '.']
+2026-03-15 17:30:19,904 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['No', 'no', 'es', 'la', 'casa', '.']
+2026-03-15 17:30:20,954 - INFO - joeynmt.training - Epoch   1, Step:      300, Batch Loss:    42.366821, Batch Acc: 0.269943, Tokens per Sec:     2981, Lr: 0.005000
+2026-03-15 17:30:20,954 - INFO - joeynmt.prediction - Predicting 27999 example(s)... (Greedy decoding with min_output_length=1, max_output_length=31, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2026-03-15 17:37:11,980 - INFO - joeynmt.prediction - Generation took 411.0258[sec].
+2026-03-15 17:37:13,053 - INFO - joeynmt.metrics - nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0
+2026-03-15 17:37:13,054 - INFO - joeynmt.prediction - Evaluation result (greedy): bleu:   0.04, loss:  51.08, ppl: 225.15, acc:   0.27, 0.5659[sec]
+2026-03-15 17:37:13,057 - INFO - joeynmt.training - Hooray! New best validation result [loss]!
+2026-03-15 17:37:13,241 - INFO - joeynmt.training - Checkpoint saved in /Users/ariel/nlpfinal/toy_transformer/300.ckpt.
+2026-03-15 17:37:13,276 - INFO - joeynmt.training - Example #0
+2026-03-15 17:37:13,280 - INFO - joeynmt.training - 	Source:     Tom felt lonely and abandoned.
+2026-03-15 17:37:13,280 - INFO - joeynmt.training - 	Reference:  Tom se sentía solo y abandonado.
+2026-03-15 17:37:13,280 - INFO - joeynmt.training - 	Hypothesis: Tom no es la casa.
+2026-03-15 17:37:13,286 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tom', 'felt', 'lonely', 'and', 'abandoned', '.']
+2026-03-15 17:37:13,286 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Tom', 'se', 'sentía', 'solo', 'y', 'abandonado', '.']
+2026-03-15 17:37:13,286 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['Tom', 'no', 'es', 'la', 'casa', '.']
+2026-03-15 17:37:13,286 - INFO - joeynmt.training - Example #1
+2026-03-15 17:37:13,289 - INFO - joeynmt.training - 	Source:     There's no time to lose.
+2026-03-15 17:37:13,289 - INFO - joeynmt.training - 	Reference:  No hay tiempo que perder.
+2026-03-15 17:37:13,289 - INFO - joeynmt.training - 	Hypothesis: No es la gusta.
+2026-03-15 17:37:13,295 - DEBUG - joeynmt.training - 	Tokenized source:     ['There', '&apos;s', 'no', 'time', 'to', 'lose', '.']
+2026-03-15 17:37:13,295 - DEBUG - joeynmt.training - 	Tokenized reference:  ['No', 'hay', 'tiempo', 'que', 'perder', '.']
+2026-03-15 17:37:13,295 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['No', 'es', 'la', 'gusta', '.']
+2026-03-15 17:37:13,295 - INFO - joeynmt.training - Example #2
+2026-03-15 17:37:13,298 - INFO - joeynmt.training - 	Source:     I felt exactly the same way.
+2026-03-15 17:37:13,298 - INFO - joeynmt.training - 	Reference:  Yo sentí exactamente lo mismo.
+2026-03-15 17:37:13,298 - INFO - joeynmt.training - 	Hypothesis: No es la gusta.
+2026-03-15 17:37:13,304 - DEBUG - joeynmt.training - 	Tokenized source:     ['I', 'felt', 'exactly', 'the', 'same', 'way', '.']
+2026-03-15 17:37:13,304 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Yo', 'sentí', 'exactamente', 'lo', 'mismo', '.']
+2026-03-15 17:37:13,304 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['No', 'es', 'la', 'gusta', '.']
+2026-03-15 17:37:14,132 - INFO - joeynmt.training - Epoch   1, Step:      310, Batch Loss:    48.295902, Batch Acc: 0.275118, Tokens per Sec:     3624, Lr: 0.005000
+2026-03-15 17:37:14,132 - INFO - joeynmt.prediction - Predicting 27999 example(s)... (Greedy decoding with min_output_length=1, max_output_length=31, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2026-03-15 17:43:15,875 - INFO - joeynmt.prediction - Generation took 361.7422[sec].
+2026-03-15 17:43:16,975 - INFO - joeynmt.metrics - nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0
+2026-03-15 17:43:16,975 - INFO - joeynmt.prediction - Evaluation result (greedy): bleu:   0.03, loss:  50.81, ppl: 218.91, acc:   0.27, 0.5858[sec]
+2026-03-15 17:43:16,979 - INFO - joeynmt.training - Hooray! New best validation result [loss]!
+2026-03-15 17:43:17,093 - INFO - joeynmt.training - Checkpoint saved in /Users/ariel/nlpfinal/toy_transformer/310.ckpt.
+2026-03-15 17:43:17,212 - INFO - joeynmt.training - Example #0
+2026-03-15 17:43:17,216 - INFO - joeynmt.training - 	Source:     Tom felt lonely and abandoned.
+2026-03-15 17:43:17,216 - INFO - joeynmt.training - 	Reference:  Tom se sentía solo y abandonado.
+2026-03-15 17:43:17,216 - INFO - joeynmt.training - 	Hypothesis: Tom es el ciudad.
+2026-03-15 17:43:17,223 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tom', 'felt', 'lonely', 'and', 'abandoned', '.']
+2026-03-15 17:43:17,223 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Tom', 'se', 'sentía', 'solo', 'y', 'abandonado', '.']
+2026-03-15 17:43:17,223 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['Tom', 'es', 'el', 'ciudad', '.']
+2026-03-15 17:43:17,223 - INFO - joeynmt.training - Example #1
+2026-03-15 17:43:17,226 - INFO - joeynmt.training - 	Source:     There's no time to lose.
+2026-03-15 17:43:17,227 - INFO - joeynmt.training - 	Reference:  No hay tiempo que perder.
+2026-03-15 17:43:17,227 - INFO - joeynmt.training - 	Hypothesis: No quiero que que que que que que que que que que que que que que que que que que que que que que que que que que que que que
+2026-03-15 17:43:17,233 - DEBUG - joeynmt.training - 	Tokenized source:     ['There', '&apos;s', 'no', 'time', 'to', 'lose', '.']
+2026-03-15 17:43:17,233 - DEBUG - joeynmt.training - 	Tokenized reference:  ['No', 'hay', 'tiempo', 'que', 'perder', '.']
+2026-03-15 17:43:17,233 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['No', 'quiero', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que']
+2026-03-15 17:43:17,233 - INFO - joeynmt.training - Example #2
+2026-03-15 17:43:17,237 - INFO - joeynmt.training - 	Source:     I felt exactly the same way.
+2026-03-15 17:43:17,237 - INFO - joeynmt.training - 	Reference:  Yo sentí exactamente lo mismo.
+2026-03-15 17:43:17,237 - INFO - joeynmt.training - 	Hypothesis: Él es el gusta.
+2026-03-15 17:43:17,243 - DEBUG - joeynmt.training - 	Tokenized source:     ['I', 'felt', 'exactly', 'the', 'same', 'way', '.']
+2026-03-15 17:43:17,243 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Yo', 'sentí', 'exactamente', 'lo', 'mismo', '.']
+2026-03-15 17:43:17,243 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['Él', 'es', 'el', 'gusta', '.']
+2026-03-15 17:43:17,928 - INFO - joeynmt.training - Epoch   1, Step:      320, Batch Loss:    40.992657, Batch Acc: 0.282134, Tokens per Sec:     4119, Lr: 0.005000
+2026-03-15 17:43:17,928 - INFO - joeynmt.prediction - Predicting 27999 example(s)... (Greedy decoding with min_output_length=1, max_output_length=31, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2026-03-15 17:49:16,885 - INFO - joeynmt.prediction - Generation took 358.9560[sec].
+2026-03-15 17:49:17,960 - INFO - joeynmt.metrics - nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0
+2026-03-15 17:49:17,960 - INFO - joeynmt.prediction - Evaluation result (greedy): bleu:   0.03, loss:  50.78, ppl: 218.23, acc:   0.27, 0.6241[sec]
+2026-03-15 17:49:17,967 - INFO - joeynmt.training - Hooray! New best validation result [loss]!
+2026-03-15 17:49:18,171 - INFO - joeynmt.training - Checkpoint saved in /Users/ariel/nlpfinal/toy_transformer/320.ckpt.
+2026-03-15 17:49:18,248 - INFO - joeynmt.training - Example #0
+2026-03-15 17:49:18,259 - INFO - joeynmt.training - 	Source:     Tom felt lonely and abandoned.
+2026-03-15 17:49:18,259 - INFO - joeynmt.training - 	Reference:  Tom se sentía solo y abandonado.
+2026-03-15 17:49:18,259 - INFO - joeynmt.training - 	Hypothesis: Tom no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no
+2026-03-15 17:49:18,266 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tom', 'felt', 'lonely', 'and', 'abandoned', '.']
+2026-03-15 17:49:18,266 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Tom', 'se', 'sentía', 'solo', 'y', 'abandonado', '.']
+2026-03-15 17:49:18,266 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['Tom', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no']
+2026-03-15 17:49:18,266 - INFO - joeynmt.training - Example #1
+2026-03-15 17:49:18,270 - INFO - joeynmt.training - 	Source:     There's no time to lose.
+2026-03-15 17:49:18,270 - INFO - joeynmt.training - 	Reference:  No hay tiempo que perder.
+2026-03-15 17:49:18,270 - INFO - joeynmt.training - 	Hypothesis: No no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no
+2026-03-15 17:49:18,276 - DEBUG - joeynmt.training - 	Tokenized source:     ['There', '&apos;s', 'no', 'time', 'to', 'lose', '.']
+2026-03-15 17:49:18,277 - DEBUG - joeynmt.training - 	Tokenized reference:  ['No', 'hay', 'tiempo', 'que', 'perder', '.']
+2026-03-15 17:49:18,277 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['No', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no']
+2026-03-15 17:49:18,277 - INFO - joeynmt.training - Example #2
+2026-03-15 17:49:18,280 - INFO - joeynmt.training - 	Source:     I felt exactly the same way.
+2026-03-15 17:49:18,281 - INFO - joeynmt.training - 	Reference:  Yo sentí exactamente lo mismo.
+2026-03-15 17:49:18,281 - INFO - joeynmt.training - 	Hypothesis: No me gusta.
+2026-03-15 17:49:18,289 - DEBUG - joeynmt.training - 	Tokenized source:     ['I', 'felt', 'exactly', 'the', 'same', 'way', '.']
+2026-03-15 17:49:18,289 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Yo', 'sentí', 'exactamente', 'lo', 'mismo', '.']
+2026-03-15 17:49:18,289 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['No', 'me', 'gusta', '.']
+2026-03-15 17:49:19,478 - INFO - joeynmt.training - Epoch   1, Step:      330, Batch Loss:    52.209480, Batch Acc: 0.269815, Tokens per Sec:     2524, Lr: 0.005000
+2026-03-15 17:49:19,479 - INFO - joeynmt.prediction - Predicting 27999 example(s)... (Greedy decoding with min_output_length=1, max_output_length=31, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2026-03-15 17:55:15,650 - INFO - joeynmt.prediction - Generation took 356.1708[sec].
+2026-03-15 17:55:17,542 - INFO - joeynmt.metrics - nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0
+2026-03-15 17:55:17,543 - INFO - joeynmt.prediction - Evaluation result (greedy): bleu:   0.05, loss:  50.38, ppl: 209.19, acc:   0.27, 1.3212[sec]
+2026-03-15 17:55:17,556 - INFO - joeynmt.training - Hooray! New best validation result [loss]!
+2026-03-15 17:55:18,109 - INFO - joeynmt.training - Checkpoint saved in /Users/ariel/nlpfinal/toy_transformer/330.ckpt.
+2026-03-15 17:55:18,226 - INFO - joeynmt.training - Example #0
+2026-03-15 17:55:18,254 - INFO - joeynmt.training - 	Source:     Tom felt lonely and abandoned.
+2026-03-15 17:55:18,255 - INFO - joeynmt.training - 	Reference:  Tom se sentía solo y abandonado.
+2026-03-15 17:55:18,255 - INFO - joeynmt.training - 	Hypothesis: Tom es la trabajo.
+2026-03-15 17:55:18,291 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tom', 'felt', 'lonely', 'and', 'abandoned', '.']
+2026-03-15 17:55:18,292 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Tom', 'se', 'sentía', 'solo', 'y', 'abandonado', '.']
+2026-03-15 17:55:18,293 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['Tom', 'es', 'la', 'trabajo', '.']
+2026-03-15 17:55:18,293 - INFO - joeynmt.training - Example #1
+2026-03-15 17:55:18,307 - INFO - joeynmt.training - 	Source:     There's no time to lose.
+2026-03-15 17:55:18,307 - INFO - joeynmt.training - 	Reference:  No hay tiempo que perder.
+2026-03-15 17:55:18,308 - INFO - joeynmt.training - 	Hypothesis: No no es un trabajo.
+2026-03-15 17:55:18,334 - DEBUG - joeynmt.training - 	Tokenized source:     ['There', '&apos;s', 'no', 'time', 'to', 'lose', '.']
+2026-03-15 17:55:18,334 - DEBUG - joeynmt.training - 	Tokenized reference:  ['No', 'hay', 'tiempo', 'que', 'perder', '.']
+2026-03-15 17:55:18,334 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['No', 'no', 'es', 'un', 'trabajo', '.']
+2026-03-15 17:55:18,334 - INFO - joeynmt.training - Example #2
+2026-03-15 17:55:18,349 - INFO - joeynmt.training - 	Source:     I felt exactly the same way.
+2026-03-15 17:55:18,349 - INFO - joeynmt.training - 	Reference:  Yo sentí exactamente lo mismo.
+2026-03-15 17:55:18,349 - INFO - joeynmt.training - 	Hypothesis: Ella es un trabajo.
+2026-03-15 17:55:18,376 - DEBUG - joeynmt.training - 	Tokenized source:     ['I', 'felt', 'exactly', 'the', 'same', 'way', '.']
+2026-03-15 17:55:18,377 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Yo', 'sentí', 'exactamente', 'lo', 'mismo', '.']
+2026-03-15 17:55:18,377 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['Ella', 'es', 'un', 'trabajo', '.']
+2026-03-15 17:55:19,777 - INFO - joeynmt.training - Epoch   1, Step:      340, Batch Loss:    47.506161, Batch Acc: 0.278609, Tokens per Sec:     2229, Lr: 0.005000
+2026-03-15 17:55:19,778 - INFO - joeynmt.prediction - Predicting 27999 example(s)... (Greedy decoding with min_output_length=1, max_output_length=31, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2026-03-15 18:00:38,049 - INFO - joeynmt.prediction - Generation took 318.2702[sec].
+2026-03-15 18:00:38,910 - INFO - joeynmt.metrics - nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0
+2026-03-15 18:00:38,910 - INFO - joeynmt.prediction - Evaluation result (greedy): bleu:   0.12, loss:  50.24, ppl: 206.02, acc:   0.27, 0.4761[sec]
+2026-03-15 18:00:38,913 - INFO - joeynmt.training - Hooray! New best validation result [loss]!
+2026-03-15 18:00:39,090 - INFO - joeynmt.training - Checkpoint saved in /Users/ariel/nlpfinal/toy_transformer/340.ckpt.
+2026-03-15 18:00:39,126 - INFO - joeynmt.training - Example #0
+2026-03-15 18:00:39,130 - INFO - joeynmt.training - 	Source:     Tom felt lonely and abandoned.
+2026-03-15 18:00:39,130 - INFO - joeynmt.training - 	Reference:  Tom se sentía solo y abandonado.
+2026-03-15 18:00:39,130 - INFO - joeynmt.training - 	Hypothesis: Tom es un vida.
+2026-03-15 18:00:39,136 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tom', 'felt', 'lonely', 'and', 'abandoned', '.']
+2026-03-15 18:00:39,136 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Tom', 'se', 'sentía', 'solo', 'y', 'abandonado', '.']
+2026-03-15 18:00:39,136 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['Tom', 'es', 'un', 'vida', '.']
+2026-03-15 18:00:39,136 - INFO - joeynmt.training - Example #1
+2026-03-15 18:00:39,139 - INFO - joeynmt.training - 	Source:     There's no time to lose.
+2026-03-15 18:00:39,139 - INFO - joeynmt.training - 	Reference:  No hay tiempo que perder.
+2026-03-15 18:00:39,139 - INFO - joeynmt.training - 	Hypothesis: No no es un gusta.
+2026-03-15 18:00:39,146 - DEBUG - joeynmt.training - 	Tokenized source:     ['There', '&apos;s', 'no', 'time', 'to', 'lose', '.']
+2026-03-15 18:00:39,146 - DEBUG - joeynmt.training - 	Tokenized reference:  ['No', 'hay', 'tiempo', 'que', 'perder', '.']
+2026-03-15 18:00:39,146 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['No', 'no', 'es', 'un', 'gusta', '.']
+2026-03-15 18:00:39,146 - INFO - joeynmt.training - Example #2
+2026-03-15 18:00:39,149 - INFO - joeynmt.training - 	Source:     I felt exactly the same way.
+2026-03-15 18:00:39,149 - INFO - joeynmt.training - 	Reference:  Yo sentí exactamente lo mismo.
+2026-03-15 18:00:39,149 - INFO - joeynmt.training - 	Hypothesis: Él es un trabajo.
+2026-03-15 18:00:39,155 - DEBUG - joeynmt.training - 	Tokenized source:     ['I', 'felt', 'exactly', 'the', 'same', 'way', '.']
+2026-03-15 18:00:39,155 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Yo', 'sentí', 'exactamente', 'lo', 'mismo', '.']
+2026-03-15 18:00:39,155 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['Él', 'es', 'un', 'trabajo', '.']
+2026-03-15 18:00:39,981 - INFO - joeynmt.training - Epoch   1, Step:      350, Batch Loss:    52.649635, Batch Acc: 0.269409, Tokens per Sec:     3676, Lr: 0.005000
+2026-03-15 18:00:39,981 - INFO - joeynmt.prediction - Predicting 27999 example(s)... (Greedy decoding with min_output_length=1, max_output_length=31, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2026-03-15 18:06:12,867 - INFO - joeynmt.prediction - Generation took 332.8841[sec].
+2026-03-15 18:06:13,772 - INFO - joeynmt.metrics - nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0
+2026-03-15 18:06:13,772 - INFO - joeynmt.prediction - Evaluation result (greedy): bleu:   0.08, loss:  50.29, ppl: 207.18, acc:   0.28, 0.4894[sec]
+2026-03-15 18:06:13,941 - INFO - joeynmt.training - Checkpoint saved in /Users/ariel/nlpfinal/toy_transformer/350.ckpt.
+2026-03-15 18:06:14,030 - INFO - joeynmt.training - Example #0
+2026-03-15 18:06:14,034 - INFO - joeynmt.training - 	Source:     Tom felt lonely and abandoned.
+2026-03-15 18:06:14,034 - INFO - joeynmt.training - 	Reference:  Tom se sentía solo y abandonado.
+2026-03-15 18:06:14,034 - INFO - joeynmt.training - 	Hypothesis: Tom es la noche.
+2026-03-15 18:06:14,040 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tom', 'felt', 'lonely', 'and', 'abandoned', '.']
+2026-03-15 18:06:14,040 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Tom', 'se', 'sentía', 'solo', 'y', 'abandonado', '.']
+2026-03-15 18:06:14,040 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['Tom', 'es', 'la', 'noche', '.']
+2026-03-15 18:06:14,040 - INFO - joeynmt.training - Example #1
+2026-03-15 18:06:14,044 - INFO - joeynmt.training - 	Source:     There's no time to lose.
+2026-03-15 18:06:14,044 - INFO - joeynmt.training - 	Reference:  No hay tiempo que perder.
+2026-03-15 18:06:14,044 - INFO - joeynmt.training - 	Hypothesis: No es un gusta.
+2026-03-15 18:06:14,050 - DEBUG - joeynmt.training - 	Tokenized source:     ['There', '&apos;s', 'no', 'time', 'to', 'lose', '.']
+2026-03-15 18:06:14,050 - DEBUG - joeynmt.training - 	Tokenized reference:  ['No', 'hay', 'tiempo', 'que', 'perder', '.']
+2026-03-15 18:06:14,050 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['No', 'es', 'un', 'gusta', '.']
+2026-03-15 18:06:14,050 - INFO - joeynmt.training - Example #2
+2026-03-15 18:06:14,053 - INFO - joeynmt.training - 	Source:     I felt exactly the same way.
+2026-03-15 18:06:14,053 - INFO - joeynmt.training - 	Reference:  Yo sentí exactamente lo mismo.
+2026-03-15 18:06:14,053 - INFO - joeynmt.training - 	Hypothesis: ¡Es un noche.
+2026-03-15 18:06:14,059 - DEBUG - joeynmt.training - 	Tokenized source:     ['I', 'felt', 'exactly', 'the', 'same', 'way', '.']
+2026-03-15 18:06:14,059 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Yo', 'sentí', 'exactamente', 'lo', 'mismo', '.']
+2026-03-15 18:06:14,059 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['¡', 'Es', 'un', 'noche', '.']
+2026-03-15 18:06:14,954 - INFO - joeynmt.training - Epoch   1, Step:      360, Batch Loss:    44.913696, Batch Acc: 0.284060, Tokens per Sec:     3306, Lr: 0.005000
+2026-03-15 18:06:14,954 - INFO - joeynmt.prediction - Predicting 27999 example(s)... (Greedy decoding with min_output_length=1, max_output_length=31, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2026-03-15 18:08:43,556 - INFO - joeynmt.prediction - Generation took 148.6013[sec].
+2026-03-15 18:08:44,369 - INFO - joeynmt.metrics - nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0
+2026-03-15 18:08:44,369 - INFO - joeynmt.prediction - Evaluation result (greedy): bleu:   0.16, loss:  50.24, ppl: 206.04, acc:   0.27, 0.4828[sec]
+2026-03-15 18:08:44,564 - INFO - joeynmt.training - Checkpoint saved in /Users/ariel/nlpfinal/toy_transformer/360.ckpt.
+2026-03-15 18:08:44,765 - INFO - joeynmt.training - Example #0
+2026-03-15 18:08:44,769 - INFO - joeynmt.training - 	Source:     Tom felt lonely and abandoned.
+2026-03-15 18:08:44,769 - INFO - joeynmt.training - 	Reference:  Tom se sentía solo y abandonado.
+2026-03-15 18:08:44,769 - INFO - joeynmt.training - 	Hypothesis: Tom es la nombre.
+2026-03-15 18:08:44,775 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tom', 'felt', 'lonely', 'and', 'abandoned', '.']
+2026-03-15 18:08:44,775 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Tom', 'se', 'sentía', 'solo', 'y', 'abandonado', '.']
+2026-03-15 18:08:44,775 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['Tom', 'es', 'la', 'nombre', '.']
+2026-03-15 18:08:44,775 - INFO - joeynmt.training - Example #1
+2026-03-15 18:08:44,778 - INFO - joeynmt.training - 	Source:     There's no time to lose.
+2026-03-15 18:08:44,778 - INFO - joeynmt.training - 	Reference:  No hay tiempo que perder.
+2026-03-15 18:08:44,778 - INFO - joeynmt.training - 	Hypothesis: No me gusta.
+2026-03-15 18:08:44,785 - DEBUG - joeynmt.training - 	Tokenized source:     ['There', '&apos;s', 'no', 'time', 'to', 'lose', '.']
+2026-03-15 18:08:44,785 - DEBUG - joeynmt.training - 	Tokenized reference:  ['No', 'hay', 'tiempo', 'que', 'perder', '.']
+2026-03-15 18:08:44,785 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['No', 'me', 'gusta', '.']
+2026-03-15 18:08:44,785 - INFO - joeynmt.training - Example #2
+2026-03-15 18:08:44,788 - INFO - joeynmt.training - 	Source:     I felt exactly the same way.
+2026-03-15 18:08:44,788 - INFO - joeynmt.training - 	Reference:  Yo sentí exactamente lo mismo.
+2026-03-15 18:08:44,788 - INFO - joeynmt.training - 	Hypothesis: Es la trabajo.
+2026-03-15 18:08:44,794 - DEBUG - joeynmt.training - 	Tokenized source:     ['I', 'felt', 'exactly', 'the', 'same', 'way', '.']
+2026-03-15 18:08:44,794 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Yo', 'sentí', 'exactamente', 'lo', 'mismo', '.']
+2026-03-15 18:08:44,794 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['Es', 'la', 'trabajo', '.']
+2026-03-15 18:08:45,701 - INFO - joeynmt.training - Epoch   1, Step:      370, Batch Loss:    45.350327, Batch Acc: 0.275768, Tokens per Sec:     3248, Lr: 0.005000
+2026-03-15 18:08:45,701 - INFO - joeynmt.prediction - Predicting 27999 example(s)... (Greedy decoding with min_output_length=1, max_output_length=31, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2026-03-15 18:13:25,289 - INFO - joeynmt.prediction - Generation took 279.5875[sec].
+2026-03-15 18:13:26,612 - INFO - joeynmt.metrics - nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0
+2026-03-15 18:13:26,612 - INFO - joeynmt.prediction - Evaluation result (greedy): bleu:   0.06, loss:  49.98, ppl: 200.46, acc:   0.27, 0.9172[sec]
+2026-03-15 18:13:26,615 - INFO - joeynmt.training - Hooray! New best validation result [loss]!
+2026-03-15 18:13:26,791 - INFO - joeynmt.training - Checkpoint saved in /Users/ariel/nlpfinal/toy_transformer/370.ckpt.
+2026-03-15 18:13:26,859 - INFO - joeynmt.training - Example #0
+2026-03-15 18:13:26,862 - INFO - joeynmt.training - 	Source:     Tom felt lonely and abandoned.
+2026-03-15 18:13:26,862 - INFO - joeynmt.training - 	Reference:  Tom se sentía solo y abandonado.
+2026-03-15 18:13:26,862 - INFO - joeynmt.training - 	Hypothesis: Tom es el gusta.
+2026-03-15 18:13:26,869 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tom', 'felt', 'lonely', 'and', 'abandoned', '.']
+2026-03-15 18:13:26,869 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Tom', 'se', 'sentía', 'solo', 'y', 'abandonado', '.']
+2026-03-15 18:13:26,869 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['Tom', 'es', 'el', 'gusta', '.']
+2026-03-15 18:13:26,869 - INFO - joeynmt.training - Example #1
+2026-03-15 18:13:26,872 - INFO - joeynmt.training - 	Source:     There's no time to lose.
+2026-03-15 18:13:26,872 - INFO - joeynmt.training - 	Reference:  No hay tiempo que perder.
+2026-03-15 18:13:26,872 - INFO - joeynmt.training - 	Hypothesis: No es.
+2026-03-15 18:13:26,878 - DEBUG - joeynmt.training - 	Tokenized source:     ['There', '&apos;s', 'no', 'time', 'to', 'lose', '.']
+2026-03-15 18:13:26,878 - DEBUG - joeynmt.training - 	Tokenized reference:  ['No', 'hay', 'tiempo', 'que', 'perder', '.']
+2026-03-15 18:13:26,878 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['No', 'es', '.']
+2026-03-15 18:13:26,878 - INFO - joeynmt.training - Example #2
+2026-03-15 18:13:26,881 - INFO - joeynmt.training - 	Source:     I felt exactly the same way.
+2026-03-15 18:13:26,881 - INFO - joeynmt.training - 	Reference:  Yo sentí exactamente lo mismo.
+2026-03-15 18:13:26,881 - INFO - joeynmt.training - 	Hypothesis: Quiero es.
+2026-03-15 18:13:26,887 - DEBUG - joeynmt.training - 	Tokenized source:     ['I', 'felt', 'exactly', 'the', 'same', 'way', '.']
+2026-03-15 18:13:26,887 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Yo', 'sentí', 'exactamente', 'lo', 'mismo', '.']
+2026-03-15 18:13:26,887 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['Quiero', 'es', '.']
+2026-03-15 18:13:27,791 - INFO - joeynmt.training - Epoch   1, Step:      380, Batch Loss:    50.198307, Batch Acc: 0.267053, Tokens per Sec:     3268, Lr: 0.005000
+2026-03-15 18:13:27,792 - INFO - joeynmt.prediction - Predicting 27999 example(s)... (Greedy decoding with min_output_length=1, max_output_length=31, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2026-03-15 18:18:41,206 - INFO - joeynmt.prediction - Generation took 313.4134[sec].
+2026-03-15 18:18:42,117 - INFO - joeynmt.metrics - nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0
+2026-03-15 18:18:42,117 - INFO - joeynmt.prediction - Evaluation result (greedy): bleu:   0.06, loss:  49.88, ppl: 198.36, acc:   0.27, 0.5033[sec]
+2026-03-15 18:18:42,120 - INFO - joeynmt.training - Hooray! New best validation result [loss]!
+2026-03-15 18:18:42,275 - INFO - joeynmt.training - Checkpoint saved in /Users/ariel/nlpfinal/toy_transformer/380.ckpt.
+2026-03-15 18:18:42,378 - INFO - joeynmt.training - Example #0
+2026-03-15 18:18:42,384 - INFO - joeynmt.training - 	Source:     Tom felt lonely and abandoned.
+2026-03-15 18:18:42,384 - INFO - joeynmt.training - 	Reference:  Tom se sentía solo y abandonado.
+2026-03-15 18:18:42,384 - INFO - joeynmt.training - 	Hypothesis: Tom no es.
+2026-03-15 18:18:42,390 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tom', 'felt', 'lonely', 'and', 'abandoned', '.']
+2026-03-15 18:18:42,390 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Tom', 'se', 'sentía', 'solo', 'y', 'abandonado', '.']
+2026-03-15 18:18:42,390 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['Tom', 'no', 'es', '.']
+2026-03-15 18:18:42,390 - INFO - joeynmt.training - Example #1
+2026-03-15 18:18:42,393 - INFO - joeynmt.training - 	Source:     There's no time to lose.
+2026-03-15 18:18:42,393 - INFO - joeynmt.training - 	Reference:  No hay tiempo que perder.
+2026-03-15 18:18:42,393 - INFO - joeynmt.training - 	Hypothesis: No no es.
+2026-03-15 18:18:42,400 - DEBUG - joeynmt.training - 	Tokenized source:     ['There', '&apos;s', 'no', 'time', 'to', 'lose', '.']
+2026-03-15 18:18:42,400 - DEBUG - joeynmt.training - 	Tokenized reference:  ['No', 'hay', 'tiempo', 'que', 'perder', '.']
+2026-03-15 18:18:42,400 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['No', 'no', 'es', '.']
+2026-03-15 18:18:42,400 - INFO - joeynmt.training - Example #2
+2026-03-15 18:18:42,403 - INFO - joeynmt.training - 	Source:     I felt exactly the same way.
+2026-03-15 18:18:42,403 - INFO - joeynmt.training - 	Reference:  Yo sentí exactamente lo mismo.
+2026-03-15 18:18:42,403 - INFO - joeynmt.training - 	Hypothesis: No es.
+2026-03-15 18:18:42,409 - DEBUG - joeynmt.training - 	Tokenized source:     ['I', 'felt', 'exactly', 'the', 'same', 'way', '.']
+2026-03-15 18:18:42,409 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Yo', 'sentí', 'exactamente', 'lo', 'mismo', '.']
+2026-03-15 18:18:42,409 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['No', 'es', '.']
+2026-03-15 18:18:43,251 - INFO - joeynmt.training - Epoch   1, Step:      390, Batch Loss:    43.524433, Batch Acc: 0.262759, Tokens per Sec:     3631, Lr: 0.005000
+2026-03-15 18:18:43,251 - INFO - joeynmt.prediction - Predicting 27999 example(s)... (Greedy decoding with min_output_length=1, max_output_length=31, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2026-03-15 18:24:06,290 - INFO - joeynmt.prediction - Generation took 323.0384[sec].
+2026-03-15 18:24:07,252 - INFO - joeynmt.metrics - nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0
+2026-03-15 18:24:07,252 - INFO - joeynmt.prediction - Evaluation result (greedy): bleu:   0.07, loss:  49.78, ppl: 196.28, acc:   0.27, 0.5198[sec]
+2026-03-15 18:24:07,256 - INFO - joeynmt.training - Hooray! New best validation result [loss]!
+2026-03-15 18:24:07,443 - INFO - joeynmt.training - Checkpoint saved in /Users/ariel/nlpfinal/toy_transformer/390.ckpt.
+2026-03-15 18:24:07,547 - INFO - joeynmt.training - Example #0
+2026-03-15 18:24:07,554 - INFO - joeynmt.training - 	Source:     Tom felt lonely and abandoned.
+2026-03-15 18:24:07,554 - INFO - joeynmt.training - 	Reference:  Tom se sentía solo y abandonado.
+2026-03-15 18:24:07,554 - INFO - joeynmt.training - 	Hypothesis: Tom es un casa.
+2026-03-15 18:24:07,560 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tom', 'felt', 'lonely', 'and', 'abandoned', '.']
+2026-03-15 18:24:07,560 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Tom', 'se', 'sentía', 'solo', 'y', 'abandonado', '.']
+2026-03-15 18:24:07,560 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['Tom', 'es', 'un', 'casa', '.']
+2026-03-15 18:24:07,560 - INFO - joeynmt.training - Example #1
+2026-03-15 18:24:07,563 - INFO - joeynmt.training - 	Source:     There's no time to lose.
+2026-03-15 18:24:07,563 - INFO - joeynmt.training - 	Reference:  No hay tiempo que perder.
+2026-03-15 18:24:07,563 - INFO - joeynmt.training - 	Hypothesis: No no es que que que que que que que que que que que que que que no que no que no que no que no que que que no que
+2026-03-15 18:24:07,569 - DEBUG - joeynmt.training - 	Tokenized source:     ['There', '&apos;s', 'no', 'time', 'to', 'lose', '.']
+2026-03-15 18:24:07,569 - DEBUG - joeynmt.training - 	Tokenized reference:  ['No', 'hay', 'tiempo', 'que', 'perder', '.']
+2026-03-15 18:24:07,569 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['No', 'no', 'es', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'no', 'que', 'no', 'que', 'no', 'que', 'no', 'que', 'no', 'que', 'que', 'que', 'no']
+2026-03-15 18:24:07,569 - INFO - joeynmt.training - Example #2
+2026-03-15 18:24:07,573 - INFO - joeynmt.training - 	Source:     I felt exactly the same way.
+2026-03-15 18:24:07,573 - INFO - joeynmt.training - 	Reference:  Yo sentí exactamente lo mismo.
+2026-03-15 18:24:07,573 - INFO - joeynmt.training - 	Hypothesis: Ella es un casa.
+2026-03-15 18:24:07,578 - DEBUG - joeynmt.training - 	Tokenized source:     ['I', 'felt', 'exactly', 'the', 'same', 'way', '.']
+2026-03-15 18:24:07,578 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Yo', 'sentí', 'exactamente', 'lo', 'mismo', '.']
+2026-03-15 18:24:07,578 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['Ella', 'es', 'un', 'casa', '.']
+2026-03-15 18:24:08,338 - INFO - joeynmt.training - Epoch   1, Step:      400, Batch Loss:    40.062057, Batch Acc: 0.289366, Tokens per Sec:     3891, Lr: 0.005000
+2026-03-15 18:24:08,339 - INFO - joeynmt.prediction - Predicting 27999 example(s)... (Greedy decoding with min_output_length=1, max_output_length=31, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2026-03-15 18:29:28,537 - INFO - joeynmt.prediction - Generation took 320.1978[sec].
+2026-03-15 18:29:29,485 - INFO - joeynmt.metrics - nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0
+2026-03-15 18:29:29,486 - INFO - joeynmt.prediction - Evaluation result (greedy): bleu:   0.13, loss:  49.82, ppl: 197.01, acc:   0.28, 0.5420[sec]
+2026-03-15 18:29:29,649 - INFO - joeynmt.training - Checkpoint saved in /Users/ariel/nlpfinal/toy_transformer/400.ckpt.
+2026-03-15 18:29:29,719 - INFO - joeynmt.training - Example #0
+2026-03-15 18:29:29,722 - INFO - joeynmt.training - 	Source:     Tom felt lonely and abandoned.
+2026-03-15 18:29:29,722 - INFO - joeynmt.training - 	Reference:  Tom se sentía solo y abandonado.
+2026-03-15 18:29:29,722 - INFO - joeynmt.training - 	Hypothesis: Tom se Tom se Tom se Tom se Tom es la casa.
+2026-03-15 18:29:29,728 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tom', 'felt', 'lonely', 'and', 'abandoned', '.']
+2026-03-15 18:29:29,728 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Tom', 'se', 'sentía', 'solo', 'y', 'abandonado', '.']
+2026-03-15 18:29:29,728 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['Tom', 'se', 'Tom', 'se', 'Tom', 'se', 'Tom', 'se', 'Tom', 'es', 'la', 'casa', '.']
+2026-03-15 18:29:29,728 - INFO - joeynmt.training - Example #1
+2026-03-15 18:29:29,731 - INFO - joeynmt.training - 	Source:     There's no time to lose.
+2026-03-15 18:29:29,731 - INFO - joeynmt.training - 	Reference:  No hay tiempo que perder.
+2026-03-15 18:29:29,731 - INFO - joeynmt.training - 	Hypothesis: No no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no
+2026-03-15 18:29:29,737 - DEBUG - joeynmt.training - 	Tokenized source:     ['There', '&apos;s', 'no', 'time', 'to', 'lose', '.']
+2026-03-15 18:29:29,737 - DEBUG - joeynmt.training - 	Tokenized reference:  ['No', 'hay', 'tiempo', 'que', 'perder', '.']
+2026-03-15 18:29:29,737 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['No', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no']
+2026-03-15 18:29:29,737 - INFO - joeynmt.training - Example #2
+2026-03-15 18:29:29,740 - INFO - joeynmt.training - 	Source:     I felt exactly the same way.
+2026-03-15 18:29:29,740 - INFO - joeynmt.training - 	Reference:  Yo sentí exactamente lo mismo.
+2026-03-15 18:29:29,740 - INFO - joeynmt.training - 	Hypothesis: Él es la casa.
+2026-03-15 18:29:29,746 - DEBUG - joeynmt.training - 	Tokenized source:     ['I', 'felt', 'exactly', 'the', 'same', 'way', '.']
+2026-03-15 18:29:29,746 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Yo', 'sentí', 'exactamente', 'lo', 'mismo', '.']
+2026-03-15 18:29:29,746 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['Él', 'es', 'la', 'casa', '.']
+2026-03-15 18:29:30,628 - INFO - joeynmt.training - Epoch   1, Step:      410, Batch Loss:    49.578754, Batch Acc: 0.277417, Tokens per Sec:     3340, Lr: 0.005000
+2026-03-15 18:29:30,629 - INFO - joeynmt.prediction - Predicting 27999 example(s)... (Greedy decoding with min_output_length=1, max_output_length=31, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2026-03-15 18:35:06,101 - INFO - joeynmt.prediction - Generation took 335.4716[sec].
+2026-03-15 18:35:07,377 - INFO - joeynmt.metrics - nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0
+2026-03-15 18:35:07,377 - INFO - joeynmt.prediction - Evaluation result (greedy): bleu:   0.05, loss:  49.57, ppl: 191.85, acc:   0.28, 0.8150[sec]
+2026-03-15 18:35:07,380 - INFO - joeynmt.training - Hooray! New best validation result [loss]!
+2026-03-15 18:35:07,540 - INFO - joeynmt.training - Checkpoint saved in /Users/ariel/nlpfinal/toy_transformer/410.ckpt.
+2026-03-15 18:35:07,633 - INFO - joeynmt.training - Example #0
+2026-03-15 18:35:07,636 - INFO - joeynmt.training - 	Source:     Tom felt lonely and abandoned.
+2026-03-15 18:35:07,636 - INFO - joeynmt.training - 	Reference:  Tom se sentía solo y abandonado.
+2026-03-15 18:35:07,636 - INFO - joeynmt.training - 	Hypothesis: Tom es que que que que que que que que que que que que que que que que que que que que que que que que que que que que que
+2026-03-15 18:35:07,645 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tom', 'felt', 'lonely', 'and', 'abandoned', '.']
+2026-03-15 18:35:07,645 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Tom', 'se', 'sentía', 'solo', 'y', 'abandonado', '.']
+2026-03-15 18:35:07,645 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['Tom', 'es', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que', 'que']
+2026-03-15 18:35:07,645 - INFO - joeynmt.training - Example #1
+2026-03-15 18:35:07,648 - INFO - joeynmt.training - 	Source:     There's no time to lose.
+2026-03-15 18:35:07,648 - INFO - joeynmt.training - 	Reference:  No hay tiempo que perder.
+2026-03-15 18:35:07,648 - INFO - joeynmt.training - 	Hypothesis: No no me me me me me me me me me me me me me me me me me me me me me me me me me me me me me
+2026-03-15 18:35:07,655 - DEBUG - joeynmt.training - 	Tokenized source:     ['There', '&apos;s', 'no', 'time', 'to', 'lose', '.']
+2026-03-15 18:35:07,655 - DEBUG - joeynmt.training - 	Tokenized reference:  ['No', 'hay', 'tiempo', 'que', 'perder', '.']
+2026-03-15 18:35:07,655 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['No', 'no', 'me', 'me', 'me', 'me', 'me', 'me', 'me', 'me', 'me', 'me', 'me', 'me', 'me', 'me', 'me', 'me', 'me', 'me', 'me', 'me', 'me', 'me', 'me', 'me', 'me', 'me', 'me', 'me']
+2026-03-15 18:35:07,655 - INFO - joeynmt.training - Example #2
+2026-03-15 18:35:07,658 - INFO - joeynmt.training - 	Source:     I felt exactly the same way.
+2026-03-15 18:35:07,658 - INFO - joeynmt.training - 	Reference:  Yo sentí exactamente lo mismo.
+2026-03-15 18:35:07,658 - INFO - joeynmt.training - 	Hypothesis: No me gusta.
+2026-03-15 18:35:07,664 - DEBUG - joeynmt.training - 	Tokenized source:     ['I', 'felt', 'exactly', 'the', 'same', 'way', '.']
+2026-03-15 18:35:07,664 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Yo', 'sentí', 'exactamente', 'lo', 'mismo', '.']
+2026-03-15 18:35:07,664 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['No', 'me', 'gusta', '.']
+2026-03-15 18:35:08,471 - INFO - joeynmt.training - Epoch   1, Step:      420, Batch Loss:    48.631569, Batch Acc: 0.276047, Tokens per Sec:     3732, Lr: 0.005000
+2026-03-15 18:35:08,471 - INFO - joeynmt.prediction - Predicting 27999 example(s)... (Greedy decoding with min_output_length=1, max_output_length=31, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2026-03-15 18:40:14,237 - INFO - joeynmt.prediction - Generation took 305.7660[sec].
+2026-03-15 18:40:15,117 - INFO - joeynmt.metrics - nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0
+2026-03-15 18:40:15,117 - INFO - joeynmt.prediction - Evaluation result (greedy): bleu:   0.11, loss:  49.21, ppl: 184.80, acc:   0.28, 0.4916[sec]
+2026-03-15 18:40:15,121 - INFO - joeynmt.training - Hooray! New best validation result [loss]!
+2026-03-15 18:40:15,280 - INFO - joeynmt.training - Checkpoint saved in /Users/ariel/nlpfinal/toy_transformer/420.ckpt.
+2026-03-15 18:40:15,350 - INFO - joeynmt.training - Example #0
+2026-03-15 18:40:15,354 - INFO - joeynmt.training - 	Source:     Tom felt lonely and abandoned.
+2026-03-15 18:40:15,354 - INFO - joeynmt.training - 	Reference:  Tom se sentía solo y abandonado.
+2026-03-15 18:40:15,354 - INFO - joeynmt.training - 	Hypothesis: Tom es un problema.
+2026-03-15 18:40:15,360 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tom', 'felt', 'lonely', 'and', 'abandoned', '.']
+2026-03-15 18:40:15,360 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Tom', 'se', 'sentía', 'solo', 'y', 'abandonado', '.']
+2026-03-15 18:40:15,360 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['Tom', 'es', 'un', 'problema', '.']
+2026-03-15 18:40:15,360 - INFO - joeynmt.training - Example #1
+2026-03-15 18:40:15,363 - INFO - joeynmt.training - 	Source:     There's no time to lose.
+2026-03-15 18:40:15,363 - INFO - joeynmt.training - 	Reference:  No hay tiempo que perder.
+2026-03-15 18:40:15,363 - INFO - joeynmt.training - 	Hypothesis: No no es que que que que que no que no que no que no no no no no no no no no no no no no no no no no
+2026-03-15 18:40:15,369 - DEBUG - joeynmt.training - 	Tokenized source:     ['There', '&apos;s', 'no', 'time', 'to', 'lose', '.']
+2026-03-15 18:40:15,369 - DEBUG - joeynmt.training - 	Tokenized reference:  ['No', 'hay', 'tiempo', 'que', 'perder', '.']
+2026-03-15 18:40:15,369 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['No', 'no', 'es', 'que', 'que', 'que', 'que', 'que', 'no', 'que', 'no', 'que', 'no', 'que', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no']
+2026-03-15 18:40:15,369 - INFO - joeynmt.training - Example #2
+2026-03-15 18:40:15,372 - INFO - joeynmt.training - 	Source:     I felt exactly the same way.
+2026-03-15 18:40:15,372 - INFO - joeynmt.training - 	Reference:  Yo sentí exactamente lo mismo.
+2026-03-15 18:40:15,372 - INFO - joeynmt.training - 	Hypothesis: Estoy un problema.
+2026-03-15 18:40:15,378 - DEBUG - joeynmt.training - 	Tokenized source:     ['I', 'felt', 'exactly', 'the', 'same', 'way', '.']
+2026-03-15 18:40:15,378 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Yo', 'sentí', 'exactamente', 'lo', 'mismo', '.']
+2026-03-15 18:40:15,378 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['Estoy', 'un', 'problema', '.']
+2026-03-15 18:40:16,246 - INFO - joeynmt.training - Epoch   1, Step:      430, Batch Loss:    46.484642, Batch Acc: 0.271609, Tokens per Sec:     3490, Lr: 0.005000
+2026-03-15 18:40:16,246 - INFO - joeynmt.prediction - Predicting 27999 example(s)... (Greedy decoding with min_output_length=1, max_output_length=31, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2026-03-15 18:45:42,347 - INFO - joeynmt.prediction - Generation took 326.0982[sec].
+2026-03-15 18:45:43,277 - INFO - joeynmt.metrics - nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0
+2026-03-15 18:45:43,277 - INFO - joeynmt.prediction - Evaluation result (greedy): bleu:   0.07, loss:  49.17, ppl: 183.93, acc:   0.28, 0.5167[sec]
+2026-03-15 18:45:43,282 - INFO - joeynmt.training - Hooray! New best validation result [loss]!
+2026-03-15 18:45:43,481 - INFO - joeynmt.training - Checkpoint saved in /Users/ariel/nlpfinal/toy_transformer/430.ckpt.
+2026-03-15 18:45:43,557 - INFO - joeynmt.training - Example #0
+2026-03-15 18:45:43,567 - INFO - joeynmt.training - 	Source:     Tom felt lonely and abandoned.
+2026-03-15 18:45:43,567 - INFO - joeynmt.training - 	Reference:  Tom se sentía solo y abandonado.
+2026-03-15 18:45:43,567 - INFO - joeynmt.training - 	Hypothesis: Tom se se se se se se se se se se se se se se se se se se se se se se se se se se se se se se
+2026-03-15 18:45:43,573 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tom', 'felt', 'lonely', 'and', 'abandoned', '.']
+2026-03-15 18:45:43,574 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Tom', 'se', 'sentía', 'solo', 'y', 'abandonado', '.']
+2026-03-15 18:45:43,574 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['Tom', 'se', 'se', 'se', 'se', 'se', 'se', 'se', 'se', 'se', 'se', 'se', 'se', 'se', 'se', 'se', 'se', 'se', 'se', 'se', 'se', 'se', 'se', 'se', 'se', 'se', 'se', 'se', 'se', 'se']
+2026-03-15 18:45:43,574 - INFO - joeynmt.training - Example #1
+2026-03-15 18:45:43,577 - INFO - joeynmt.training - 	Source:     There's no time to lose.
+2026-03-15 18:45:43,577 - INFO - joeynmt.training - 	Reference:  No hay tiempo que perder.
+2026-03-15 18:45:43,577 - INFO - joeynmt.training - 	Hypothesis: No no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no
+2026-03-15 18:45:43,584 - DEBUG - joeynmt.training - 	Tokenized source:     ['There', '&apos;s', 'no', 'time', 'to', 'lose', '.']
+2026-03-15 18:45:43,584 - DEBUG - joeynmt.training - 	Tokenized reference:  ['No', 'hay', 'tiempo', 'que', 'perder', '.']
+2026-03-15 18:45:43,584 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['No', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no']
+2026-03-15 18:45:43,584 - INFO - joeynmt.training - Example #2
+2026-03-15 18:45:43,588 - INFO - joeynmt.training - 	Source:     I felt exactly the same way.
+2026-03-15 18:45:43,588 - INFO - joeynmt.training - 	Reference:  Yo sentí exactamente lo mismo.
+2026-03-15 18:45:43,588 - INFO - joeynmt.training - 	Hypothesis: No es un problema.
+2026-03-15 18:45:43,595 - DEBUG - joeynmt.training - 	Tokenized source:     ['I', 'felt', 'exactly', 'the', 'same', 'way', '.']
+2026-03-15 18:45:43,595 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Yo', 'sentí', 'exactamente', 'lo', 'mismo', '.']
+2026-03-15 18:45:43,595 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['No', 'es', 'un', 'problema', '.']
+2026-03-15 18:45:44,608 - INFO - joeynmt.training - Epoch   1, Step:      440, Batch Loss:    46.880539, Batch Acc: 0.276887, Tokens per Sec:     2971, Lr: 0.005000
+2026-03-15 18:45:44,609 - INFO - joeynmt.prediction - Predicting 27999 example(s)... (Greedy decoding with min_output_length=1, max_output_length=31, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2026-03-15 18:52:05,607 - INFO - joeynmt.prediction - Generation took 380.9960[sec].
+2026-03-15 18:52:07,409 - INFO - joeynmt.metrics - nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0
+2026-03-15 18:52:07,409 - INFO - joeynmt.prediction - Evaluation result (greedy): bleu:   0.06, loss:  49.02, ppl: 181.04, acc:   0.28, 1.0852[sec]
+2026-03-15 18:52:07,416 - INFO - joeynmt.training - Hooray! New best validation result [loss]!
+2026-03-15 18:52:07,612 - INFO - joeynmt.training - Checkpoint saved in /Users/ariel/nlpfinal/toy_transformer/440.ckpt.
+2026-03-15 18:52:07,710 - INFO - joeynmt.training - Example #0
+2026-03-15 18:52:07,715 - INFO - joeynmt.training - 	Source:     Tom felt lonely and abandoned.
+2026-03-15 18:52:07,715 - INFO - joeynmt.training - 	Reference:  Tom se sentía solo y abandonado.
+2026-03-15 18:52:07,715 - INFO - joeynmt.training - 	Hypothesis: Tom es el momento.
+2026-03-15 18:52:07,722 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tom', 'felt', 'lonely', 'and', 'abandoned', '.']
+2026-03-15 18:52:07,722 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Tom', 'se', 'sentía', 'solo', 'y', 'abandonado', '.']
+2026-03-15 18:52:07,722 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['Tom', 'es', 'el', 'momento', '.']
+2026-03-15 18:52:07,722 - INFO - joeynmt.training - Example #1
+2026-03-15 18:52:07,726 - INFO - joeynmt.training - 	Source:     There's no time to lose.
+2026-03-15 18:52:07,726 - INFO - joeynmt.training - 	Reference:  No hay tiempo que perder.
+2026-03-15 18:52:07,726 - INFO - joeynmt.training - 	Hypothesis: No no es que que que no que no no no no no no no no no no no no no no no no no no no no no no no
+2026-03-15 18:52:07,733 - DEBUG - joeynmt.training - 	Tokenized source:     ['There', '&apos;s', 'no', 'time', 'to', 'lose', '.']
+2026-03-15 18:52:07,733 - DEBUG - joeynmt.training - 	Tokenized reference:  ['No', 'hay', 'tiempo', 'que', 'perder', '.']
+2026-03-15 18:52:07,733 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['No', 'no', 'es', 'que', 'que', 'que', 'no', 'que', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no']
+2026-03-15 18:52:07,733 - INFO - joeynmt.training - Example #2
+2026-03-15 18:52:07,737 - INFO - joeynmt.training - 	Source:     I felt exactly the same way.
+2026-03-15 18:52:07,737 - INFO - joeynmt.training - 	Reference:  Yo sentí exactamente lo mismo.
+2026-03-15 18:52:07,737 - INFO - joeynmt.training - 	Hypothesis: No es un problema.
+2026-03-15 18:52:07,744 - DEBUG - joeynmt.training - 	Tokenized source:     ['I', 'felt', 'exactly', 'the', 'same', 'way', '.']
+2026-03-15 18:52:07,744 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Yo', 'sentí', 'exactamente', 'lo', 'mismo', '.']
+2026-03-15 18:52:07,744 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['No', 'es', 'un', 'problema', '.']
+2026-03-15 18:52:08,715 - INFO - joeynmt.training - Epoch   1, Step:      450, Batch Loss:    49.319340, Batch Acc: 0.277145, Tokens per Sec:     3096, Lr: 0.005000
+2026-03-15 18:52:08,716 - INFO - joeynmt.prediction - Predicting 27999 example(s)... (Greedy decoding with min_output_length=1, max_output_length=31, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2026-03-15 18:57:55,417 - INFO - joeynmt.prediction - Generation took 346.7010[sec].
+2026-03-15 18:57:56,779 - INFO - joeynmt.metrics - nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0
+2026-03-15 18:57:56,779 - INFO - joeynmt.prediction - Evaluation result (greedy): bleu:   0.08, loss:  48.82, ppl: 177.32, acc:   0.28, 0.5070[sec]
+2026-03-15 18:57:56,782 - INFO - joeynmt.training - Hooray! New best validation result [loss]!
+2026-03-15 18:57:56,948 - INFO - joeynmt.training - Checkpoint saved in /Users/ariel/nlpfinal/toy_transformer/450.ckpt.
+2026-03-15 18:57:57,029 - INFO - joeynmt.training - Example #0
+2026-03-15 18:57:57,032 - INFO - joeynmt.training - 	Source:     Tom felt lonely and abandoned.
+2026-03-15 18:57:57,032 - INFO - joeynmt.training - 	Reference:  Tom se sentía solo y abandonado.
+2026-03-15 18:57:57,032 - INFO - joeynmt.training - 	Hypothesis: Tom es el trabajo.
+2026-03-15 18:57:57,038 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tom', 'felt', 'lonely', 'and', 'abandoned', '.']
+2026-03-15 18:57:57,038 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Tom', 'se', 'sentía', 'solo', 'y', 'abandonado', '.']
+2026-03-15 18:57:57,038 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['Tom', 'es', 'el', 'trabajo', '.']
+2026-03-15 18:57:57,038 - INFO - joeynmt.training - Example #1
+2026-03-15 18:57:57,042 - INFO - joeynmt.training - 	Source:     There's no time to lose.
+2026-03-15 18:57:57,042 - INFO - joeynmt.training - 	Reference:  No hay tiempo que perder.
+2026-03-15 18:57:57,042 - INFO - joeynmt.training - 	Hypothesis: No no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no
+2026-03-15 18:57:57,048 - DEBUG - joeynmt.training - 	Tokenized source:     ['There', '&apos;s', 'no', 'time', 'to', 'lose', '.']
+2026-03-15 18:57:57,048 - DEBUG - joeynmt.training - 	Tokenized reference:  ['No', 'hay', 'tiempo', 'que', 'perder', '.']
+2026-03-15 18:57:57,048 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['No', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no']
+2026-03-15 18:57:57,048 - INFO - joeynmt.training - Example #2
+2026-03-15 18:57:57,051 - INFO - joeynmt.training - 	Source:     I felt exactly the same way.
+2026-03-15 18:57:57,051 - INFO - joeynmt.training - 	Reference:  Yo sentí exactamente lo mismo.
+2026-03-15 18:57:57,051 - INFO - joeynmt.training - 	Hypothesis: No es el trabajo.
+2026-03-15 18:57:57,058 - DEBUG - joeynmt.training - 	Tokenized source:     ['I', 'felt', 'exactly', 'the', 'same', 'way', '.']
+2026-03-15 18:57:57,058 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Yo', 'sentí', 'exactamente', 'lo', 'mismo', '.']
+2026-03-15 18:57:57,058 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['No', 'es', 'el', 'trabajo', '.']
+2026-03-15 18:57:58,491 - INFO - joeynmt.training - Epoch   1, Step:      460, Batch Loss:    53.432331, Batch Acc: 0.278878, Tokens per Sec:     2125, Lr: 0.005000
+2026-03-15 18:57:58,492 - INFO - joeynmt.prediction - Predicting 27999 example(s)... (Greedy decoding with min_output_length=1, max_output_length=31, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2026-03-15 19:03:26,906 - INFO - joeynmt.prediction - Generation took 328.4141[sec].
+2026-03-15 19:03:27,861 - INFO - joeynmt.metrics - nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0
+2026-03-15 19:03:27,861 - INFO - joeynmt.prediction - Evaluation result (greedy): bleu:   0.12, loss:  48.70, ppl: 174.99, acc:   0.28, 0.5232[sec]
+2026-03-15 19:03:27,870 - INFO - joeynmt.training - Hooray! New best validation result [loss]!
+2026-03-15 19:03:28,041 - INFO - joeynmt.training - Checkpoint saved in /Users/ariel/nlpfinal/toy_transformer/460.ckpt.
+2026-03-15 19:03:28,124 - INFO - joeynmt.training - Example #0
+2026-03-15 19:03:28,128 - INFO - joeynmt.training - 	Source:     Tom felt lonely and abandoned.
+2026-03-15 19:03:28,128 - INFO - joeynmt.training - 	Reference:  Tom se sentía solo y abandonado.
+2026-03-15 19:03:28,128 - INFO - joeynmt.training - 	Hypothesis: Tom es la trabajo.
+2026-03-15 19:03:28,134 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tom', 'felt', 'lonely', 'and', 'abandoned', '.']
+2026-03-15 19:03:28,134 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Tom', 'se', 'sentía', 'solo', 'y', 'abandonado', '.']
+2026-03-15 19:03:28,134 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['Tom', 'es', 'la', 'trabajo', '.']
+2026-03-15 19:03:28,134 - INFO - joeynmt.training - Example #1
+2026-03-15 19:03:28,137 - INFO - joeynmt.training - 	Source:     There's no time to lose.
+2026-03-15 19:03:28,137 - INFO - joeynmt.training - 	Reference:  No hay tiempo que perder.
+2026-03-15 19:03:28,138 - INFO - joeynmt.training - 	Hypothesis: No no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no
+2026-03-15 19:03:28,144 - DEBUG - joeynmt.training - 	Tokenized source:     ['There', '&apos;s', 'no', 'time', 'to', 'lose', '.']
+2026-03-15 19:03:28,144 - DEBUG - joeynmt.training - 	Tokenized reference:  ['No', 'hay', 'tiempo', 'que', 'perder', '.']
+2026-03-15 19:03:28,144 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['No', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no']
+2026-03-15 19:03:28,144 - INFO - joeynmt.training - Example #2
+2026-03-15 19:03:28,148 - INFO - joeynmt.training - 	Source:     I felt exactly the same way.
+2026-03-15 19:03:28,148 - INFO - joeynmt.training - 	Reference:  Yo sentí exactamente lo mismo.
+2026-03-15 19:03:28,148 - INFO - joeynmt.training - 	Hypothesis: No puedo un trabajo.
+2026-03-15 19:03:28,154 - DEBUG - joeynmt.training - 	Tokenized source:     ['I', 'felt', 'exactly', 'the', 'same', 'way', '.']
+2026-03-15 19:03:28,154 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Yo', 'sentí', 'exactamente', 'lo', 'mismo', '.']
+2026-03-15 19:03:28,154 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['No', 'puedo', 'un', 'trabajo', '.']
+2026-03-15 19:03:29,137 - INFO - joeynmt.training - Epoch   1, Step:      470, Batch Loss:    45.607185, Batch Acc: 0.264157, Tokens per Sec:     3188, Lr: 0.005000
+2026-03-15 19:03:29,137 - INFO - joeynmt.prediction - Predicting 27999 example(s)... (Greedy decoding with min_output_length=1, max_output_length=31, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2026-03-15 19:11:11,913 - INFO - joeynmt.prediction - Generation took 462.7733[sec].
+2026-03-15 19:11:13,144 - INFO - joeynmt.metrics - nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0
+2026-03-15 19:11:13,145 - INFO - joeynmt.prediction - Evaluation result (greedy): bleu:   0.05, loss:  48.59, ppl: 172.89, acc:   0.28, 0.7090[sec]
+2026-03-15 19:11:13,153 - INFO - joeynmt.training - Hooray! New best validation result [loss]!
+2026-03-15 19:11:13,350 - INFO - joeynmt.training - Checkpoint saved in /Users/ariel/nlpfinal/toy_transformer/470.ckpt.
+2026-03-15 19:11:13,397 - INFO - joeynmt.training - Example #0
+2026-03-15 19:11:13,401 - INFO - joeynmt.training - 	Source:     Tom felt lonely and abandoned.
+2026-03-15 19:11:13,401 - INFO - joeynmt.training - 	Reference:  Tom se sentía solo y abandonado.
+2026-03-15 19:11:13,402 - INFO - joeynmt.training - 	Hypothesis: Tom se le le le le le le le le le le le le le le le le le le le le le le le le le le le le le
+2026-03-15 19:11:13,408 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tom', 'felt', 'lonely', 'and', 'abandoned', '.']
+2026-03-15 19:11:13,408 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Tom', 'se', 'sentía', 'solo', 'y', 'abandonado', '.']
+2026-03-15 19:11:13,408 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['Tom', 'se', 'le', 'le', 'le', 'le', 'le', 'le', 'le', 'le', 'le', 'le', 'le', 'le', 'le', 'le', 'le', 'le', 'le', 'le', 'le', 'le', 'le', 'le', 'le', 'le', 'le', 'le', 'le', 'le']
+2026-03-15 19:11:13,408 - INFO - joeynmt.training - Example #1
+2026-03-15 19:11:13,411 - INFO - joeynmt.training - 	Source:     There's no time to lose.
+2026-03-15 19:11:13,411 - INFO - joeynmt.training - 	Reference:  No hay tiempo que perder.
+2026-03-15 19:11:13,411 - INFO - joeynmt.training - 	Hypothesis: No me gusta que no no no no no no no no no no no no no no no no no no no no no no no no no no no
+2026-03-15 19:11:13,417 - DEBUG - joeynmt.training - 	Tokenized source:     ['There', '&apos;s', 'no', 'time', 'to', 'lose', '.']
+2026-03-15 19:11:13,417 - DEBUG - joeynmt.training - 	Tokenized reference:  ['No', 'hay', 'tiempo', 'que', 'perder', '.']
+2026-03-15 19:11:13,417 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['No', 'me', 'gusta', 'que', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no']
+2026-03-15 19:11:13,417 - INFO - joeynmt.training - Example #2
+2026-03-15 19:11:13,420 - INFO - joeynmt.training - 	Source:     I felt exactly the same way.
+2026-03-15 19:11:13,420 - INFO - joeynmt.training - 	Reference:  Yo sentí exactamente lo mismo.
+2026-03-15 19:11:13,420 - INFO - joeynmt.training - 	Hypothesis: No me gusta un noche.
+2026-03-15 19:11:13,426 - DEBUG - joeynmt.training - 	Tokenized source:     ['I', 'felt', 'exactly', 'the', 'same', 'way', '.']
+2026-03-15 19:11:13,426 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Yo', 'sentí', 'exactamente', 'lo', 'mismo', '.']
+2026-03-15 19:11:13,426 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['No', 'me', 'gusta', 'un', 'noche', '.']
+2026-03-15 19:11:14,361 - INFO - joeynmt.training - Epoch   1, Step:      480, Batch Loss:    48.155647, Batch Acc: 0.292734, Tokens per Sec:     3072, Lr: 0.005000
+2026-03-15 19:11:14,363 - INFO - joeynmt.prediction - Predicting 27999 example(s)... (Greedy decoding with min_output_length=1, max_output_length=31, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2026-03-15 19:17:42,786 - INFO - joeynmt.prediction - Generation took 388.4219[sec].
+2026-03-15 19:17:44,127 - INFO - joeynmt.metrics - nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0
+2026-03-15 19:17:44,127 - INFO - joeynmt.prediction - Evaluation result (greedy): bleu:   0.14, loss:  48.53, ppl: 171.87, acc:   0.28, 0.8598[sec]
+2026-03-15 19:17:44,135 - INFO - joeynmt.training - Hooray! New best validation result [loss]!
+2026-03-15 19:17:44,297 - INFO - joeynmt.training - Checkpoint saved in /Users/ariel/nlpfinal/toy_transformer/480.ckpt.
+2026-03-15 19:17:44,357 - INFO - joeynmt.training - Example #0
+2026-03-15 19:17:44,360 - INFO - joeynmt.training - 	Source:     Tom felt lonely and abandoned.
+2026-03-15 19:17:44,360 - INFO - joeynmt.training - 	Reference:  Tom se sentía solo y abandonado.
+2026-03-15 19:17:44,360 - INFO - joeynmt.training - 	Hypothesis: Tom es un hombre.
+2026-03-15 19:17:44,366 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tom', 'felt', 'lonely', 'and', 'abandoned', '.']
+2026-03-15 19:17:44,366 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Tom', 'se', 'sentía', 'solo', 'y', 'abandonado', '.']
+2026-03-15 19:17:44,366 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['Tom', 'es', 'un', 'hombre', '.']
+2026-03-15 19:17:44,366 - INFO - joeynmt.training - Example #1
+2026-03-15 19:17:44,369 - INFO - joeynmt.training - 	Source:     There's no time to lose.
+2026-03-15 19:17:44,369 - INFO - joeynmt.training - 	Reference:  No hay tiempo que perder.
+2026-03-15 19:17:44,369 - INFO - joeynmt.training - 	Hypothesis: No me gusta que no que no que no que no que no que no que no no no no no no no no no no que no que no que
+2026-03-15 19:17:44,375 - DEBUG - joeynmt.training - 	Tokenized source:     ['There', '&apos;s', 'no', 'time', 'to', 'lose', '.']
+2026-03-15 19:17:44,375 - DEBUG - joeynmt.training - 	Tokenized reference:  ['No', 'hay', 'tiempo', 'que', 'perder', '.']
+2026-03-15 19:17:44,375 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['No', 'me', 'gusta', 'que', 'no', 'que', 'no', 'que', 'no', 'que', 'no', 'que', 'no', 'que', 'no', 'que', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'que', 'no', 'que', 'no']
+2026-03-15 19:17:44,375 - INFO - joeynmt.training - Example #2
+2026-03-15 19:17:44,378 - INFO - joeynmt.training - 	Source:     I felt exactly the same way.
+2026-03-15 19:17:44,379 - INFO - joeynmt.training - 	Reference:  Yo sentí exactamente lo mismo.
+2026-03-15 19:17:44,379 - INFO - joeynmt.training - 	Hypothesis: No me gusta un problema.
+2026-03-15 19:17:44,385 - DEBUG - joeynmt.training - 	Tokenized source:     ['I', 'felt', 'exactly', 'the', 'same', 'way', '.']
+2026-03-15 19:17:44,385 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Yo', 'sentí', 'exactamente', 'lo', 'mismo', '.']
+2026-03-15 19:17:44,385 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['No', 'me', 'gusta', 'un', 'problema', '.']
+2026-03-15 19:17:45,335 - INFO - joeynmt.training - Epoch   1, Step:      490, Batch Loss:    40.728817, Batch Acc: 0.285376, Tokens per Sec:     3134, Lr: 0.005000
+2026-03-15 19:17:45,336 - INFO - joeynmt.prediction - Predicting 27999 example(s)... (Greedy decoding with min_output_length=1, max_output_length=31, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2026-03-15 19:24:24,867 - INFO - joeynmt.prediction - Generation took 399.5309[sec].
+2026-03-15 19:24:25,913 - INFO - joeynmt.metrics - nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0
+2026-03-15 19:24:25,914 - INFO - joeynmt.prediction - Evaluation result (greedy): bleu:   0.11, loss:  48.40, ppl: 169.46, acc:   0.29, 0.6051[sec]
+2026-03-15 19:24:25,917 - INFO - joeynmt.training - Hooray! New best validation result [loss]!
+2026-03-15 19:24:26,092 - INFO - joeynmt.training - Checkpoint saved in /Users/ariel/nlpfinal/toy_transformer/490.ckpt.
+2026-03-15 19:24:26,179 - INFO - joeynmt.training - Example #0
+2026-03-15 19:24:26,183 - INFO - joeynmt.training - 	Source:     Tom felt lonely and abandoned.
+2026-03-15 19:24:26,183 - INFO - joeynmt.training - 	Reference:  Tom se sentía solo y abandonado.
+2026-03-15 19:24:26,183 - INFO - joeynmt.training - 	Hypothesis: Tom es la hombre.
+2026-03-15 19:24:26,189 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tom', 'felt', 'lonely', 'and', 'abandoned', '.']
+2026-03-15 19:24:26,189 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Tom', 'se', 'sentía', 'solo', 'y', 'abandonado', '.']
+2026-03-15 19:24:26,189 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['Tom', 'es', 'la', 'hombre', '.']
+2026-03-15 19:24:26,189 - INFO - joeynmt.training - Example #1
+2026-03-15 19:24:26,192 - INFO - joeynmt.training - 	Source:     There's no time to lose.
+2026-03-15 19:24:26,192 - INFO - joeynmt.training - 	Reference:  No hay tiempo que perder.
+2026-03-15 19:24:26,192 - INFO - joeynmt.training - 	Hypothesis: No no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no
+2026-03-15 19:24:26,198 - DEBUG - joeynmt.training - 	Tokenized source:     ['There', '&apos;s', 'no', 'time', 'to', 'lose', '.']
+2026-03-15 19:24:26,198 - DEBUG - joeynmt.training - 	Tokenized reference:  ['No', 'hay', 'tiempo', 'que', 'perder', '.']
+2026-03-15 19:24:26,198 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['No', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no']
+2026-03-15 19:24:26,198 - INFO - joeynmt.training - Example #2
+2026-03-15 19:24:26,201 - INFO - joeynmt.training - 	Source:     I felt exactly the same way.
+2026-03-15 19:24:26,201 - INFO - joeynmt.training - 	Reference:  Yo sentí exactamente lo mismo.
+2026-03-15 19:24:26,201 - INFO - joeynmt.training - 	Hypothesis: Yo me gusta.
+2026-03-15 19:24:26,207 - DEBUG - joeynmt.training - 	Tokenized source:     ['I', 'felt', 'exactly', 'the', 'same', 'way', '.']
+2026-03-15 19:24:26,207 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Yo', 'sentí', 'exactamente', 'lo', 'mismo', '.']
+2026-03-15 19:24:26,207 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['Yo', 'me', 'gusta', '.']
+2026-03-15 19:24:27,413 - INFO - joeynmt.training - Epoch   1, Step:      500, Batch Loss:    49.955708, Batch Acc: 0.276554, Tokens per Sec:     2574, Lr: 0.005000
+2026-03-15 19:24:27,414 - INFO - joeynmt.prediction - Predicting 27999 example(s)... (Greedy decoding with min_output_length=1, max_output_length=31, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2026-03-15 19:30:50,812 - INFO - joeynmt.prediction - Generation took 383.3980[sec].
+2026-03-15 19:30:51,830 - INFO - joeynmt.metrics - nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0
+2026-03-15 19:30:51,830 - INFO - joeynmt.prediction - Evaluation result (greedy): bleu:   0.15, loss:  48.39, ppl: 169.39, acc:   0.28, 0.5619[sec]
+2026-03-15 19:30:51,833 - INFO - joeynmt.training - Hooray! New best validation result [loss]!
+2026-03-15 19:30:52,057 - INFO - joeynmt.training - Checkpoint saved in /Users/ariel/nlpfinal/toy_transformer/500.ckpt.
+2026-03-15 19:30:52,133 - INFO - joeynmt.training - Example #0
+2026-03-15 19:30:52,136 - INFO - joeynmt.training - 	Source:     Tom felt lonely and abandoned.
+2026-03-15 19:30:52,136 - INFO - joeynmt.training - 	Reference:  Tom se sentía solo y abandonado.
+2026-03-15 19:30:52,136 - INFO - joeynmt.training - 	Hypothesis: Tom es un día de Mary.
+2026-03-15 19:30:52,142 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tom', 'felt', 'lonely', 'and', 'abandoned', '.']
+2026-03-15 19:30:52,142 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Tom', 'se', 'sentía', 'solo', 'y', 'abandonado', '.']
+2026-03-15 19:30:52,142 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['Tom', 'es', 'un', 'día', 'de', 'Mary', '.']
+2026-03-15 19:30:52,142 - INFO - joeynmt.training - Example #1
+2026-03-15 19:30:52,146 - INFO - joeynmt.training - 	Source:     There's no time to lose.
+2026-03-15 19:30:52,146 - INFO - joeynmt.training - 	Reference:  No hay tiempo que perder.
+2026-03-15 19:30:52,146 - INFO - joeynmt.training - 	Hypothesis: No no me gusta que no no no no no no no no no no no no no no no no no no no no no no no no no no
+2026-03-15 19:30:52,152 - DEBUG - joeynmt.training - 	Tokenized source:     ['There', '&apos;s', 'no', 'time', 'to', 'lose', '.']
+2026-03-15 19:30:52,152 - DEBUG - joeynmt.training - 	Tokenized reference:  ['No', 'hay', 'tiempo', 'que', 'perder', '.']
+2026-03-15 19:30:52,152 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['No', 'no', 'me', 'gusta', 'que', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no']
+2026-03-15 19:30:52,152 - INFO - joeynmt.training - Example #2
+2026-03-15 19:30:52,155 - INFO - joeynmt.training - 	Source:     I felt exactly the same way.
+2026-03-15 19:30:52,155 - INFO - joeynmt.training - 	Reference:  Yo sentí exactamente lo mismo.
+2026-03-15 19:30:52,155 - INFO - joeynmt.training - 	Hypothesis: No me gusta un problema.
+2026-03-15 19:30:52,161 - DEBUG - joeynmt.training - 	Tokenized source:     ['I', 'felt', 'exactly', 'the', 'same', 'way', '.']
+2026-03-15 19:30:52,161 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Yo', 'sentí', 'exactamente', 'lo', 'mismo', '.']
+2026-03-15 19:30:52,161 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['No', 'me', 'gusta', 'un', 'problema', '.']
+2026-03-15 19:30:52,914 - INFO - joeynmt.training - Epoch   1, Step:      510, Batch Loss:    43.786007, Batch Acc: 0.282219, Tokens per Sec:     4118, Lr: 0.005000
+2026-03-15 19:30:52,914 - INFO - joeynmt.prediction - Predicting 27999 example(s)... (Greedy decoding with min_output_length=1, max_output_length=31, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2026-03-15 19:32:38,078 - INFO - joeynmt.training - Interrupt at epoch 1, step 510.
+2026-03-15 19:32:38,277 - INFO - joeynmt.training - Checkpoint saved in /Users/ariel/nlpfinal/toy_transformer/510.ckpt.
+2026-03-15 19:32:38,363 - INFO - joeynmt.prediction - Decoding on dev set... (device: cpu, n_gpu: 0, use_ddp: False, fp16: False)
+2026-03-15 19:32:38,363 - INFO - joeynmt.prediction - Predicting 27999 example(s)... (Beam search with beam_size=5, beam_alpha=1.0, n_best=1, min_output_length=1, max_output_length=31, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
