@@ -70,7 +70,7 @@ data:
         #lang_tags: ["<de>", "<en>"] # language tags; Used for multi-task training
 
 testing:                            # specify which inference algorithm to use for testing (for validation it's always greedy decoding)
-    load_model: "toy_transformer" # if given, load a pre-trained model from this checkpoint
+    load_model: "toy_transformer/best.ckpt" # if given, load a pre-trained model from this checkpoint
     n_best: 1                       # n_best size, must be smaller than or equal to beam_size
     beam_size: 5                    # size of the beam for beam search
     beam_alpha: 1.0                 # length penalty for beam search
@@ -90,15 +90,14 @@ testing:                            # specify which inference algorithm to use f
 
 training:                           # specify training details here
     model_dir: "toy_transformer"        # directory where models and validation results are stored, required.
-
-    #load_model: "toy_model/60.ckpt" # if given, load a pre-trained model from this checkpoint
+    # load_model: "toy_model/60.ckpt" # if given, load a pre-trained model from this checkpoint
     reset_best_ckpt: False          # if True, reset the tracking of the best checkpoint and scores. Use for domain adaptation or fine-tuning with new metrics or dev data.
     reset_scheduler: False          # if True, overwrite scheduler in loaded checkpoint with parameters specified in this config. Use for domain adaptation or fine-tuning.
     reset_optimizer: False          # if True, overwrite optimizer in loaded checkpoint with parameters specified in this config. Use for domain adaptation or fine-tuning.
     reset_iter_state: False         # if True, overwrite iterator state in loaded checkpoint with parameters specified in this config. Use for resumed training.
     optimizer: "adamw"              # choices: "sgd", "adam", "adamw", "adadelta", "adagrad", "rmsprop", default is SGD
-    adam_betas: [0.9, 0.999]        # beta parameters for Adam. These are the defaults. Typically these are different for Transformer models.
-    learning_rate: 0.005            # initial learning rate, default: 3.0e-4
+    adam_betas: [0.9, 0.98]        # beta parameters for Adam. These are the defaults. Typically these are different for Transformer models.
+    learning_rate: 0.0002            # initial learning rate, default: 3.0e-4
     learning_rate_min: 0.0       # stop learning when learning rate is reduced below this threshold, default: 1.0e-8
     #learning_rate_factor: 1        # factor for Noam scheduler (used with Transformer)
     learning_rate_warmup: 4000     # warmup steps for Noam scheduler (used with Transformer)
@@ -106,8 +105,8 @@ training:                           # specify training details here
     #clip_grad_norm: 1.0            # norm clipping instead of value clipping
     weight_decay: 0.                # l2 regularization, default: 0
     loss: "crossentropy"            # loss type, default: "crossentropy"
-    label_smoothing: 0.0            # label smoothing: reference tokens will have 1-label_smoothing probability instead of 1, rest of probability mass is uniformly distributed over the rest of the vocabulary, default: 0.0 (off)
-    batch_size: 2048                 # mini-batch size as number of sentences (when batch_type is "sentence"; default) or total number of tokens (when batch_type is "token"). When you use more than 1 GPUs, the actual batch size per device will be: batch_size // n_gpu.
+    label_smoothing: 0.1            # label smoothing: reference tokens will have 1-label_smoothing probability instead of 1, rest of probability mass is uniformly distributed over the rest of the vocabulary, default: 0.0 (off)
+    batch_size: 4096                 # mini-batch size as number of sentences (when batch_type is "sentence"; default) or total number of tokens (when batch_type is "token"). When you use more than 1 GPUs, the actual batch size per device will be: batch_size // n_gpu.
     batch_type: "token"          # create batches with sentences ("sentence", default) or tokens ("token")
     batch_multiplier: 1             # increase the effective batch size with values >1 to batch_multiplier*batch_size without increasing memory consumption by making updates only every batch_multiplier batches
     normalization: "batch"          # loss normalization of a mini-batch, default: "batch" (by number of sequences in batch), other options: "tokens" (by number of tokens in batch), "none" (don't normalize, sum up loss)
@@ -118,7 +117,7 @@ training:                           # specify training details here
     updates: 100000                    # train for this many updates (won't be reset in resumed process)
     validation_freq: 500             # validate after this many updates (number of mini-batches), default: 1000
     logging_freq: 10                # log the training progress after this many updates, default: 100
-    early_stopping_metric: "loss"   # when a new high score on this metric is achieved, a checkpoint is written, when "eval_metric" (default) is maximized, when "loss" or "ppl" is minimized
+    early_stopping_metric: "bleu"   # when a new high score on this metric is achieved, a checkpoint is written, when "eval_metric" (default) is maximized, when "loss" or "ppl" is minimized
     shuffle: True                   # shuffle the training data, default: True
     overwrite: True                # overwrite existing model directory, default: False. Do not set to True unless for debugging!
     print_valid_sents: [0, 1, 2]    # print this many validation sentences during each validation run, default: [0, 1, 2]
@@ -134,30 +133,30 @@ model:                              # specify your model architecture here
     tied_softmax: True
     encoder:
         type: "transformer"         # encoder type: "recurrent" for LSTM or GRU, or "transformer" for a Transformer
-        num_layers: 3               # number of layers
-        num_heads: 4                # number of transformer heads
+        num_layers: 6               # number of layers
+        num_heads: 8                # number of transformer heads
         embeddings:
-            embedding_dim: 64       # size of embeddings (for Transformer set equal to hidden_size)
+            embedding_dim: 512       # size of embeddings (for Transformer set equal to hidden_size)
             scale: True             # scale the embeddings by sqrt of their size, default: False
             freeze: False           # if True, embeddings are not updated during training
             #load_pretrained: "my_data/train.trg.embed.txt" # path to the pretrained embedding file
-        hidden_size: 64             # size of hidden layer; must be divisible by number of heads
-        ff_size: 128                # size of position-wise feed-forward layer
+        hidden_size: 512             # size of hidden layer; must be divisible by number of heads
+        ff_size: 2048                # size of position-wise feed-forward layer
         dropout: 0.1                # apply dropout to the outputs to the transformer, default: 0.0
         freeze: False               # if True, encoder parameters are not updated during training (does not include embedding parameters)
         layer_norm: "pre"           # where to apply layer norm. either "pre" or "post". default "post"
         activation: "relu"          # activation function. choices: "relu", "gelu", "tanh", "swish". default: "relu"
     decoder:
         type: "transformer"         # decoder type: "recurrent" for LSTM or GRU, or "transformer" for a Transformer
-        num_layers: 3               # number of layers
-        num_heads: 4                # number of transformer heads
+        num_layers: 6               # number of layers
+        num_heads: 8                # number of transformer heads
         embeddings:
-            embedding_dim: 64       # size of embeddings (for Transformer set equal to hidden_size)
+            embedding_dim: 512       # size of embeddings (for Transformer set equal to hidden_size)
             scale: True             # scale the embeddings by sqrt of their size, default: False
             freeze: False           # if True, embeddings are not updated during training
             #load_pretrained: "my_data/train.trg.embed.txt" # path to the pretrained embedding file
-        hidden_size: 64             # size of hidden layer; must be divisible by number of heads
-        ff_size: 128                # size of position-wise feed-forward layer
+        hidden_size: 512             # size of hidden layer; must be divisible by number of heads
+        ff_size: 2048                # size of position-wise feed-forward layer
         dropout: 0.1                # apply dropout to the outputs to the transformer, default: 0.0
         freeze: False               # if True, decoder parameters are not updated during training (does not include embedding parameters, but attention)
         layer_norm: "pre"           # where to apply layer norm. either "pre" or "post". default "post"
